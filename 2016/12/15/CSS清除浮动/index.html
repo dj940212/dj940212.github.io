@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo,GitHub," />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -84,16 +84,22 @@
 
 
 
-<meta name="description" content="环境安装Git安装node.js">
+<meta name="description" content="浮动属性会使当前标签脱离文档流，同时会影响父标签（高度塌陷）以及前后标签的布局，下面总结平时常用的清除浮动的方法。1.浮动标签结尾处添加一个空标签&amp;lt;div style=&amp;quot;clear:both&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;;
+
+优点：简单易懂，浏览器支持好，不容易出问题缺点：增加很多空标签不易维护和理解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo搭建Github静态博客">
-<meta property="og:url" content="http://yoursite.com/2016/12/13/Hexo搭建Github静态博客/index.html">
+<meta property="og:title" content="CSS清除浮动">
+<meta property="og:url" content="http://yoursite.com/2016/12/15/CSS清除浮动/index.html">
 <meta property="og:site_name" content="Ding   Blog">
-<meta property="og:description" content="环境安装Git安装node.js">
-<meta property="og:updated_time" content="2016-12-14T14:50:43.253Z">
+<meta property="og:description" content="浮动属性会使当前标签脱离文档流，同时会影响父标签（高度塌陷）以及前后标签的布局，下面总结平时常用的清除浮动的方法。1.浮动标签结尾处添加一个空标签&amp;lt;div style=&amp;quot;clear:both&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;;
+
+优点：简单易懂，浏览器支持好，不容易出问题缺点：增加很多空标签不易维护和理解">
+<meta property="og:updated_time" content="2016-12-15T06:50:42.074Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo搭建Github静态博客">
-<meta name="twitter:description" content="环境安装Git安装node.js">
+<meta name="twitter:title" content="CSS清除浮动">
+<meta name="twitter:description" content="浮动属性会使当前标签脱离文档流，同时会影响父标签（高度塌陷）以及前后标签的布局，下面总结平时常用的清除浮动的方法。1.浮动标签结尾处添加一个空标签&amp;lt;div style=&amp;quot;clear:both&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;;
+
+优点：简单易懂，浏览器支持好，不容易出问题缺点：增加很多空标签不易维护和理解">
 
 
 
@@ -121,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/13/Hexo搭建Github静态博客/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/15/CSS清除浮动/"/>
 
 
 
 
 
-  <title> Hexo搭建Github静态博客 | Ding   Blog </title>
+  <title> CSS清除浮动 | Ding   Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -268,7 +274,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/13/Hexo搭建Github静态博客/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/15/CSS清除浮动/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="DingJian">
@@ -292,7 +298,7 @@
             
             
               
-                Hexo搭建Github静态博客
+                CSS清除浮动
               
             
           </h1>
@@ -305,8 +311,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-13T20:49:13+08:00">
-                2016-12-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-15T13:43:31+08:00">
+                2016-12-15
               </time>
             
 
@@ -359,14 +365,32 @@
       
 
       
-        <h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><h5 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h5><h5 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h5><a id="more"></a>
-<p>下载：<a href="http://nodejs.org/download/" target="_blank" rel="external">http://nodejs.org/download/</a></p>
-<p>安装时直接保持默认配置即可。</p>
-<h3 id="配置Github"><a href="#配置Github" class="headerlink" title="配置Github"></a>配置Github</h3><h5 id="建立Repository"><a href="#建立Repository" class="headerlink" title="建立Repository"></a>建立Repository</h5><p>建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】</p>
-<h5 id="配置SSH-Key"><a href="#配置SSH-Key" class="headerlink" title="配置SSH-Key"></a>配置SSH-Key</h5><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>关于Hexo的安装配置过程，请以官方Hexo【2】给出的步骤为准。</p>
-<h5 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h5><p>打开Git命令行，执行如下命令</p>
-<pre><code>$ npm install -g hexo
-</code></pre>
+        <p>浮动属性会使当前标签脱离文档流，同时会影响父标签（高度塌陷）以及前后标签的布局，下面总结平时常用的清除浮动的方法。<br>1.浮动标签结尾处添加一个空标签<code>&lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;</code>;</p>
+<blockquote>
+<p>优点：简单易懂，浏览器支持好，不容易出问题<br>缺点：增加很多空标签不易维护和理解</p>
+</blockquote>
+<a id="more"></a>
+<p>2.给父级标签添加<code>overflow:hidden</code></p>
+<blockquote>
+<p>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:hidden时，浏览器会自动检查浮动区域的高度<br>优点：简单、代码少、浏览器支持好<br>缺点：不能和position配合使用，因为超出的尺寸的会被隐藏。</p>
+</blockquote>
+<p>3.父级div定义 <code>overflow:auto</code> </p>
+<blockquote>
+<p>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:auto时，浏览器会自动检查浮动区域的高度<br>优点：简单、代码少、浏览器支持好<br>缺点：内部宽高超过父级div时，会出现滚动条。</p>
+</blockquote>
+<p>4.父级标签也一起浮动 </p>
+<blockquote>
+<p>原理：所有代码一起浮动，就变成了一个整体<br>缺点：会产生新的浮动问题,不推荐使用</p>
+</blockquote>
+<p>5.父级标签定义<code>display:table</code></p>
+<blockquote>
+<p>原理：将div属性变成表格<br>缺点：会产生新的未知问题,不推荐使用</p>
+</blockquote>
+<p>6.给父级元素添加 <code>&lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;</code></p>
+<blockquote>
+<p>目前比较通用的方法</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*清除浮动，防止高度塌陷*/</span></div><div class="line"><span class="comment">/*清除浮动，防止高度塌陷*/</span></div><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span>,</div><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line">	<span class="attribute">content</span>: <span class="string">" "</span>;</div><div class="line">	<span class="attribute">display</span>: table;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line">	<span class="attribute">clear</span>: both;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -389,9 +413,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
-          
-            <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
           
         </div>
       
@@ -400,15 +422,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/12/14/windows中路径太长文件无法删除/" rel="next" title="windows中路径太长文件无法删除">
+                <i class="fa fa-chevron-left"></i> windows中路径太长文件无法删除
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/13/Markdom基本语法/" rel="prev" title="Markdown基本语法">
-                Markdown基本语法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -455,17 +477,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -518,22 +531,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装Git"><span class="nav-number">1.0.1.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装node-js"><span class="nav-number">1.0.2.</span> <span class="nav-text">安装node.js</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Github"><span class="nav-number">2.</span> <span class="nav-text">配置Github</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#建立Repository"><span class="nav-number">2.0.1.</span> <span class="nav-text">建立Repository</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置SSH-Key"><span class="nav-number">2.0.2.</span> <span class="nav-text">配置SSH-Key</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">3.</span> <span class="nav-text">安装Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Installation"><span class="nav-number">3.0.1.</span> <span class="nav-text">Installation</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
     </div>
