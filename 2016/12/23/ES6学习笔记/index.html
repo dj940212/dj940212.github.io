@@ -102,7 +102,7 @@ let用法类似于var,但是所声明的变量只在let所在的代码块内有�
 
 不存在变量提升
 1234567// var 的情况console.log(foo); // 输出undefinedvar foo = 2">
-<meta property="og:updated_time" content="2016-12-23T12:23:49.026Z">
+<meta property="og:updated_time" content="2017-02-17T06:06:28.208Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6学习笔记">
 <meta name="twitter:description" content="1.let命令
@@ -389,7 +389,12 @@ let用法类似于var,但是所声明的变量只在let所在的代码块内有�
 </li>
 <li>不允许重复声明</li>
 </ul>
-<p><strong>2.const命令</strong></p>
+<p><strong>2.const命令</strong><br>const声明一个只读的常量。一旦声明，常量的值就不能改变。<br>const的作用域与let命令相同：只在声明所在的块级作用域内有效。</p>
+<p><strong>3.变量的解构赋值</strong></p>
+<p>ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。本质上，这种写法属于“模式匹配”，只要等号两边的模式相同，左边的变量就会被赋予对应的值。</p>
+<p>以前，为变量赋值，只能直接指定值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</div><div class="line"><span class="keyword">let</span> c = <span class="number">3</span>;</div></pre></td></tr></table></figure>
+<p>ES6允许写成下面这样。<br><figure class="highlight plain"><figcaption><span>[a, b, c] = [1, 2, 3];```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">下面是使用嵌套数组进行解构的例子，如果解构不成功，变量的值就等于undefined。</div><div class="line"></div><div class="line">```javascript</div><div class="line">let [foo, [[bar], baz]] = [1, [[2], 3]];</div><div class="line">foo // 1</div><div class="line">bar // 2</div><div class="line">baz // 3</div><div class="line"></div><div class="line">let [ , , third] = [&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;];</div><div class="line">third // &quot;baz&quot;</div><div class="line"></div><div class="line">let [x, , y] = [1, 2, 3];</div><div class="line">x // 1</div><div class="line">y // 3</div><div class="line"></div><div class="line">let [head, ...tail] = [1, 2, 3, 4];</div><div class="line">head // 1</div><div class="line">tail // [2, 3, 4]</div><div class="line"></div><div class="line">let [x, y, ...z] = [&apos;a&apos;];</div><div class="line">x // &quot;a&quot;</div><div class="line">y // undefined</div><div class="line">z // []</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -493,7 +498,7 @@ let用法类似于var,但是所声明的变量只在let所在的代码块内有�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -510,7 +515,7 @@ let用法类似于var,但是所声明的变量只在let所在的代码块内有�
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

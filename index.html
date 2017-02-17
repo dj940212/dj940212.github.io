@@ -266,6 +266,553 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/17/雅虎军规/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="DingJian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Ding   Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Ding   Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/17/雅虎军规/" itemprop="url">
+                  雅虎军规
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-17T13:40:46+08:00">
+                2017-02-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>首先，先说一下为什么要进行前端优化？<br>当我们打开一个网页时，事实上，只有10%-20%的最终用户响应时间是花在从web服务器获取HTML文档并传送到浏览器的，至少80%的最终用户响应时间是花在了页面中的组件上（图片、脚本、样式表、Flash等）、太慢的网站经常会造成访客不再回返，因此，把精力放在这80%的时间可以极大的改善web的性能。而请求组件需要伴随着HTTP请求，而减少HTTP请求、减小HTTP请求大小等都是改善web性能的最佳实践</p>
+<p>下面，让我们来学学雅虎的14条军规把~</p>
+<h4 id="规则1：减少HTTP请求"><a href="#规则1：减少HTTP请求" class="headerlink" title="规则1：减少HTTP请求"></a>规则1：减少HTTP请求</h4><p>改善响应时间的最简单途径就是减少组件(图片，脚本，样式表、Flash等）的数量，并由此减少http请求的数量<br>（1）CSS Sprites：将多个图片合并到一个单独的图片中，再结合css的background-position属性一起使用，通过合并图片减少http请求（合并后的图片会比分离的图片的总和要小，因为它降低了图片自身的开销（颜色表，格式信息等））<br>适用场景：若需要在页面中为背景，按钮，导航栏，链接等提供大量图片，可使用CSS Sprites<br>（2）合并脚本和样式表：若将css代码和javascript代码分别放在多个文件中，每个文件都会导致一个额外的http请求，将这些文件合并到一个文件中，可以减少http请求的数量并缩短最终用户时间<br>注：若不同页面需要不同的脚本，可能脚本合并的组合数会比较多</p>
+<h4 id="规则2：使用内容发布网络"><a href="#规则2：使用内容发布网络" class="headerlink" title="规则2：使用内容发布网络"></a>规则2：使用内容发布网络</h4><p>通常来说，Web客户端离当前Web服务器越近，响应时间会更快<br>（1）内容发布网络：内容发布网络是一组分布在多个不同地理位置的Web服务器，用于更加有效地向用户发布内容<br>（2）一些大型公司都拥有他们自己的CDN，但使用一个CDN服务提供商更为有效<br>优点：对于地理上分散的用户人群来说，CDN能轻易地得到响应速度上的提高<br>         除了缩短响应时间之外，CDN还提供备份，扩展存储功能和进行缓存等服务<br>缺点：CDN服务开销可能比较大，且CDN服务提供商在其所有客户之间共享其Web服务组，可能会受到其它网站流量的影响<br>         无法直接控制组件服务器所带来的特殊麻烦，如修改HTTP响应头必须通过服务器提供商来完成</p>
+<h4 id="规则3：添加Expires头"><a href="#规则3：添加Expires头" class="headerlink" title="规则3：添加Expires头"></a>规则3：添加Expires头</h4><p>（1）主要通过配置组件，使用一个长久的Expires头，使这些组件能够被缓存，使在后续的页面浏览中避免不必要的http请求（浏览器可以直接从硬盘上读取组件而无需生成任何http流量）,web服务器使用Expires头来告诉web客户端它可以使用一个组件的当前副本，直到指定的时间为止<br>（2）长久的Expires头最常用于图片，但应该将其应用在所有组件上，包括脚本、样式表和Flash等不经常变化的组件，但添加长久的Expires会带来额外的开发成本<br>（3）浏览器（和代理）通过使用缓存来减少http请求的数量，并减小http响应的大小，从而使页面加载得更快，Expires在http响应中发送，web服务器通过使用Expires头来告诉Web客户端它可以使用一个组件的当前副本</p>
+<p>（4）Expires头的限制：Expires头使用一个特定的时间，它要求服务器和客户端的时钟严格同步，另外，如果到了过期时间，需要在服务器配置中提供一个新的日期<br>（5）Cache-Control头：http1.1引入的，主要用来克服Expires的限制<br>主要使用max-age指令指定组件被缓存多久</p>
+<p>注：可以同时指定Expires和Cache-Control两个响应头，因为有些浏览器不支持http1.1<br>（6）修订文件名：<br>为了确保用户能够获取组件的最新版本，需要在所有HTML页面中修改组件的文件名<br>（7）一个具有长久的Expires头的组件将会被缓存，在后续请求时浏览器直接从磁盘上读取它，避免了一个http请求<br>     如果一个组件没有长久的Expires头，它仍然会存储在浏览器的缓存中，在后续请求中，浏览器会检查缓存并发现组件以及过期。为了提高效率，浏览器会向原始服务器发送一个条件GET请求，如果组件没有改变，原始服务器可以免于发送整个组件，而是发送一个很小的头，告诉浏览器可以使用其缓存的组件</p>
+<h4 id="规则4：压缩组件（使用gzip编码压缩http响应包）"><a href="#规则4：压缩组件（使用gzip编码压缩http响应包）" class="headerlink" title="规则4：压缩组件（使用gzip编码压缩http响应包）"></a>规则4：压缩组件（使用gzip编码压缩http响应包）</h4><p>（1）主要通过http响应的大小来减少响应时间，从http1.1开始，Web客户端可以通过http请求中的Accept-Encoding来标识对压缩的支持</p>
+<p>如果Web服务器看到请求中有这个头，就会使用客户端列出来的方法中的一种来压缩响应，Web服务器通过响应中的Content-Encoding头来通知Web客户端</p>
+<p>（2）压缩什么：一般压缩HTML文档、样式表和脚本<br>（3）压缩的成本：服务器端会花费额外的CPU周期来完成压缩，客户端要对压缩文件进行解压缩</p>
+<h4 id="规则5：将样式表放在顶部"><a href="#规则5：将样式表放在顶部" class="headerlink" title="规则5：将样式表放在顶部"></a>规则5：将样式表放在顶部</h4><p>（1）将样式表放在底部，可能会延迟页面的加载，会出现“白屏”和“无样式闪烁”，将样式表放在顶部，可以使页面逐步呈现，避免页面出现”白屏“和“无样式闪烁”<br>（2）白屏：浏览器延迟内容呈现，直到所有的样式表都下载完毕后才开始开始显示内容，即页面完全空白，直到页面所有内容同时涌上屏幕<br>       无样式闪烁：样式表被正确地下载及解析，已经呈现的页面和图片要用新的样式重绘<br>（3）link和@import：</p>
+<p>注：使用@import规则可能会导致白屏现象，即使是放在<head>中<br>      一般组件都是按照它们在页面中出现的顺序下载的，而使用@import会带来下载时的无序性</head></p>
+<h4 id="规则6：将脚本放在底部"><a href="#规则6：将脚本放在底部" class="headerlink" title="规则6：将脚本放在底部"></a>规则6：将脚本放在底部</h4><p>（1）将脚本放在底部，既可以使页面逐步呈现，也可以提高下载的并行度<br>（2）将样式表放在<head>中，可以首先下载它们而不会阻止页面呈现，使用脚本时，对于所有位于脚本以下的内容，逐步呈现都被阻塞了。将脚本放在页面越靠下的地方，意味着越多的内容能够逐步地呈现<br>（3）http1.1建议浏览器从每个主机名并行地下载两个组件。然而，在下载脚本时并行下载其实是被禁用的，即使是用了不同的主机名，浏览器也不会启动其他的下载<br>（4）脚本对web页面的影响：脚本会阻塞其后面内容的呈现，脚本会阻塞其后面组件的下载（脚本会阻塞并行下载）</head></p>
+<h4 id="规则7：避免CSS表达式"><a href="#规则7：避免CSS表达式" class="headerlink" title="规则7：避免CSS表达式"></a>规则7：避免CSS表达式</h4><p>（1）CSS表达式不只在页面呈现和大小改变时求值，当页面滚动，甚至连用户鼠标的页面移动时都要求值</p>
+<h4 id="规则8：使用外部的JavaScript和CSS"><a href="#规则8：使用外部的JavaScript和CSS" class="headerlink" title="规则8：使用外部的JavaScript和CSS"></a>规则8：使用外部的JavaScript和CSS</h4><p>（1）在某种程度上，内联会快一些，尽管总下载量时是相同的，但外部示例需要承担多个http请求带来的开销。但是现实中还是使用外部文件会产生比较快的页面，因为javascript和css文件有可能被浏览器缓存起来<br>（2）使用外部文件可以提高组件的重用率</p>
+<h4 id="规则9：减少DNS查找"><a href="#规则9：减少DNS查找" class="headerlink" title="规则9：减少DNS查找"></a>规则9：减少DNS查找</h4><p>（1）Internet是通过IP地址来查找服务器的，由于IP地址很难记忆，通常使用包含主机名的URL来代替它，但当浏览器发送其请求时，IP地址仍然是必需的，这就是Domain Name System(DNS)所处的角色。DNS将主机名映射到IP地址上，在输入一个URL时，连接到浏览器的DNS解析器会返回服务器的IP地址<br>（2）DNS也是开销，在DNS查找完成之前，浏览器不能从主机名那里下载到任何东西，响应时间依赖于DNS解析器（通常由你的ISP提供）<br>（3）DNS缓存：DNS查找可以被缓存起来以提高性能，在用户请求了一个主机名后，DNS信息会留在操作系统的DNS缓存中，之后对于该主机名的请求将无需进行过多的DNS查找<br>（4）通过使用keep-Alive和较少的域名来减少DNS查找，keep-Alive通过重用现有连接避免了重复的DNS查找，减少唯一主机名的数量可以减少DNS查找<br>（5）建议：可以将组件分别放在至少2个，但不要超过4个主机名下，这是在减少DNS查找和允许高度并行下载之间作出的很好的权衡</p>
+<h4 id="规则10：精简Javascript"><a href="#规则10：精简Javascript" class="headerlink" title="规则10：精简Javascript"></a>规则10：精简Javascript</h4><p>（1）精简是从代码中移除不必要的字符以减小其大小进而改善加载时间，在代码被精简后，所有的注释以及不必要的空白字符都将被移除<br>（2）内联的javascript也应该被精简<br>（3）精简CSS能够带来的节省通常要小于精简javascript，因为css中的注释和空白比javascript中的少，最大的潜在节省来自于优化CSS——合并相同的类，移除不适用的类等</p>
+<h4 id="规则11：避免重定向"><a href="#规则11：避免重定向" class="headerlink" title="规则11：避免重定向"></a>规则11：避免重定向</h4><p>（1）重定向就是，在网页上设置一个约束条件，条件满足，就自动转入到其它网页、网址<br>（2）重定向用于将用户从一个url重新路由到另一个url，重定向有很多种——301和302是最常用的两种，重定向会使你的页面变慢，javascript可以通过document.location设置为期望的URL执行重定向<br>（3）当web服务器向浏览器返回一个重定向时，响应中就会返回一个范围在3xx的状态码，这表示用户代理必需执行进一步操作才能完成请求<br>注：304并不是真的重定向，它用来响应条件GET请求，避免下载已经存在于浏览器缓存中的数据<br>（4）重定向是如何损伤性能的：重定向会延迟整个HTML文档的传输，在HTML文档到达之前，页面中不会呈现出任何东西，也没有任何组件会被下载</p>
+<h4 id="规则12：移除重复脚本"><a href="#规则12：移除重复脚本" class="headerlink" title="规则12：移除重复脚本"></a>规则12：移除重复脚本</h4><p>（1）重复脚本损伤性能的方式有两种——不必要的HTTP请求和执行javascript所浪费的时间<br>（2）在页面中多次包含相同的脚本会使页面变慢<br>       在IE中，如果脚本没有被缓存，或在重新加载页面时，会产生额外的http请求<br>       在火狐和IE中，脚本会被多次求值</p>
+<h4 id="规则13：配置ETag"><a href="#规则13：配置ETag" class="headerlink" title="规则13：配置ETag"></a>规则13：配置ETag</h4><p>（1）ETag（实体标签）是web服务器和浏览器用于确认缓存组件的一种机制<br>（2）浏览器下载组件时，会将它们存储到缓存中，在后续的页面查看中，如果缓存的组件是“新鲜”的，浏览器就会从磁盘上读取它，避免产生http请求，如果缓存的组件过期了（或者用户明确地重新加载了页面），浏览器在重用它之前必须首先检查它是否仍然有效，这称为一个条件get请求，如果浏览器缓存中的组件是有效的（即它能够和原始服务器上的组件相匹配），原始服务器不会返回整个组件，而是返回一个304的状态码<br>（3）服务器在检测缓存的组件是否和原始服务器上的组件匹配时有两种方式：比较最新修改日期，比较实体标签（ETag是唯一标识了一个组件的一个特定版本的字符串）<br>（4）ETag带来的问题，当浏览器向一台服务器获取了原始组件，又向另一台不同的服务器发起条件get请求时，ETag是不会匹配的<br>（5）即使组件具有长久的Expires头，一旦用户单击了Reload或Refresh按钮。依然会产生条件get请求</p>
+<h4 id="规则14：使Ajax可缓存"><a href="#规则14：使Ajax可缓存" class="headerlink" title="规则14：使Ajax可缓存"></a>规则14：使Ajax可缓存</h4>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/17/首先，先说一下为什么要进行前端优化？/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="DingJian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Ding   Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Ding   Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/17/首先，先说一下为什么要进行前端优化？/" itemprop="url">
+                  首先，先说一下为什么要进行前端优化？
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-17T13:40:16+08:00">
+                2017-02-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/17/设备像素比devicePixelRatio/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="DingJian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Ding   Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Ding   Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/17/设备像素比devicePixelRatio/" itemprop="url">
+                  设备像素比devicePixelRatio
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-17T13:29:02+08:00">
+                2017-02-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>设备像素比的定义：</p>
+<blockquote>
+<p>window.devicePixelRatio是设备上物理像素和设备独立像素(device-independent pixels (dips))的比例。<br>公式表示就是：window.devicePixelRatio = 物理像素 / dips</p>
+</blockquote>
+<p>dip或dp,（device independent pixels，设备独立像素）与屏幕密度有关。dip可以用来辅助区分视网膜设备还是非视网膜设备。</p>
+<p>所有非视网膜屏幕的iphone在垂直的时候，宽度为320物理像素。当你使用<meta name="viewport" content="width=device-width">的时候，会设置视窗布局宽度（不同于视觉区域宽度，不放大显示情况下，两者大小一致，见下图）为320px, 于是，页面很自然地覆盖在屏幕上。</p>
+<p>这样，非视网膜屏幕的iphone上，屏幕物理像素320像素，独立像素也是320像素，因此，window.devicePixelRatio等于1.</p>
+<p>而对于视网膜屏幕的iphone，如iphone4s, 纵向显示的时候，屏幕物理像素640像素。同样，当用户设置<meta name="viewport" content="width=device-width">的时候，其视区宽度并不是640像素，而是320像素，这是为了有更好的阅读体验 – 更合适的文字大小。</p>
+<p>这样，在视网膜屏幕的iphone上，屏幕物理像素640像素，独立像素还是320像素，因此，window.devicePixelRatio等于2.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/16/vue-js仿饿了吗App/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="DingJian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Ding   Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Ding   Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/16/vue-js仿饿了吗App/" itemprop="url">
+                  vue.js仿饿了吗App
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-16T19:29:03+08:00">
+                2017-02-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/16/在GitHubPages上搭建项目主页/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -509,11 +1056,13 @@
       
         
           
-            <h3 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h3><p><a href="http://www.huxiaofei.me/webapp" target="_blank" rel="external"><em>项目预览</em></a></p>
+            <h3 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h3><p><a href="http://www.huxiaofei.me/webApp" target="_blank" rel="external"><em>项目预览</em></a></p>
 <p>本项目为一个H5报告页面，运用了HTML5、CSS3、JS等技术，采用组件式开发，页面滚动采用了基于jQuery的FullPage.js，运用Canvas制作了柱形图、折线图、饼图、散点图、雷达图等多种动态图表组件。</p>
 <h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p><img src="http://imglf.nosdn.127.net/img/MklXTVZ2ekNiL0JqaHcvVlpGTk5rMDQyVGk1aXdRUE9uU0hDWnI2TzVmR2d1TWtBQkZTTVRRPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="核心对象"></p>
-<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">//page 上绑定进入和离开事件处理程序</span></div><div class="line">$(<span class="string">'.page'</span>).on(<span class="string">'onLeave'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( $(<span class="keyword">this</span>).attr(<span class="string">'id'</span>) ,<span class="string">'==&gt;&gt;'</span> ,<span class="string">'onLeave'</span> );</div><div class="line">    $(<span class="keyword">this</span>).find(<span class="string">'.component'</span>).trigger(<span class="string">'onLeave'</span>);</div><div class="line">&#125;)</div><div class="line">$(<span class="string">'.page'</span>).on(<span class="string">'onLoad'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( $(<span class="keyword">this</span>).attr(<span class="string">'id'</span>) ,<span class="string">'==&gt;&gt;'</span> ,<span class="string">'onLoad'</span> );</div><div class="line">    $(<span class="keyword">this</span>).find(<span class="string">'.component'</span>).trigger(<span class="string">'onLoad'</span>);</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//component上绑定进入和离开事件处理程序</span></div><div class="line">$(<span class="string">'.component'</span>).on(<span class="string">'onLoad'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).fadeIn();</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;)</div><div class="line">$(<span class="string">'.component'</span>).on(<span class="string">'onLeave'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).fadeOut();</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="核心对象与方法"><a href="#核心对象与方法" class="headerlink" title="核心对象与方法"></a>核心对象与方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> H5 =<span class="function"><span class="keyword">function</span> (<span class="params"> </span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.id = (<span class="string">'h5_'</span>+<span class="built_in">Math</span>.random()).replace(<span class="string">'.'</span>,<span class="string">'_'</span>);</div><div class="line">    <span class="keyword">this</span>.el = $(<span class="string">'&lt;div class="h5" id="'</span>+<span class="keyword">this</span>.id+<span class="string">'"&gt;'</span>).hide();</div><div class="line">    <span class="keyword">this</span>.page = [];</div><div class="line">    $(<span class="string">'body'</span>).append( <span class="keyword">this</span>.el );</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 新增一个页</div><div class="line">     * @param &#123;string&#125; name 组建的名称，会加入到ClassName中</div><div class="line">     * @param &#123;string&#125; text 页内的默认文本</div><div class="line">     * @return &#123;H5&#125; H5对象，可以重复使用H5对象支持的方法</div><div class="line">     */</div><div class="line">    <span class="keyword">this</span>.addPage = <span class="function"><span class="keyword">function</span>(<span class="params"> name , text </span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> page = $(<span class="string">'&lt;div class="h5_page section"&gt;'</span>);</div><div class="line"></div><div class="line">        <span class="keyword">if</span>( name != <span class="literal">undefined</span> )&#123;</div><div class="line">            page.addClass(<span class="string">'h5_page_'</span>+name);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>( text != <span class="literal">undefined</span> )&#123;</div><div class="line">            page.text(text);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">this</span>.el.append(page);</div><div class="line">        <span class="keyword">this</span>.page.push( page );</div><div class="line">        <span class="keyword">if</span>( <span class="keyword">typeof</span> <span class="keyword">this</span>.whenAddPage === <span class="string">'function'</span> )&#123;</div><div class="line">            <span class="keyword">this</span>.whenAddPage();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/* 新增一个组件 */</span></div><div class="line">    <span class="keyword">this</span>.addComponent = <span class="function"><span class="keyword">function</span>(<span class="params">name, cfg</span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> cfg = cfg || &#123;&#125;;</div><div class="line">        cfg = $.extend(&#123;</div><div class="line">             <span class="attr">type</span> : <span class="string">'base'</span></div><div class="line">         &#125;,cfg);</div><div class="line"></div><div class="line">        <span class="keyword">var</span> component;  <span class="comment">//  定义一个变量，存储 组件元素</span></div><div class="line">        <span class="keyword">var</span> page = <span class="keyword">this</span>.page.slice(<span class="number">-1</span>)[<span class="number">0</span>];</div><div class="line">        <span class="keyword">switch</span>( cfg.type )&#123;</div><div class="line">            <span class="keyword">case</span> <span class="string">'base'</span> :</div><div class="line">                component = <span class="keyword">new</span> H5ComponentBase(name,cfg);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line"></div><div class="line">            <span class="keyword">case</span> <span class="string">'polyline'</span> :</div><div class="line">                component = <span class="keyword">new</span> H5ComponentPolyline(name,cfg);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line"></div><div class="line">            <span class="keyword">case</span> <span class="string">'pie'</span> :</div><div class="line">                component = <span class="keyword">new</span> H5ComponentPie(name,cfg);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="string">'bar'</span> :</div><div class="line">                component = <span class="keyword">new</span> H5ComponentBar(name,cfg);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="string">'bar_v'</span> :</div><div class="line">                component = <span class="keyword">new</span> H5ComponentBar_v(name,cfg);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line"></div><div class="line">            <span class="keyword">case</span> <span class="string">'radar'</span> :</div><div class="line">                component = <span class="keyword">new</span> H5ComponentRadar(name,cfg);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line"></div><div class="line">            <span class="keyword">case</span> <span class="string">'pie'</span> :</div><div class="line">                component = <span class="keyword">new</span> H5ComponentPie(name,cfg);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="string">'ring'</span> :</div><div class="line">                component = <span class="keyword">new</span> H5ComponentRing(name,cfg);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">           <span class="keyword">case</span> <span class="string">'point'</span> :</div><div class="line">                component = <span class="keyword">new</span> H5ComponentPoint(name,cfg);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        page.append(component);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">/* H5对象初始化呈现 */</span></div><div class="line">    <span class="keyword">this</span>.loader = <span class="function"><span class="keyword">function</span>(<span class="params"> firstPage </span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.el.fullpage(&#123;</div><div class="line">            <span class="attr">onLeave</span>:<span class="function"><span class="keyword">function</span>(<span class="params"> index, nextIndex, direction</span>) </span>&#123;</div><div class="line">                $(<span class="keyword">this</span>).find(<span class="string">'.h5_component'</span>).trigger(<span class="string">'onLeave'</span>);</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">afterLoad</span>:<span class="function"><span class="keyword">function</span>(<span class="params"> anchorLink, index </span>) </span>&#123;</div><div class="line">                $(<span class="keyword">this</span>).find(<span class="string">'.h5_component'</span>).trigger(<span class="string">'onLoad'</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">this</span>.page[<span class="number">0</span>].find(<span class="string">'.h5_component'</span>).trigger(<span class="string">'onLoad'</span>);</div><div class="line">        <span class="keyword">this</span>.el.show();</div><div class="line">        <span class="keyword">if</span>(firstPage)&#123;</div><div class="line">            $.fn.fullpage.moveTo( firstPage );</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.loader = <span class="keyword">typeof</span> H5_loading == <span class="string">'function'</span> ? H5_loading : <span class="keyword">this</span>.loader;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//page 上绑定进入和离开事件处理程序</span></div><div class="line">$(<span class="string">'.page'</span>).on(<span class="string">'onLeave'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( $(<span class="keyword">this</span>).attr(<span class="string">'id'</span>) ,<span class="string">'==&gt;&gt;'</span> ,<span class="string">'onLeave'</span> );</div><div class="line">    $(<span class="keyword">this</span>).find(<span class="string">'.component'</span>).trigger(<span class="string">'onLeave'</span>);</div><div class="line">&#125;)</div><div class="line">$(<span class="string">'.page'</span>).on(<span class="string">'onLoad'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( $(<span class="keyword">this</span>).attr(<span class="string">'id'</span>) ,<span class="string">'==&gt;&gt;'</span> ,<span class="string">'onLoad'</span> );</div><div class="line">    $(<span class="keyword">this</span>).find(<span class="string">'.component'</span>).trigger(<span class="string">'onLoad'</span>);</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//component上绑定进入和离开事件处理程序</span></div><div class="line">$(<span class="string">'.component'</span>).on(<span class="string">'onLoad'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).fadeIn();</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;)</div><div class="line">$(<span class="string">'.component'</span>).on(<span class="string">'onLeave'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).fadeOut();</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="核心对象与方法"><a href="#核心对象与方法" class="headerlink" title="核心对象与方法"></a>核心对象与方法</h3><p>H5为整个项目的内容组件对象，H5包含addPage（）、addComponent（）、loader（）三个方法。addComponent()方法接受两个参数，第一个参数为组件名name，第二个参数为一个对象cfg，储存组件基本参数。loader()方法,每个方法都返回<code>this</code>,使其能形成链式调用。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">h5</div><div class="line">.addPage(<span class="string">'face'</span>)</div><div class="line">    .addComponent(<span class="string">'logo'</span>,&#123;</div><div class="line">        <span class="attr">text</span>:<span class="string">'logo'</span>,</div><div class="line">        <span class="attr">width</span>:<span class="number">400</span>,</div><div class="line">        <span class="attr">height</span>:<span class="number">100</span>,</div><div class="line">        <span class="attr">css</span>:&#123;<span class="attr">backgroundColor</span>:<span class="string">'red'</span>,<span class="attr">top</span>:<span class="number">200</span>,<span class="attr">opacity</span>:<span class="number">0</span>&#125;,</div><div class="line">        <span class="attr">center</span>:<span class="literal">true</span>,</div><div class="line">        <span class="attr">animateIn</span>:&#123;<span class="attr">opacity</span>:<span class="number">1</span>&#125;,</div><div class="line">        <span class="attr">animateOut</span>:&#123;<span class="attr">opacity</span>:<span class="number">0</span>&#125;</div><div class="line">    &#125;)</div><div class="line">    .addComponent(<span class="string">'slogan'</span>,&#123;</div><div class="line">        <span class="attr">text</span>:<span class="string">'slogan'</span>,</div><div class="line">        <span class="attr">width</span>:<span class="number">400</span>,</div><div class="line">        <span class="attr">height</span>:<span class="number">100</span>,</div><div class="line">        <span class="attr">css</span>:&#123;<span class="attr">backgroundColor</span>:<span class="string">'red'</span>,<span class="attr">top</span>:<span class="number">350</span>&#125;,</div><div class="line">        <span class="attr">center</span>:<span class="literal">true</span>,</div><div class="line">    &#125;)</div><div class="line">.addPage(<span class="string">'desc'</span>)</div><div class="line">    .addComponent(<span class="string">'caption'</span>,&#123;</div><div class="line">        <span class="attr">text</span>:<span class="string">'核心理念'</span>,</div><div class="line">        <span class="attr">width</span>:<span class="number">400</span>,</div><div class="line">        <span class="attr">height</span>:<span class="number">100</span>,</div><div class="line">        <span class="attr">css</span>:&#123;<span class="attr">backgroundColor</span>:<span class="string">'green'</span>,<span class="attr">top</span>:<span class="number">350</span>&#125;,</div><div class="line">        <span class="attr">center</span>:<span class="literal">true</span>,</div><div class="line">    &#125;)</div><div class="line">.addPage(<span class="string">'page-3'</span>)</div><div class="line">    .addComponent(<span class="string">'caption'</span>,&#123;<span class="attr">text</span>:<span class="string">'课程方向分布'</span>&#125;)</div><div class="line">.loader( );</div></pre></td></tr></table></figure></p>
+<h4 id="loader-方法"><a href="#loader-方法" class="headerlink" title="loader( )方法"></a>loader( )方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.loader = <span class="function"><span class="keyword">function</span>(<span class="params"> firstPage </span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.el.fullpage(&#123;</div><div class="line">            <span class="attr">onLeave</span>:<span class="function"><span class="keyword">function</span>(<span class="params"> index, nextIndex, direction</span>) </span>&#123;</div><div class="line">                $(<span class="keyword">this</span>).find(<span class="string">'.h5_component'</span>).trigger(<span class="string">'onLeave'</span>);</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">afterLoad</span>:<span class="function"><span class="keyword">function</span>(<span class="params"> anchorLink, index </span>) </span>&#123;</div><div class="line">                $(<span class="keyword">this</span>).find(<span class="string">'.h5_component'</span>).trigger(<span class="string">'onLoad'</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">this</span>.page[<span class="number">0</span>].find(<span class="string">'.h5_component'</span>).trigger(<span class="string">'onLoad'</span>);</div><div class="line">        <span class="keyword">this</span>.el.show();</div><div class="line">        <span class="keyword">if</span>(firstPage)&#123;</div><div class="line">            $.fn.fullpage.moveTo( firstPage );</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="图表组件对象"><a href="#图表组件对象" class="headerlink" title="图表组件对象"></a>图表组件对象</h3><p><strong>饼图组件对象：H5ComponentPie</strong></p>
 
           
         
@@ -660,7 +1209,12 @@
 </li>
 <li>不允许重复声明</li>
 </ul>
-<p><strong>2.const命令</strong></p>
+<p><strong>2.const命令</strong><br>const声明一个只读的常量。一旦声明，常量的值就不能改变。<br>const的作用域与let命令相同：只在声明所在的块级作用域内有效。</p>
+<p><strong>3.变量的解构赋值</strong></p>
+<p>ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。本质上，这种写法属于“模式匹配”，只要等号两边的模式相同，左边的变量就会被赋予对应的值。</p>
+<p>以前，为变量赋值，只能直接指定值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</div><div class="line"><span class="keyword">let</span> c = <span class="number">3</span>;</div></pre></td></tr></table></figure>
+<p>ES6允许写成下面这样。<br><figure class="highlight plain"><figcaption><span>[a, b, c] = [1, 2, 3];```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">下面是使用嵌套数组进行解构的例子，如果解构不成功，变量的值就等于undefined。</div><div class="line"></div><div class="line">```javascript</div><div class="line">let [foo, [[bar], baz]] = [1, [[2], 3]];</div><div class="line">foo // 1</div><div class="line">bar // 2</div><div class="line">baz // 3</div><div class="line"></div><div class="line">let [ , , third] = [&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;];</div><div class="line">third // &quot;baz&quot;</div><div class="line"></div><div class="line">let [x, , y] = [1, 2, 3];</div><div class="line">x // 1</div><div class="line">y // 3</div><div class="line"></div><div class="line">let [head, ...tail] = [1, 2, 3, 4];</div><div class="line">head // 1</div><div class="line">tail // [2, 3, 4]</div><div class="line"></div><div class="line">let [x, y, ...z] = [&apos;a&apos;];</div><div class="line">x // &quot;a&quot;</div><div class="line">y // undefined</div><div class="line">z // []</div></pre></td></tr></table></figure></p>
 
           
         
@@ -1113,408 +1667,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/13/Markdom基本语法/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="DingJian">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Ding   Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Ding   Blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/13/Markdom基本语法/" itemprop="url">
-                  Markdown基本语法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-13T20:52:50+08:00">
-                2016-12-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="Markdown-简明语法手册"><a href="#Markdown-简明语法手册" class="headerlink" title="Markdown 简明语法手册"></a>Markdown 简明语法手册</h4><h5 id="斜体和粗体"><a href="#斜体和粗体" class="headerlink" title="斜体和粗体"></a>斜体和粗体</h5>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/13/Markdom基本语法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/13/Hexo搭建Github静态博客/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="DingJian">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Ding   Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Ding   Blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/13/Hexo搭建Github静态博客/" itemprop="url">
-                  Hexo搭建Github静态博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-13T20:49:13+08:00">
-                2016-12-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><h5 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h5><h5 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h5>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/13/Hexo搭建Github静态博客/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/12/14/春风十里/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="DingJian">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Ding   Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Ding   Blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/12/14/春风十里/" itemprop="url">
-                  春风十里
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-12-14T17:39:24+08:00">
-                2015-12-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/音乐/" itemprop="url" rel="index">
-                    <span itemprop="name">音乐</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>我在二环路的里边 想着你<br>你在远方的山上 春风十里<br>今天的风吹向你 下了雨<br>我说所有的酒 都不如你<br>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/14/春风十里/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1553,7 +1712,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1570,7 +1729,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
