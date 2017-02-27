@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Node.js," />
 
 
 
@@ -84,13 +84,22 @@
 
 
 
+<meta name="description" content="本项目是一个简单的电影网站，实现了用户注册、登录、登出，电影的录入、移除、查看、修改等后台管管理功能。用户可以对电影进行评论，用户之间也可以相互评论。为了方便电影的录入，利用豆瓣Api，使用jsonp跨域请求，实现豆瓣电影数据同步。项目后端使用Node.js+express+MongoDB数据库构建，前端是使用jade模版引擎，样式使用了Bootstrap框架，以及jQuery工具库。
+文件目录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node.js+express构建电影网站">
 <meta property="og:url" content="http://yoursite.com/2017/02/21/Node-js-express构建电影网站/index.html">
 <meta property="og:site_name" content="Ding   Blog">
-<meta property="og:updated_time" content="2017-02-21T10:46:02.407Z">
+<meta property="og:description" content="本项目是一个简单的电影网站，实现了用户注册、登录、登出，电影的录入、移除、查看、修改等后台管管理功能。用户可以对电影进行评论，用户之间也可以相互评论。为了方便电影的录入，利用豆瓣Api，使用jsonp跨域请求，实现豆瓣电影数据同步。项目后端使用Node.js+express+MongoDB数据库构建，前端是使用jade模版引擎，样式使用了Bootstrap框架，以及jQuery工具库。
+文件目录">
+<meta property="og:image" content="http://imglf0.nosdn.127.net/img/MklXTVZ2ekNiL0JQdWdiOFJNMEhXbjhmME9OZFpUVkdqMWxIL0N0NXZpRDRsRmZSdGk5eTR3PT0.png?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg">
+<meta property="og:image" content="http://imglf2.nosdn.127.net/img/MklXTVZ2ekNiL0JQdWdiOFJNMEhXbEc0Q2RuR3FGQzZMSjNQcVA5SEQrblhYMEJ4WWhNZW1BPT0.png?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg">
+<meta property="og:updated_time" content="2017-02-27T07:29:05.515Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js+express构建电影网站">
+<meta name="twitter:description" content="本项目是一个简单的电影网站，实现了用户注册、登录、登出，电影的录入、移除、查看、修改等后台管管理功能。用户可以对电影进行评论，用户之间也可以相互评论。为了方便电影的录入，利用豆瓣Api，使用jsonp跨域请求，实现豆瓣电影数据同步。项目后端使用Node.js+express+MongoDB数据库构建，前端是使用jade模版引擎，样式使用了Bootstrap框架，以及jQuery工具库。
+文件目录">
+<meta name="twitter:image" content="http://imglf0.nosdn.127.net/img/MklXTVZ2ekNiL0JQdWdiOFJNMEhXbjhmME9OZFpUVkdqMWxIL0N0NXZpRDRsRmZSdGk5eTR3PT0.png?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg">
 
 
 
@@ -313,6 +322,24 @@
           </span>
 
           
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -338,7 +365,19 @@
       
 
       
-        
+        <p>本项目是一个简单的电影网站，实现了用户注册、登录、登出，电影的录入、移除、查看、修改等后台管管理功能。用户可以对电影进行评论，用户之间也可以相互评论。为了方便电影的录入，利用豆瓣Api，使用jsonp跨域请求，实现豆瓣电影数据同步。项目后端使用Node.js+express+MongoDB数据库构建，前端是使用jade模版引擎，样式使用了Bootstrap框架，以及jQuery工具库。</p>
+<h3 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h3><ul>
+<li><p>入口文件<br>index.js -&gt; 主程序入口<br>启动Express程序，启动并连接数据库，路由分发，引入配置</p>
+</li>
+<li><p>路由<br>routes.js  -&gt; 路由文件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">  <span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">app</span>)</span>&#123;</div><div class="line">    app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req,res,next</span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> _user = req.session.user;</div><div class="line"></div><div class="line">        app.locals.user = _user;</div><div class="line"></div><div class="line">        next()</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">    <span class="comment">// Index</span></div><div class="line">    app.get(<span class="string">'/'</span>, Index.index);</div><div class="line">    <span class="comment">//User</span></div><div class="line">    app.post(<span class="string">'/user/signup'</span>, User.signup)</div><div class="line">    app.post(<span class="string">'/user/signin'</span>, User.signin)</div><div class="line">    app.get(<span class="string">'/signin'</span>,User.showSignin)</div><div class="line">    app.get(<span class="string">'/signup'</span>,User.showSignup)</div><div class="line">    app.get(<span class="string">'/logout'</span>,User.logout)</div><div class="line">    app.get(<span class="string">'/admin/userlist'</span>,User.signinRequired,User.adminRequired,User.userlist);</div><div class="line"></div><div class="line">    <span class="comment">//Movie</span></div><div class="line">    <span class="comment">//详情页</span></div><div class="line">    app.get(<span class="string">'/movie/:id'</span>, Movie.detail);</div><div class="line">    <span class="comment">//列表页</span></div><div class="line">    app.get(<span class="string">'/admin/list'</span>,User.signinRequired,User.adminRequired, Movie.list);</div><div class="line">    <span class="comment">// 后台录入页</span></div><div class="line">    app.get(<span class="string">'/admin/movie'</span>,User.signinRequired,User.adminRequired, Movie.new);</div><div class="line">    <span class="comment">// 逻辑控制:更新</span></div><div class="line">    app.get(<span class="string">'/admin/update/:id'</span>,User.signinRequired,User.adminRequired, Movie.update);</div><div class="line">    <span class="comment">// 逻辑控制:插入</span></div><div class="line">    app.post(<span class="string">'/admin/movie/new'</span>,User.signinRequired,User.adminRequired, Movie.save);</div><div class="line">    <span class="comment">// 逻辑控制:删除</span></div><div class="line">    app.delete(<span class="string">'/admin/delete'</span>,User.signinRequired,User.adminRequired, Movie.del);</div><div class="line"></div><div class="line">    <span class="comment">//评论</span></div><div class="line">    app.post(<span class="string">'/user/comment'</span>,User.signinRequired,Comment.save)</div><div class="line"></div><div class="line">    <span class="comment">//分类</span></div><div class="line">    app.get(<span class="string">'/admin/category/new'</span>,User.signinRequired,User.adminRequired, Category.new);</div><div class="line">    app.post(<span class="string">'/admin/category'</span>,User.signinRequired,User.adminRequired, Category.save);</div><div class="line">    app.get(<span class="string">'/admin/category/list'</span>,User.signinRequired,User.adminRequired, Category.list);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>视图文件<br><img src="http://imglf0.nosdn.127.net/img/MklXTVZ2ekNiL0JQdWdiOFJNMEhXbjhmME9OZFpUVkdqMWxIL0N0NXZpRDRsRmZSdGk5eTR3PT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="文件目录"></p>
+<p>layout.hade -&gt; 布局文件<br><img src="http://imglf2.nosdn.127.net/img/MklXTVZ2ekNiL0JQdWdiOFJNMEhXbEc0Q2RuR3FGQzZMSjNQcVA5SEQrblhYMEJ4WWhNZW1BPT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="布局"></p>
+</li>
+<li>数据库模式模型设计</li>
+</ul>
+
       
     </div>
 
@@ -358,6 +397,12 @@
 
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Node-js/" rel="tag"># Node.js</a>
+          
+        </div>
       
 
       
@@ -423,8 +468,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -452,7 +506,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -477,6 +531,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件目录"><span class="nav-number">1.</span> <span class="nav-text">文件目录</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
