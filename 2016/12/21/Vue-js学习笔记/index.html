@@ -94,7 +94,7 @@ vue-resource get
 <meta property="og:description" content="自定义按键修饰符别名12//将键码为17的Ctrl健定义别名为ctrlVue.directive(&apos;on&apos;).keyCodes.ctrl=17;
 vue-resource get
 12345678910111213141516//获取一个普通的文本数据this.$http.get(&apos;a.txt&apos;).then(function(res)&amp;#123;    alert(res.status)&amp;#125">
-<meta property="og:updated_time" content="2017-02-27T16:59:19.954Z">
+<meta property="og:updated_time" content="2017-02-28T07:43:00.193Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue.js学习笔记">
 <meta name="twitter:description" content="自定义按键修饰符别名12//将键码为17的Ctrl健定义别名为ctrlVue.directive(&apos;on&apos;).keyCodes.ctrl=17;
@@ -403,7 +403,17 @@ vue-resource get
 <h3 id="监听数据变化"><a href="#监听数据变化" class="headerlink" title="监听数据变化"></a>监听数据变化</h3><pre><code>vm.$watch(name,function(){})                //浅度监视
 
 vm.$watch(name,function(){},{deep:true})   //深度监视
-</code></pre>
+</code></pre><h3 id="父子组件数据传递"><a href="#父子组件数据传递" class="headerlink" title="父子组件数据传递"></a>父子组件数据传递</h3><ul>
+<li>子组建获取父组件数据</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在调用子组件中</span></div><div class="line">&lt;bbb :m = <span class="string">"数据"</span>&gt;&lt;/bbb&gt;</div><div class="line"></div><div class="line">子组件之内：</div><div class="line">props:[<span class="string">'m'</span>,<span class="string">'myMsg'</span>]</div></pre></td></tr></table></figure>
+<ul>
+<li>父组件获得子组件数据<br>子组件把数据发送到父组件<br>vm.$emit(事件名称，数据)</li>
+</ul>
+<p>父组件接收</p>
+<p>v-on:事件名称=””</p>
+<h3 id="slot"><a href="#slot" class="headerlink" title="slot"></a>slot</h3><p>作用：占个位置</p>
+
       
     </div>
 
@@ -515,7 +525,7 @@ vm.$watch(name,function(){},{deep:true})   //深度监视
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -567,7 +577,7 @@ vm.$watch(name,function(){},{deep:true})   //深度监视
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义按键修饰符别名"><span class="nav-number">1.</span> <span class="nav-text">自定义按键修饰符别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue-resource"><span class="nav-number">2.</span> <span class="nav-text">vue-resource</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue-router"><span class="nav-number">3.</span> <span class="nav-text">vue-router</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue生存周期"><span class="nav-number">4.</span> <span class="nav-text">vue生存周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防止数据闪烁"><span class="nav-number">5.</span> <span class="nav-text">防止数据闪烁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算属性"><span class="nav-number">6.</span> <span class="nav-text">计算属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue实例方法"><span class="nav-number">7.</span> <span class="nav-text">vue实例方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环重复数据"><span class="nav-number">8.</span> <span class="nav-text">循环重复数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤器"><span class="nav-number">9.</span> <span class="nav-text">过滤器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义指令"><span class="nav-number">10.</span> <span class="nav-text">自定义指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监听数据变化"><span class="nav-number">11.</span> <span class="nav-text">监听数据变化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义按键修饰符别名"><span class="nav-number">1.</span> <span class="nav-text">自定义按键修饰符别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue-resource"><span class="nav-number">2.</span> <span class="nav-text">vue-resource</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue-router"><span class="nav-number">3.</span> <span class="nav-text">vue-router</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue生存周期"><span class="nav-number">4.</span> <span class="nav-text">vue生存周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防止数据闪烁"><span class="nav-number">5.</span> <span class="nav-text">防止数据闪烁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算属性"><span class="nav-number">6.</span> <span class="nav-text">计算属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue实例方法"><span class="nav-number">7.</span> <span class="nav-text">vue实例方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环重复数据"><span class="nav-number">8.</span> <span class="nav-text">循环重复数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤器"><span class="nav-number">9.</span> <span class="nav-text">过滤器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义指令"><span class="nav-number">10.</span> <span class="nav-text">自定义指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监听数据变化"><span class="nav-number">11.</span> <span class="nav-text">监听数据变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#父子组件数据传递"><span class="nav-number">12.</span> <span class="nav-text">父子组件数据传递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#slot"><span class="nav-number">13.</span> <span class="nav-text">slot</span></a></li></ol></div>
             
 
           </div>
