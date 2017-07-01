@@ -1,816 +1,2037 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
-    
-
-    
-
-    
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
-    <meta charset="utf-8">
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
     
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-    <title>Ding   Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="theme-color" content="#3F51B5">
-    
-    
-    <meta name="keywords" content="undefined">
-    <meta property="og:type" content="website">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta property="og:type" content="website">
 <meta property="og:title" content="Ding   Blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Ding   Blog">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ding   Blog">
-    
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@1.6.1/css/style.css">
-    <script>window.lazyScripts=[]</script>
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>Ding   Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 
-<body>
-    <div id="loading" class="active"></div>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-    <aside id="menu"  >
-  <div class="inner flex-row-vertical">
-    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-        <i class="icon icon-lg icon-close"></i>
-    </a>
-    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
-      <div class="brand">
-        <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/img/avatar.jpg">
-        </a>
-        <hgroup class="introduce">
-          <h5 class="nickname">DingJian</h5>
-          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
-        </hgroup>
-      </div>
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ding   Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    <div class="scroll-wrap flex-col">
-      <ul class="nav">
-        
-            <li class="waves-block waves-effect active">
-              <a href="/"  >
-                <i class="icon icon-lg icon-home"></i>
-                主页
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/archives"  >
-                <i class="icon icon-lg icon-archives"></i>
-                Archives
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/tags"  >
-                <i class="icon icon-lg icon-tags"></i>
-                Tags
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/categories"  >
-                <i class="icon icon-lg icon-th-list"></i>
-                Categories
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://github.com/yscoder" target="_blank" >
-                <i class="icon icon-lg icon-github"></i>
-                Github
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="http://www.weibo.com/ysweb" target="_blank" >
-                <i class="icon icon-lg icon-weibo"></i>
-                Weibo
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/custom"  >
-                <i class="icon icon-lg icon-link"></i>
-                测试
-              </a>
-            </li>
-        
-      </ul>
-    </div>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
-</aside>
 
-    <main id="main">
-        <header class="top-header" id="header">
-    <div class="flex-row">
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
-          <i class="icon icon-lg icon-navicon"></i>
-        </a>
-        <div class="flex-col header-title ellipsis">Ding   Blog</div>
-        
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
-        
-        
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
-        
-    </div>
-</header>
-<header class="content-header index-header">
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
 
-    <div class="container fade-scale">
-        <h1 class="title">Ding   Blog</h1>
-        <h5 class="subtitle">
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
             
-                
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-        </h5>
-    </div>
-
-    
-
-
-</header>
-
-<div class="container body-wrap">
-
-    <ul class="post-list">
-    
-        <li class="post-list-item fade">
-            <article id="post-获取隐藏元素的高度"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-04-30 22:11:04" datetime="2017-04-30T14:11:04.000Z"  itemprop="datePublished">2017-04-30</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程/">编程</a></li></ul>
-
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/04/30/获取隐藏元素的高度/">获取隐藏元素的高度</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-关于重绘和重排：https://xdlrt.github.io/2016/11/05/2016-11-05/
-
-隐藏元素的方式“隐藏”元素的方式有很多种：display:none,visibility:hiden,opacity:0,height:0; overflow:hidden,transform:scale(0)
-“隐藏”的区别visibility:hidden和opacity:0...
-    
-
-        <a href="/2017/04/30/获取隐藏元素的高度/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </div>
-    
-</article>
-
+            首页
+          </a>
         </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Vue-js2-0变化"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-02-28 17:44:07" datetime="2017-02-28T09:44:07.000Z"  itemprop="datePublished">2017-02-28</time>
-
+      
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程/">编程</a></li></ul>
-
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/02/28/Vue-js2-0变化/">Vue.js2.0变化</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        模版
-组件模版，不支持片段代码，必须要有一个跟元素，包裹住所有模版代码（1.0支持）
-
-组件定义
-Vue.component(组件名称，{    //vue2.0继续存在  data(){}  methods:{}  tmplate:})
-
-vue2.0推出了简洁的组件定义方式var name = {  template:’’};
-
-
-生命周期beforeCreate  -&gt;  组件实...
-    
-
-        <a href="/2017/02/28/Vue-js2-0变化/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue-js/">Vue.js</a></li></ul>
-
-    </div>
-    
-</article>
-
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
         </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CSS中居中的几种方法"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-02-26 18:19:22" datetime="2017-02-26T10:19:22.000Z"  itemprop="datePublished">2017-02-26</time>
-
+      
         
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/02/26/CSS中居中的几种方法/">CSS中居中的几种方法</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        本文主要总结一下平常所能用到的各种使用CSS居中的方法。
-1.水瓶居中 margin：0 auto;平常比较常用的方法，前提是不受float影响
-1234567891011121314151617181920212223&lt;style&gt;    *&#123;        padding: 0;        margin: 0;    &#125;    .box&#123;  ...
-    
-
-        <a href="/2017/02/26/CSS中居中的几种方法/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
         </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Node-js-express构建电影网站"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-02-21 18:46:02" datetime="2017-02-21T10:46:02.000Z"  itemprop="datePublished">2017-02-21</time>
-
+      
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程/">编程</a></li></ul>
-
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/02/21/Node-js-express构建电影网站/">Node.js+express构建电影网站</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        本项目是一个简单的电影网站，实现了用户注册、登录、登出，电影的录入、移除、查看、修改等后台管管理功能。用户可以对电影进行评论，用户之间也可以相互评论。为了方便电影的录入，利用豆瓣Api，使用jsonp跨域请求，实现豆瓣电影数据同步。项目后端使用Node.js+express+MongoDB数据库构建，前端是使用jade模版引擎，样式使用了Bootstrap框架，以及jQuery工具库。
-运行...
-    
-
-        <a href="/2017/02/21/Node-js-express构建电影网站/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
-
-    </div>
-    
-</article>
-
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
         </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-雅虎军规"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-02-17 13:40:46" datetime="2017-02-17T05:40:46.000Z"  itemprop="datePublished">2017-02-17</time>
-
+      
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程/">编程</a></li></ul>
-
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/02/17/雅虎军规/">雅虎军规</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        当我们打开一个网页时，事实上，只有10%-20%的最终用户响应时间是花在从web服务器获取HTML文档并传送到浏览器的，至少80%的最终用户响应时间是花在了页面中的组件上（图片、脚本、样式表、Flash等）、太慢的网站经常会造成访客不再回返，因此，把精力放在这80%的时间可以极大的改善web的性能。而请求组件需要伴随着HTTP请求，而减少HTTP请求、减小HTTP请求大小等都是改善web性能...
-    
-
-        <a href="/2017/02/17/雅虎军规/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能优化/">性能优化</a></li></ul>
-
-    </div>
-    
-</article>
-
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
         </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-设备像素比devicePixelRatio"
-  class="article-card article-type-post" itemprop="blogPost">
+      
 
-    <div class="post-meta">
-        <time class="post-time" title="2017-02-17 13:29:02" datetime="2017-02-17T05:29:02.000Z"  itemprop="datePublished">2017-02-17</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程/">编程</a></li></ul>
-
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/02/17/设备像素比devicePixelRatio/">设备像素比devicePixelRatio</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        设备像素比的定义：
-
-window.devicePixelRatio是设备上物理像素和设备独立像素(device-independent pixels (dips))的比例。公式表示就是：window.devicePixelRatio = 物理像素 / dips
-
-dip或dp,（device independent pixels，设备独立像素）与屏幕密度有关。dip可以用来辅助区分视网膜设...
-    
-
-        <a href="/2017/02/17/设备像素比devicePixelRatio/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </div>
-    
-</article>
-
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
         </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-vue-js仿饿了吗App"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-02-16 19:29:03" datetime="2017-02-16T11:29:03.000Z"  itemprop="datePublished">2017-02-16</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程/">编程</a></li></ul>
-
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/02/16/vue-js仿饿了吗App/">vue.js仿饿了吗App</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        本项目仿饿了吗App商家模块（包括商品、评论、商家介绍等各模块），使用Vue.js+es6+webpack等前端热门技术，采用组件化、模块化开发方式。使用flex布局，stylus css预处理器。使用vue-router插件实现路由，数据交互用vue-resource插件实现。项目运行：123456//克隆项目git clone https://github.com/dj940212/se...
-    
-
-        <a href="/2017/02/16/vue-js仿饿了吗App/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue-js/">Vue.js</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-vue.js仿饿了吗App"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-02-16 19:29:03" datetime="2017-02-16T11:29:03.000Z"  itemprop="datePublished">2017-02-16</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程/">编程</a></li></ul>
-
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/02/16/vue.js仿饿了吗App/">vue.js仿饿了吗App</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        本项目仿饿了吗App商家模块（包括商品、评论、商家介绍等各模块），使用Vue.js+es6+webpack等前端热门技术，采用组件化、模块化开发方式。使用flex布局，stylus css预处理器。使用vue-router插件实现路由，数据交互用vue-resource插件实现。项目运行：123456//克隆项目git clone https://github.com/dj940212/se...
-    
-
-        <a href="/2017/02/16/vue.js仿饿了吗App/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue-js/">Vue.js</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-在GitHubPages上搭建项目主页"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-02-16 15:10:36" datetime="2017-02-16T07:10:36.000Z"  itemprop="datePublished">2017-02-16</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程/">编程</a></li></ul>
-
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/02/16/在GitHubPages上搭建项目主页/">在GitHubPages上搭建项目主页</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        Github Pages是Github免费提供给开发者的一款托管个人网站的产品，这绝对是个好东西啊。目前来看只能托管静态内容，但是这已经足够我们用了。GitHub Pages主页
-
-终端里切换到你的工作目录
-创建一个新的gh-pages分支  git checkout --orphan gh-pages
-//新建一个gh-pages分支并且没有任何提交历史，不要–orphan也行
-
-
-删除里...
-    
-
-        <a href="/2017/02/16/在GitHubPages上搭建项目主页/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-H5报告"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-02-16 13:10:16" datetime="2017-02-16T05:10:16.000Z"  itemprop="datePublished">2017-02-16</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程/">编程</a></li></ul>
-
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/02/16/H5报告/">H5报告</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        项目简介项目预览
-本项目为一个H5报告页面，运用了HTML5、CSS3、JS等技术，采用组件式开发，页面滚动采用了基于jQuery的FullPage.js，运用Canvas制作了柱形图、折线图、饼图、散点图、雷达图等多种动态图表组件。
-项目结构
-事件12345678910111213141516171819//page 上绑定进入和离开事件处理程序$('.page').on('onLeave...
-    
-
-        <a href="/2017/02/16/H5报告/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/项目介绍/">项目介绍</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
+      
     </ul>
+  
 
-    
-<nav id="page-nav">
-    <div class="inner">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
     </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
 </nav>
 
 
-</div>
 
-        <footer class="footer">
-    <div class="top">
-        
-<p>
-    <span id="busuanzi_container_site_uv" style='display:none'>
-        站点总访客数：<span id="busuanzi_value_site_uv"></span>
-    </span>
-    <span id="busuanzi_container_site_pv" style='display:none'>
-        站点总访问量：<span id="busuanzi_value_site_pv"></span>
-    </span>
-</p>
-
-
-        <p>
-            
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
-        </p>
-    </div>
-    <div class="bottom">
-        <p>
-            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
-            <span>DingJian &copy; 2015 - 2017</span>
-        </p>
-    </div>
-</footer>
-
-    </main>
-    <div class="mask" id="mask"></div>
-<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
-
-
-
-<div class="global-share" id="globalShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/&title=Ding   Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/&title=Ding   Blog&source=" data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Ding   Blog&url=http://yoursite.com/&via=http://yoursite.com" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
  </div>
+    </header>
 
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
 
-<div class="page-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAAAAAAZai4+AAABW0lEQVR42u3aQQ7DIAxE0dz/0qnUVaUUMjNOF7W/VxVKw8sCMIbjkON8x6r9M/T/PhCwYDVindu4PqO0XNv1vmDBmszaD2y9S/33jQEWLFjC6/QFGBYsWL9muV3CggVrz1KSZmWy0JPvx3J5WLBasCrLbSVRfri+BQvW37JOM9xlOwtYsKax9CLRfhRXtrhGBgELVlPWSpptSvVk+qYvWLBgRUWiynWEL++BBQuW0KUy1BXWsgUWrGEsN2nOQNJRij67wILVlKUUZCvLuVJsks5gYcFqyqqUbt0jE2PqgQVrMMu9fJAdcCqTCCxY01jZQUi2uS2d/MCC1ZpVuXCQlWul1BwWrGGsLOXdd6kv5PVEHBasTqxsUtDTZXcqgQVrMisr/WTbVOkZWLBgyYPcPcMxMgVYsGA9tL1Uik3Lz4AFayQrS5rd1NmYE2DBGsbKrgtkxFI1CxasnqwXXY7FbVPN83MAAAAASUVORK5CYII=" alt="微信分享二维码">
-</div>
+  
 
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/30/获取隐藏元素的高度/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DingJian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
 
-    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
-<script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ding   Blog">
+    </span>
 
+    
+      <header class="post-header">
 
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/30/获取隐藏元素的高度/" itemprop="url">获取隐藏元素的高度</a></h1>
+        
 
-</script>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-30T22:11:04+08:00">
+                2017-04-30
+              </time>
+            
 
-<script src="//unpkg.com/hexo-theme-material-indigo@1.6.1/js/main.min.js"></script>
+            
 
+            
+          </span>
 
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<template id="search-tpl">
-<li class="item">
-    <a href="{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
-            </div>
-            <time class="flex-col time">{date}</time>
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-    </a>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>关于重绘和重排：<a href="https://xdlrt.github.io/2016/11/05/2016-11-05/" target="_blank" rel="external">https://xdlrt.github.io/2016/11/05/2016-11-05/</a></p>
+</blockquote>
+<h2 id="隐藏元素的方式"><a href="#隐藏元素的方式" class="headerlink" title="隐藏元素的方式"></a>隐藏元素的方式</h2><p>“隐藏”元素的方式有很多种：<code>display:none</code>,<code>visibility:hiden</code>,<code>opacity:0</code>,<code>height:0; overflow:hidden</code>,<code>transform:scale(0)</code></p>
+<h4 id="“隐藏”的区别"><a href="#“隐藏”的区别" class="headerlink" title="“隐藏”的区别"></a>“隐藏”的区别</h4><p><code>visibility:hidden</code>和<code>opacity:0</code>元素在文档流中占据位置，这些元素有高度且可以获取</p>
+<h2 id="如何获取隐藏元素的高度-scrollHeiht"><a href="#如何获取隐藏元素的高度-scrollHeiht" class="headerlink" title="如何获取隐藏元素的高度(scrollHeiht)"></a>如何获取隐藏元素的高度(scrollHeiht)</h2><p>这里所说的隐藏元素是指类似<code>display:none</code>的隐藏</p>
+<blockquote>
+<p>设置  <code>height:0; overflow:hidden</code>,此时元素达到隐藏的效果，<code>clientHight</code>、<code>offsetHeight</code>为0,但<code>scrollHeight</code>是有值的。<br>1.<code>scrollHeight</code>是一个元素没有滚动条时的高度<br>2.当一个元素没有滚动条时<code>scrollHeight === offsetHeight</code></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/28/Vue-js2-0变化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DingJian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ding   Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/28/Vue-js2-0变化/" itemprop="url">Vue.js2.0变化</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-28T17:44:07+08:00">
+                2017-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="模版"><a href="#模版" class="headerlink" title="模版"></a>模版</h3><ul>
+<li>组件模版，不支持片段代码，必须要有一个跟元素，包裹住所有模版代码（1.0支持）</li>
+</ul>
+<h3 id="组件定义"><a href="#组件定义" class="headerlink" title="组件定义"></a>组件定义</h3><ul>
+<li><p>Vue.component(组件名称，{    //vue2.0继续存在<br>  data(){}<br>  methods:{}<br>  tmplate:<br>})</p>
 </li>
-</template>
+<li><p>vue2.0推出了简洁的组件定义方式<br>var name = {<br>  template:’’<br>};</p>
+</li>
+</ul>
+<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p>beforeCreate  -&gt;  组件实例刚刚被创建，属性尚未绑定<br>created       -&gt;  实例已经创建完成，属性已经绑定<br>beforeMount   -&gt;  模版编译之前<br>mounted       -&gt;  模版编译完成<br>beforeUpdate  -&gt;  组件更新之前<br>updated       -&gt;  组件更新完毕<br>beforeDestroy -&gt;  组件销毁之前<br>destroyed       -&gt;  组件销毁完毕</p>
+<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><p>默认就可以添加重复数据（vue1.0需设置 track-by=”$index”）</p>
+<h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><p>去掉了很多系统自带过滤器(limitBy,filterBy,debounce,currency)，自定义过滤器传参改成函数方式  number | toDou(a,b)</p>
+<h3 id="父子组件数据传递"><a href="#父子组件数据传递" class="headerlink" title="父子组件数据传递"></a>父子组件数据传递</h3><p>vue1.0: 子组件可以更改父组件数据，可以使父组件同步（sync）<br>vue2.0: 不允许直接改数据<br>        如何更改：</p>
+<pre><code>1.父组件每次传一个对象给子组件，数据可作为对象属性，然后可以更改
 
-<script src="//unpkg.com/hexo-theme-material-indigo@1.6.1/js/search.min.js" async></script>
+2.可以使用mounted更改
+</code></pre><h3 id="非父子组件通信"><a href="#非父子组件通信" class="headerlink" title="非父子组件通信"></a>非父子组件通信</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bus = <span class="keyword">new</span> Vue()</div><div class="line"></div><div class="line"><span class="comment">// 触发组件 A 中的事件</span></div><div class="line">bus.$emit(<span class="string">'id-selected'</span>, <span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="comment">// 在组件 B 创建的钩子中监听事件</span></div><div class="line">bus.$on(<span class="string">'id-selected'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">id</span>) </span>&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/26/CSS中居中的几种方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DingJian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ding   Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/26/CSS中居中的几种方法/" itemprop="url">CSS中居中的几种方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-26T18:19:22+08:00">
+                2017-02-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>本文主要总结一下平常所能用到的各种使用CSS居中的方法。</p>
+<h4 id="1-水瓶居中-margin：0-auto"><a href="#1-水瓶居中-margin：0-auto" class="headerlink" title="1.水瓶居中 margin：0 auto;"></a>1.水瓶居中 margin：0 auto;</h4><p>平常比较常用的方法，前提是不受float影响</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    *&#123;</div><div class="line">        padding: 0;</div><div class="line">        margin: 0;</div><div class="line">    &#125;</div><div class="line">    .box&#123;</div><div class="line">        width: 300px;</div><div class="line">        height: 300px;</div><div class="line">        border: 3px solid red;</div><div class="line">    &#125;</div><div class="line">    img&#123;</div><div class="line">        display: block;</div><div class="line">        width: 100px;</div><div class="line">        height: 100px;</div><div class="line">        margin: 0 auto;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;!--html--&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div class="box"&gt;</div><div class="line">        &lt;img src=""/&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h4 id="2-水平居中-text-align：center；"><a href="#2-水平居中-text-align：center；" class="headerlink" title="2.水平居中 text-align：center；"></a>2.水平居中 text-align：center；</h4><p>img的display：inline-block；类似一样在不受float影响下进行<br>实在父元素上添加效果让它进行水平居中</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    *&#123;</div><div class="line">        padding: 0;</div><div class="line">        margin: 0;</div><div class="line">    &#125;</div><div class="line">    .box&#123;</div><div class="line">        width: 300px;</div><div class="line">        height: 300px;</div><div class="line">        border: 3px solid red;</div><div class="line">        text-align: center;</div><div class="line">    &#125;</div><div class="line">    img&#123;</div><div class="line">        display: inline-block;</div><div class="line">        width: 100px;</div><div class="line">        height: 100px;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;!--html--&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div class="box"&gt;</div><div class="line">        &lt;img src=""/&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h4 id="3-水平垂直居中（一）-定位和需要定位的元素的margin减去宽高的一半"><a href="#3-水平垂直居中（一）-定位和需要定位的元素的margin减去宽高的一半" class="headerlink" title="3.水平垂直居中（一） 定位和需要定位的元素的margin减去宽高的一半"></a>3.水平垂直居中（一） 定位和需要定位的元素的margin减去宽高的一半</h4><p>这种方法的局限性在于需要知道需要垂直居中的宽高才能实现，经常使用这种方法</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    *&#123;</div><div class="line">        padding: 0;</div><div class="line">        margin: 0;</div><div class="line">    &#125;</div><div class="line">    .box&#123;</div><div class="line">        width: 300px;</div><div class="line">        height: 300px;</div><div class="line">        background:#e9dfc7; </div><div class="line">        border:1px solid red;</div><div class="line">        position: relative;</div><div class="line">    &#125;</div><div class="line">    img&#123;</div><div class="line">        width: 100px;</div><div class="line">        height: 150px;</div><div class="line">        position: absolute;</div><div class="line">        top: 50%;</div><div class="line">        left: 50%;</div><div class="line">        margin-top: -75px;</div><div class="line">        margin-left: -50px;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;!--html --&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div class="box" &gt;</div><div class="line">        &lt;img src=""&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h4 id="4-水平垂直居中（二）定位和margin-auto"><a href="#4-水平垂直居中（二）定位和margin-auto" class="headerlink" title="4.水平垂直居中（二）定位和margin:auto;"></a>4.水平垂直居中（二）定位和margin:auto;</h4><p>这种方法也需知道宽高</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    *&#123;</div><div class="line">        padding: 0;</div><div class="line">        margin: 0;</div><div class="line">    &#125;</div><div class="line">    .box&#123;</div><div class="line">        width: 300px;</div><div class="line">        height: 300px;</div><div class="line">        background:#e9dfc7; </div><div class="line">        border:1px solid red;</div><div class="line">        position: relative;</div><div class="line">    &#125;</div><div class="line">    img&#123;</div><div class="line">        width: 100px;</div><div class="line">        height: 100px;</div><div class="line">        position: absolute;</div><div class="line">        top: 0;</div><div class="line">        left: 0;</div><div class="line">        right: 0;</div><div class="line">        bottom: 0;</div><div class="line">        margin: auto;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;!--html --&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div class="box" &gt;</div><div class="line">        &lt;img src=""/&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h4 id="5-水平垂直居中（三）绝对定位和transfrom"><a href="#5-水平垂直居中（三）绝对定位和transfrom" class="headerlink" title="5.水平垂直居中（三）绝对定位和transfrom"></a>5.水平垂直居中（三）绝对定位和transfrom</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    *&#123;</div><div class="line">        padding: 0;</div><div class="line">        margin: 0;</div><div class="line">    &#125;</div><div class="line">    .box&#123;</div><div class="line">        width: 300px;</div><div class="line">        height: 300px;</div><div class="line">        background:#e9dfc7; </div><div class="line">        border:1px solid red;</div><div class="line">        position: relative;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    img&#123;</div><div class="line">        width: 100px;</div><div class="line">        height: 100px;</div><div class="line">        position: absolute;</div><div class="line">        top: 50%;</div><div class="line">        left: 50%;</div><div class="line">        transform: translate(-50%,-50%);</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;!--html --&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div class="box" &gt;</div><div class="line">        &lt;img src=""&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h4 id="6-水平垂直居中（四）diplay：table-cell"><a href="#6-水平垂直居中（四）diplay：table-cell" class="headerlink" title="6.水平垂直居中（四）diplay：table-cell"></a>6.水平垂直居中（四）diplay：table-cell</h4><p>其实这个就是把其变成表格样式，再利用表格的样式来进行居中</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .box&#123;</div><div class="line">        width: 300px;</div><div class="line">        height: 300px;</div><div class="line">        background:#e9dfc7; </div><div class="line">        border:1px solid red;</div><div class="line">        display: table-cell;</div><div class="line">        vertical-align: middle;</div><div class="line">        text-align: center;</div><div class="line">    &#125;</div><div class="line">    img&#123;</div><div class="line">        width: 100px;</div><div class="line">        height: 150px;</div><div class="line">        /*margin: 0 auto;*/  这个也行</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;!--html --&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div class="box" &gt;</div><div class="line">        ![](5.jpg)</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h4 id="7-水平垂直居中（五）flexBox居中"><a href="#7-水平垂直居中（五）flexBox居中" class="headerlink" title="7.水平垂直居中（五）flexBox居中"></a>7.水平垂直居中（五）flexBox居中</h4><p>这个是CSS3的新特性</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .box&#123;</div><div class="line">        width: 300px;</div><div class="line">        height: 300px;</div><div class="line">        background:#e9dfc7; </div><div class="line">        border:1px solid red;</div><div class="line">        display: flex;</div><div class="line">        justify-content: center;</div><div class="line">        align-items:center;</div><div class="line">    &#125;</div><div class="line">    img&#123;</div><div class="line">        width: 150px;</div><div class="line">        height: 100px;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;!--html --&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div class="box" &gt;</div><div class="line">        &lt;img src=""&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/21/Node-js-express构建电影网站/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DingJian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ding   Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/21/Node-js-express构建电影网站/" itemprop="url">Node.js+express构建电影网站</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-21T18:46:02+08:00">
+                2017-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>本项目是一个简单的电影网站，实现了用户注册、登录、登出，电影的录入、移除、查看、修改等后台管管理功能。用户可以对电影进行评论，用户之间也可以相互评论。为了方便电影的录入，利用豆瓣Api，使用jsonp跨域请求，实现豆瓣电影数据同步。项目后端使用Node.js+express+MongoDB数据库构建，前端是使用jade模版引擎，样式使用了Bootstrap框架，以及jQuery工具库。</p>
+<p>运行项目</p>
+<blockquote>
+<ol>
+<li>git clone <a href="https://github.com/dj940212/showMovie.git" target="_blank" rel="external">https://github.com/dj940212/showMovie.git</a></li>
+<li>grunt</li>
+</ol>
+</blockquote>
+<h3 id="1-grunt集成自动化"><a href="#1-grunt集成自动化" class="headerlink" title="1.grunt集成自动化"></a>1.grunt集成自动化</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">grunt</span>)</span>&#123;</div><div class="line"></div><div class="line">    grunt.initConfig(&#123;</div><div class="line">        <span class="attr">watch</span>:&#123;</div><div class="line">            <span class="attr">jade</span>:&#123;</div><div class="line">                <span class="attr">files</span>:[<span class="string">'views/**'</span>],</div><div class="line">                <span class="attr">options</span>:&#123;</div><div class="line">                    <span class="attr">livereload</span>:<span class="literal">true</span></div><div class="line">                &#125;</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">js</span>:&#123;</div><div class="line">                <span class="attr">files</span>:[<span class="string">'public/js/**'</span>,<span class="string">'models/**/*.js'</span>,<span class="string">'schemas/**/*.js'</span>],</div><div class="line">                <span class="comment">//tasks:['jshint'],</span></div><div class="line">                options:&#123;</div><div class="line">                    <span class="attr">livereload</span>:<span class="literal">true</span>  <span class="comment">//重启服务</span></div><div class="line">                &#125;</div><div class="line">            &#125;,</div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        <span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">grunt</span>)</span>&#123;</div><div class="line"></div><div class="line">    grunt.initConfig(&#123;</div><div class="line">        <span class="attr">watch</span>:&#123;</div><div class="line">            <span class="attr">jade</span>:&#123;</div><div class="line">                <span class="attr">files</span>:[<span class="string">'views/**'</span>],</div><div class="line">                <span class="attr">options</span>:&#123;</div><div class="line">                    <span class="attr">livereload</span>:<span class="literal">true</span></div><div class="line">                &#125;</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">js</span>:&#123;</div><div class="line">                <span class="attr">files</span>:[<span class="string">'public/js/**'</span>,<span class="string">'models/**/*.js'</span>,<span class="string">'schemas/**/*.js'</span>],</div><div class="line">                <span class="comment">//tasks:['jshint'],</span></div><div class="line">                options:&#123;</div><div class="line">                    <span class="attr">livereload</span>:<span class="literal">true</span>  <span class="comment">//重启服务</span></div><div class="line">                &#125;</div><div class="line">            &#125;,</div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        <span class="attr">nodemon</span>:&#123;</div><div class="line">            <span class="attr">dev</span>:&#123;</div><div class="line">                <span class="attr">options</span>:&#123;</div><div class="line">                    <span class="attr">file</span>:<span class="string">'app.js'</span>,</div><div class="line">                    <span class="attr">args</span>:[],</div><div class="line">                    <span class="attr">ignoredFiles</span>:[<span class="string">'README.md'</span>,<span class="string">'node_modules/**'</span>,<span class="string">'.DS_Store'</span>],</div><div class="line">                    <span class="attr">watchedExtensions</span>:[<span class="string">'js'</span>],</div><div class="line">                    <span class="attr">watchedFolders</span>:[<span class="string">'./'</span>],</div><div class="line">                    <span class="attr">debug</span>:<span class="literal">true</span>,</div><div class="line">                    <span class="attr">delayTime</span>:<span class="number">1</span>,</div><div class="line">                    <span class="attr">env</span>:&#123;</div><div class="line">                        <span class="attr">PORT</span>:<span class="number">3000</span></div><div class="line">                    &#125;,</div><div class="line">                    <span class="attr">cwd</span>:__dirname</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        <span class="attr">concurrent</span>:&#123;</div><div class="line">            <span class="attr">tasks</span>:[<span class="string">'nodemon'</span>,<span class="string">'watch'</span>],</div><div class="line">            <span class="attr">options</span>:&#123;</div><div class="line">                <span class="attr">logConcurrentOutput</span>:<span class="literal">true</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">    grunt.loadNpmTasks(<span class="string">'grunt-contrib-watch'</span>) <span class="comment">//监听文件变更，注册其他任务启动</span></div><div class="line">    grunt.loadNpmTasks(<span class="string">'grunt-nodemon'</span>)  <span class="comment">//监听文件变更，重启服务</span></div><div class="line">    grunt.loadNpmTasks(<span class="string">'grunt-concurrent'</span>) <span class="comment">//并发执行任务</span></div><div class="line"></div><div class="line">    grunt.option(<span class="string">'force'</span>,<span class="literal">true</span>)  <span class="comment">//避免打断，强制执行</span></div><div class="line"></div><div class="line">    grunt.registerTask(<span class="string">'default'</span>,[<span class="string">'concurrent'</span>])</div><div class="line">&#125;:&#123;</div><div class="line">            <span class="attr">dev</span>:&#123;</div><div class="line">                <span class="attr">options</span>:&#123;</div><div class="line">                    <span class="attr">file</span>:<span class="string">'app.js'</span>,</div><div class="line">                    <span class="attr">args</span>:[],</div><div class="line">                    <span class="attr">ignoredFiles</span>:[<span class="string">'README.md'</span>,<span class="string">'node_modules/**'</span>,<span class="string">'.DS_Store'</span>],</div><div class="line">                    <span class="attr">watchedExtensions</span>:[<span class="string">'js'</span>],</div><div class="line">                    <span class="attr">watchedFolders</span>:[<span class="string">'./'</span>],</div><div class="line">                    <span class="attr">debug</span>:<span class="literal">true</span>,</div><div class="line">                    <span class="attr">delayTime</span>:<span class="number">1</span>,</div><div class="line">                    <span class="attr">env</span>:&#123;</div><div class="line">                        <span class="attr">PORT</span>:<span class="number">3000</span></div><div class="line">                    &#125;,</div><div class="line">                    <span class="attr">cwd</span>:__dirname</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        <span class="attr">concurrent</span>:&#123;</div><div class="line">            <span class="attr">tasks</span>:[<span class="string">'nodemon'</span>,<span class="string">'watch'</span>],</div><div class="line">            <span class="attr">options</span>:&#123;</div><div class="line">                <span class="attr">logConcurrentOutput</span>:<span class="literal">true</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">    grunt.loadNpmTasks(<span class="string">'grunt-contrib-watch'</span>) <span class="comment">//监听文件变更，注册其他任务启动</span></div><div class="line">    grunt.loadNpmTasks(<span class="string">'grunt-nodemon'</span>)  <span class="comment">//监听文件变更，重启服务</span></div><div class="line">    grunt.loadNpmTasks(<span class="string">'grunt-concurrent'</span>) <span class="comment">//并发执行任务</span></div><div class="line"></div><div class="line">    grunt.option(<span class="string">'force'</span>,<span class="literal">true</span>)  <span class="comment">//避免打断，强制执行</span></div><div class="line"></div><div class="line">    grunt.registerTask(<span class="string">'default'</span>,[<span class="string">'concurrent'</span>])</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="1-文件目录"><a href="#1-文件目录" class="headerlink" title="1.文件目录"></a>1.文件目录</h3><ul>
+<li><p>入口文件<br>index.js -&gt; 主程序入口<br>启动Express程序，启动并连接数据库，路由分发，引入配置</p>
+</li>
+<li><p>路由<br>routes.js  -&gt; 路由文件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">  <span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">app</span>)</span>&#123;</div><div class="line">    app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req,res,next</span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> _user = req.session.user;</div><div class="line"></div><div class="line">        app.locals.user = _user;</div><div class="line"></div><div class="line">        next()</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">    <span class="comment">// Index</span></div><div class="line">    app.get(<span class="string">'/'</span>, Index.index);</div><div class="line">    <span class="comment">//User</span></div><div class="line">    app.post(<span class="string">'/user/signup'</span>, User.signup)</div><div class="line">    app.post(<span class="string">'/user/signin'</span>, User.signin)</div><div class="line">    app.get(<span class="string">'/signin'</span>,User.showSignin)</div><div class="line">    app.get(<span class="string">'/signup'</span>,User.showSignup)</div><div class="line">    app.get(<span class="string">'/logout'</span>,User.logout)</div><div class="line">    app.get(<span class="string">'/admin/userlist'</span>,User.signinRequired,User.adminRequired,User.userlist);</div><div class="line"></div><div class="line">    <span class="comment">//Movie</span></div><div class="line">    <span class="comment">//详情页</span></div><div class="line">    app.get(<span class="string">'/movie/:id'</span>, Movie.detail);</div><div class="line">    <span class="comment">//列表页</span></div><div class="line">    app.get(<span class="string">'/admin/list'</span>,User.signinRequired,User.adminRequired, Movie.list);</div><div class="line">    <span class="comment">// 后台录入页</span></div><div class="line">    app.get(<span class="string">'/admin/movie'</span>,User.signinRequired,User.adminRequired, Movie.new);</div><div class="line">    <span class="comment">// 逻辑控制:更新</span></div><div class="line">    app.get(<span class="string">'/admin/update/:id'</span>,User.signinRequired,User.adminRequired, Movie.update);</div><div class="line">    <span class="comment">// 逻辑控制:插入</span></div><div class="line">    app.post(<span class="string">'/admin/movie/new'</span>,User.signinRequired,User.adminRequired, Movie.save);</div><div class="line">    <span class="comment">// 逻辑控制:删除</span></div><div class="line">    app.delete(<span class="string">'/admin/delete'</span>,User.signinRequired,User.adminRequired, Movie.del);</div><div class="line"></div><div class="line">    <span class="comment">//评论</span></div><div class="line">    app.post(<span class="string">'/user/comment'</span>,User.signinRequired,Comment.save)</div><div class="line"></div><div class="line">    <span class="comment">//分类</span></div><div class="line">    app.get(<span class="string">'/admin/category/new'</span>,User.signinRequired,User.adminRequired, Category.new);</div><div class="line">    app.post(<span class="string">'/admin/category'</span>,User.signinRequired,User.adminRequired, Category.save);</div><div class="line">    app.get(<span class="string">'/admin/category/list'</span>,User.signinRequired,User.adminRequired, Category.list);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>视图文件<br><img src="http://imglf0.nosdn.127.net/img/MklXTVZ2ekNiL0JQdWdiOFJNMEhXbjhmME9OZFpUVkdqMWxIL0N0NXZpRDRsRmZSdGk5eTR3PT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="文件目录"></p>
+<p>layout.hade -&gt; 布局文件<br><img src="http://imglf2.nosdn.127.net/img/MklXTVZ2ekNiL0JQdWdiOFJNMEhXbEc0Q2RuR3FGQzZMSjNQcVA5SEQrblhYMEJ4WWhNZW1BPT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="布局"></p>
+</li>
+</ul>
+<h3 id="2-数据库模式模型设计"><a href="#2-数据库模式模型设计" class="headerlink" title="2.数据库模式模型设计"></a>2.数据库模式模型设计</h3><p>创建category、comment、movie、user四个数据库模型</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line">    <span class="comment">//电影分类</span></div><div class="line">    <span class="keyword">var</span> CategorySchema = <span class="keyword">new</span> Schema(&#123;</div><div class="line">        <span class="attr">name</span>: <span class="built_in">String</span>,</div><div class="line">        <span class="attr">movies</span>: [&#123;<span class="attr">type</span>: ObjectId, <span class="attr">ref</span>: <span class="string">'Movie'</span>&#125;],</div><div class="line">        <span class="attr">meta</span>: &#123;</div><div class="line">            <span class="attr">createAt</span>: &#123;</div><div class="line">                <span class="attr">type</span>: <span class="built_in">Date</span>,</div><div class="line">                <span class="attr">default</span>: <span class="built_in">Date</span>.now()</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">updateAt</span>: &#123;</div><div class="line">                <span class="attr">type</span>: <span class="built_in">Date</span>,</div><div class="line">                <span class="attr">default</span>: <span class="built_in">Date</span>.now()</div><div class="line">            &#125;</div><div class="line">          &#125;</div><div class="line">    &#125;)</div><div class="line">    <span class="comment">//用户评论</span></div><div class="line">    <span class="keyword">var</span> CommentSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</div><div class="line">        <span class="attr">movie</span>:&#123;<span class="attr">type</span>:ObjectId, <span class="attr">ref</span>:<span class="string">'Movie'</span> &#125;,</div><div class="line">        <span class="attr">from</span>:&#123;<span class="attr">type</span>:ObjectId, <span class="attr">ref</span>:<span class="string">'User'</span> &#125;,</div><div class="line">        <span class="attr">reply</span>:[&#123;</div><div class="line">            <span class="attr">from</span>:&#123;<span class="attr">type</span>:ObjectId,<span class="attr">ref</span>:<span class="string">'User'</span>&#125;,</div><div class="line">            <span class="attr">to</span>:&#123;<span class="attr">type</span>:ObjectId,<span class="attr">ref</span>:<span class="string">'User'</span>&#125;,</div><div class="line">            <span class="attr">content</span>:<span class="built_in">String</span></div><div class="line">        &#125;],</div><div class="line">        <span class="attr">to</span>:&#123;<span class="attr">type</span>:ObjectId, <span class="attr">ref</span>:<span class="string">'User'</span> &#125;,</div><div class="line">        <span class="attr">content</span>:<span class="built_in">String</span>,</div><div class="line">        <span class="attr">meta</span>: &#123;</div><div class="line">            <span class="attr">createAt</span>: &#123;</div><div class="line">                <span class="attr">type</span>: <span class="built_in">Date</span>,</div><div class="line">                <span class="attr">default</span>: <span class="built_in">Date</span>.now()</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">updateAt</span>: &#123;</div><div class="line">                <span class="attr">type</span>: <span class="built_in">Date</span>,</div><div class="line">                <span class="attr">default</span>: <span class="built_in">Date</span>.now()</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="comment">//用户信息</span></div><div class="line">    <span class="keyword">var</span> UserSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</div><div class="line">        <span class="attr">name</span>:&#123;</div><div class="line">            <span class="attr">unique</span>:<span class="literal">true</span>,</div><div class="line">            <span class="attr">type</span>:<span class="built_in">String</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">password</span>:<span class="built_in">String</span>,</div><div class="line">        <span class="attr">role</span>:&#123;</div><div class="line">            <span class="attr">type</span>:<span class="built_in">Number</span>,</div><div class="line">            <span class="attr">default</span>:<span class="number">0</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">meta</span>: &#123;</div><div class="line">            <span class="attr">createAt</span>: &#123;</div><div class="line">                <span class="attr">type</span>: <span class="built_in">Date</span>,</div><div class="line">                <span class="attr">default</span>: <span class="built_in">Date</span>.now()</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">updateAt</span>: &#123;</div><div class="line">                <span class="attr">type</span>: <span class="built_in">Date</span>,</div><div class="line">                <span class="attr">default</span>: <span class="built_in">Date</span>.now()</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="comment">//电影</span></div><div class="line">    <span class="keyword">var</span> MovieSchema = <span class="keyword">new</span> Schema(&#123;</div><div class="line">    <span class="attr">doctor</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">title</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">language</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">country</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">year</span>: <span class="built_in">Number</span>,</div><div class="line">    <span class="attr">summary</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">poster</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">category</span>:&#123;</div><div class="line">        <span class="attr">type</span>:ObjectId,</div><div class="line">        <span class="attr">ref</span>:<span class="string">'Category'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">meta</span>: &#123;</div><div class="line">        <span class="attr">createAt</span>: &#123;</div><div class="line">            <span class="attr">type</span>: <span class="built_in">Date</span>,</div><div class="line">            <span class="attr">default</span>: <span class="built_in">Date</span>.now()</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">updateAt</span>: &#123;</div><div class="line">            <span class="attr">type</span>: <span class="built_in">Date</span>,</div><div class="line">            <span class="attr">default</span>: <span class="built_in">Date</span>.now()</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="3-数据库交互"><a href="#3-数据库交互" class="headerlink" title="3. 数据库交互"></a>3. 数据库交互</h3><ul>
+<li>建立数据库链接</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// movie为mongodb的一个数据库</span></div><div class="line"><span class="keyword">var</span> dbUrl = <span class="string">'mongodb://localhost/movie'</span>;</div><div class="line"><span class="keyword">var</span> db = mongoose.connect(dbUrl)</div><div class="line">db.connection.on(<span class="string">'open'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"----数据库连接成功！------"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>数据库交互</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">MovieSchema.pre(<span class="string">'save'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">next</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.isNew) &#123;</div><div class="line">        <span class="keyword">this</span>.meta.createAt = <span class="keyword">this</span>.meta.updateAt = <span class="built_in">Date</span>.now();</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">this</span>.meta.updateAt = <span class="built_in">Date</span>.now();</div><div class="line">    &#125;</div><div class="line">    next();</div><div class="line">&#125;);</div><div class="line"></div><div class="line">MovieSchema.statics = &#123;</div><div class="line">    <span class="attr">fetch</span>: <span class="function"><span class="keyword">function</span> (<span class="params">cb</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span></div><div class="line">            .find(&#123;&#125;)</div><div class="line">            .sort(<span class="string">'meta.updateAt'</span>)</div><div class="line">            .exec(cb);</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">findById</span>: <span class="function"><span class="keyword">function</span> (<span class="params">id, cb</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span></div><div class="line">            .findOne(&#123;<span class="attr">_id</span>: id&#125;)</div><div class="line">            .exec(cb);</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="4-用户登录注册后台存储"><a href="#4-用户登录注册后台存储" class="headerlink" title="4.用户登录注册后台存储"></a>4.用户登录注册后台存储</h3><p>使用bcrypt-nodejs模块，实现对密码的加盐，转换hash值，以及登录是密码的比对</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//实例方法</span></div><div class="line">UserSchema.methods = &#123;</div><div class="line">    <span class="attr">comparePassword</span>:<span class="function"><span class="keyword">function</span>(<span class="params">_password,cb</span>)</span>&#123;</div><div class="line">        bcrypt.compare(_password,<span class="keyword">this</span>.password,<span class="function"><span class="keyword">function</span>(<span class="params">err,isMatch</span>)</span>&#123;</div><div class="line">            <span class="keyword">if</span> (err) &#123;</div><div class="line">                <span class="keyword">return</span> cb(err)</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            cb(<span class="literal">null</span>,isMatch)</div><div class="line"></div><div class="line">        &#125;)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">UserSchema.pre(<span class="string">'save'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">next</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> user = <span class="keyword">this</span></div><div class="line"></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.isNew) &#123;</div><div class="line">        <span class="keyword">this</span>.meta.createAt = <span class="keyword">this</span>.meta.updateAt = <span class="built_in">Date</span>.now();</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">this</span>.meta.updateAt = <span class="built_in">Date</span>.now();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">//随机salt及密码加密</span></div><div class="line">    bcrypt.genSalt(SALT_WORK_FACTOR, <span class="function"><span class="keyword">function</span>(<span class="params">err, salt</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span> (err) <span class="keyword">return</span> next(err);</div><div class="line">        </div><div class="line">        bcrypt.hash(user.password, salt, <span class="literal">null</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, hash</span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span> (err) <span class="keyword">return</span> next(err);</div><div class="line">            user.password = hash;</div><div class="line">            next();</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="5-用户权限管理"><a href="#5-用户权限管理" class="headerlink" title="5.用户权限管理"></a>5.用户权限管理</h3><p>UserSchema模式下增加一个<code>role:Number</code>用来区分用户的权限</p>
+<blockquote>
+<p>0: nomal user<br>1:verified user<br>2:professonal user</p>
+<p>lg10:admin<br>lg50:super admin</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//用户中间件</span></div><div class="line">exports.signinRequired = <span class="function"><span class="keyword">function</span> (<span class="params">req, res,next</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> user = req.session.user</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'当前用户'</span>)</div><div class="line">    <span class="built_in">console</span>.log(user)</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (!user) &#123;</div><div class="line">        <span class="keyword">return</span> res.redirect(<span class="string">'/signin'</span>)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    next();</div><div class="line">    </div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//管理员中间件</span></div><div class="line">exports.adminRequired = <span class="function"><span class="keyword">function</span> (<span class="params">req, res,next</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> user = req.session.user</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(user)</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (user.role &lt;= <span class="number">10</span>) &#123;</div><div class="line">        <span class="keyword">return</span> res.redirect(<span class="string">'/signin'</span>)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    next()</div><div class="line"></div><div class="line">    </div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="6-用户评论"><a href="#6-用户评论" class="headerlink" title="6.用户评论"></a>6.用户评论</h3>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/17/雅虎军规/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DingJian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ding   Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/17/雅虎军规/" itemprop="url">雅虎军规</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-17T13:40:46+08:00">
+                2017-02-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>当我们打开一个网页时，事实上，只有10%-20%的最终用户响应时间是花在从web服务器获取HTML文档并传送到浏览器的，至少80%的最终用户响应时间是花在了页面中的组件上（图片、脚本、样式表、Flash等）、太慢的网站经常会造成访客不再回返，因此，把精力放在这80%的时间可以极大的改善web的性能。而请求组件需要伴随着HTTP请求，而减少HTTP请求、减小HTTP请求大小等都是改善web性能的最佳实践</p>
+<h4 id="规则1：减少HTTP请求"><a href="#规则1：减少HTTP请求" class="headerlink" title="规则1：减少HTTP请求"></a>规则1：减少HTTP请求</h4><p>改善响应时间的最简单途径就是减少组件(图片，脚本，样式表、Flash等）的数量，并由此减少http请求的数量<br>（1）CSS Sprites：将多个图片合并到一个单独的图片中，再结合css的background-position属性一起使用，通过合并图片减少http请求（合并后的图片会比分离的图片的总和要小，因为它降低了图片自身的开销（颜色表，格式信息等））<br>适用场景：若需要在页面中为背景，按钮，导航栏，链接等提供大量图片，可使用CSS Sprites<br>（2）合并脚本和样式表：若将css代码和javascript代码分别放在多个文件中，每个文件都会导致一个额外的http请求，将这些文件合并到一个文件中，可以减少http请求的数量并缩短最终用户时间<br>注：若不同页面需要不同的脚本，可能脚本合并的组合数会比较多</p>
+<h4 id="规则2：使用内容发布网络"><a href="#规则2：使用内容发布网络" class="headerlink" title="规则2：使用内容发布网络"></a>规则2：使用内容发布网络</h4><p>通常来说，Web客户端离当前Web服务器越近，响应时间会更快<br>（1）内容发布网络：内容发布网络是一组分布在多个不同地理位置的Web服务器，用于更加有效地向用户发布内容<br>（2）一些大型公司都拥有他们自己的CDN，但使用一个CDN服务提供商更为有效<br>优点：对于地理上分散的用户人群来说，CDN能轻易地得到响应速度上的提高<br>         除了缩短响应时间之外，CDN还提供备份，扩展存储功能和进行缓存等服务<br>缺点：CDN服务开销可能比较大，且CDN服务提供商在其所有客户之间共享其Web服务组，可能会受到其它网站流量的影响<br>         无法直接控制组件服务器所带来的特殊麻烦，如修改HTTP响应头必须通过服务器提供商来完成</p>
+<h4 id="规则3：添加Expires头"><a href="#规则3：添加Expires头" class="headerlink" title="规则3：添加Expires头"></a>规则3：添加Expires头</h4><p>（1）主要通过配置组件，使用一个长久的Expires头，使这些组件能够被缓存，使在后续的页面浏览中避免不必要的http请求（浏览器可以直接从硬盘上读取组件而无需生成任何http流量）,web服务器使用Expires头来告诉web客户端它可以使用一个组件的当前副本，直到指定的时间为止<br>（2）长久的Expires头最常用于图片，但应该将其应用在所有组件上，包括脚本、样式表和Flash等不经常变化的组件，但添加长久的Expires会带来额外的开发成本<br>（3）浏览器（和代理）通过使用缓存来减少http请求的数量，并减小http响应的大小，从而使页面加载得更快，Expires在http响应中发送，web服务器通过使用Expires头来告诉Web客户端它可以使用一个组件的当前副本</p>
+<p>（4）Expires头的限制：Expires头使用一个特定的时间，它要求服务器和客户端的时钟严格同步，另外，如果到了过期时间，需要在服务器配置中提供一个新的日期<br>（5）Cache-Control头：http1.1引入的，主要用来克服Expires的限制<br>主要使用max-age指令指定组件被缓存多久</p>
+<p>注：可以同时指定Expires和Cache-Control两个响应头，因为有些浏览器不支持http1.1<br>（6）修订文件名：<br>为了确保用户能够获取组件的最新版本，需要在所有HTML页面中修改组件的文件名<br>（7）一个具有长久的Expires头的组件将会被缓存，在后续请求时浏览器直接从磁盘上读取它，避免了一个http请求<br>     如果一个组件没有长久的Expires头，它仍然会存储在浏览器的缓存中，在后续请求中，浏览器会检查缓存并发现组件以及过期。为了提高效率，浏览器会向原始服务器发送一个条件GET请求，如果组件没有改变，原始服务器可以免于发送整个组件，而是发送一个很小的头，告诉浏览器可以使用其缓存的组件</p>
+<h4 id="规则4：压缩组件（使用gzip编码压缩http响应包）"><a href="#规则4：压缩组件（使用gzip编码压缩http响应包）" class="headerlink" title="规则4：压缩组件（使用gzip编码压缩http响应包）"></a>规则4：压缩组件（使用gzip编码压缩http响应包）</h4><p>（1）主要通过http响应的大小来减少响应时间，从http1.1开始，Web客户端可以通过http请求中的Accept-Encoding来标识对压缩的支持</p>
+<p>如果Web服务器看到请求中有这个头，就会使用客户端列出来的方法中的一种来压缩响应，Web服务器通过响应中的Content-Encoding头来通知Web客户端</p>
+<p>（2）压缩什么：一般压缩HTML文档、样式表和脚本<br>（3）压缩的成本：服务器端会花费额外的CPU周期来完成压缩，客户端要对压缩文件进行解压缩</p>
+<h4 id="规则5：将样式表放在顶部"><a href="#规则5：将样式表放在顶部" class="headerlink" title="规则5：将样式表放在顶部"></a>规则5：将样式表放在顶部</h4><p>（1）将样式表放在底部，可能会延迟页面的加载，会出现“白屏”和“无样式闪烁”，将样式表放在顶部，可以使页面逐步呈现，避免页面出现”白屏“和“无样式闪烁”<br>（2）白屏：浏览器延迟内容呈现，直到所有的样式表都下载完毕后才开始开始显示内容，即页面完全空白，直到页面所有内容同时涌上屏幕<br>       无样式闪烁：样式表被正确地下载及解析，已经呈现的页面和图片要用新的样式重绘<br>（3）link和@import：</p>
+<p>注：使用@import规则可能会导致白屏现象，即使是放在<head>中<br>      一般组件都是按照它们在页面中出现的顺序下载的，而使用@import会带来下载时的无序性</head></p>
+<h4 id="规则6：将脚本放在底部"><a href="#规则6：将脚本放在底部" class="headerlink" title="规则6：将脚本放在底部"></a>规则6：将脚本放在底部</h4><p>（1）将脚本放在底部，既可以使页面逐步呈现，也可以提高下载的并行度<br>（2）将样式表放在<head>中，可以首先下载它们而不会阻止页面呈现，使用脚本时，对于所有位于脚本以下的内容，逐步呈现都被阻塞了。将脚本放在页面越靠下的地方，意味着越多的内容能够逐步地呈现<br>（3）http1.1建议浏览器从每个主机名并行地下载两个组件。然而，在下载脚本时并行下载其实是被禁用的，即使是用了不同的主机名，浏览器也不会启动其他的下载<br>（4）脚本对web页面的影响：脚本会阻塞其后面内容的呈现，脚本会阻塞其后面组件的下载（脚本会阻塞并行下载）</head></p>
+<h4 id="规则7：避免CSS表达式"><a href="#规则7：避免CSS表达式" class="headerlink" title="规则7：避免CSS表达式"></a>规则7：避免CSS表达式</h4><p>（1）CSS表达式不只在页面呈现和大小改变时求值，当页面滚动，甚至连用户鼠标的页面移动时都要求值</p>
+<h4 id="规则8：使用外部的JavaScript和CSS"><a href="#规则8：使用外部的JavaScript和CSS" class="headerlink" title="规则8：使用外部的JavaScript和CSS"></a>规则8：使用外部的JavaScript和CSS</h4><p>（1）在某种程度上，内联会快一些，尽管总下载量时是相同的，但外部示例需要承担多个http请求带来的开销。但是现实中还是使用外部文件会产生比较快的页面，因为javascript和css文件有可能被浏览器缓存起来<br>（2）使用外部文件可以提高组件的重用率</p>
+<h4 id="规则9：减少DNS查找"><a href="#规则9：减少DNS查找" class="headerlink" title="规则9：减少DNS查找"></a>规则9：减少DNS查找</h4><p>（1）Internet是通过IP地址来查找服务器的，由于IP地址很难记忆，通常使用包含主机名的URL来代替它，但当浏览器发送其请求时，IP地址仍然是必需的，这就是Domain Name System(DNS)所处的角色。DNS将主机名映射到IP地址上，在输入一个URL时，连接到浏览器的DNS解析器会返回服务器的IP地址<br>（2）DNS也是开销，在DNS查找完成之前，浏览器不能从主机名那里下载到任何东西，响应时间依赖于DNS解析器（通常由你的ISP提供）<br>（3）DNS缓存：DNS查找可以被缓存起来以提高性能，在用户请求了一个主机名后，DNS信息会留在操作系统的DNS缓存中，之后对于该主机名的请求将无需进行过多的DNS查找<br>（4）通过使用keep-Alive和较少的域名来减少DNS查找，keep-Alive通过重用现有连接避免了重复的DNS查找，减少唯一主机名的数量可以减少DNS查找<br>（5）建议：可以将组件分别放在至少2个，但不要超过4个主机名下，这是在减少DNS查找和允许高度并行下载之间作出的很好的权衡</p>
+<h4 id="规则10：精简Javascript"><a href="#规则10：精简Javascript" class="headerlink" title="规则10：精简Javascript"></a>规则10：精简Javascript</h4><p>（1）精简是从代码中移除不必要的字符以减小其大小进而改善加载时间，在代码被精简后，所有的注释以及不必要的空白字符都将被移除<br>（2）内联的javascript也应该被精简<br>（3）精简CSS能够带来的节省通常要小于精简javascript，因为css中的注释和空白比javascript中的少，最大的潜在节省来自于优化CSS——合并相同的类，移除不适用的类等</p>
+<h4 id="规则11：避免重定向"><a href="#规则11：避免重定向" class="headerlink" title="规则11：避免重定向"></a>规则11：避免重定向</h4><p>（1）重定向就是，在网页上设置一个约束条件，条件满足，就自动转入到其它网页、网址<br>（2）重定向用于将用户从一个url重新路由到另一个url，重定向有很多种——301和302是最常用的两种，重定向会使你的页面变慢，javascript可以通过document.location设置为期望的URL执行重定向<br>（3）当web服务器向浏览器返回一个重定向时，响应中就会返回一个范围在3xx的状态码，这表示用户代理必需执行进一步操作才能完成请求<br>注：304并不是真的重定向，它用来响应条件GET请求，避免下载已经存在于浏览器缓存中的数据<br>（4）重定向是如何损伤性能的：重定向会延迟整个HTML文档的传输，在HTML文档到达之前，页面中不会呈现出任何东西，也没有任何组件会被下载</p>
+<h4 id="规则12：移除重复脚本"><a href="#规则12：移除重复脚本" class="headerlink" title="规则12：移除重复脚本"></a>规则12：移除重复脚本</h4><p>（1）重复脚本损伤性能的方式有两种——不必要的HTTP请求和执行javascript所浪费的时间<br>（2）在页面中多次包含相同的脚本会使页面变慢<br>       在IE中，如果脚本没有被缓存，或在重新加载页面时，会产生额外的http请求<br>       在火狐和IE中，脚本会被多次求值</p>
+<h4 id="规则13：配置ETag"><a href="#规则13：配置ETag" class="headerlink" title="规则13：配置ETag"></a>规则13：配置ETag</h4><p>（1）ETag（实体标签）是web服务器和浏览器用于确认缓存组件的一种机制<br>（2）浏览器下载组件时，会将它们存储到缓存中，在后续的页面查看中，如果缓存的组件是“新鲜”的，浏览器就会从磁盘上读取它，避免产生http请求，如果缓存的组件过期了（或者用户明确地重新加载了页面），浏览器在重用它之前必须首先检查它是否仍然有效，这称为一个条件get请求，如果浏览器缓存中的组件是有效的（即它能够和原始服务器上的组件相匹配），原始服务器不会返回整个组件，而是返回一个304的状态码<br>（3）服务器在检测缓存的组件是否和原始服务器上的组件匹配时有两种方式：比较最新修改日期，比较实体标签（ETag是唯一标识了一个组件的一个特定版本的字符串）<br>（4）ETag带来的问题，当浏览器向一台服务器获取了原始组件，又向另一台不同的服务器发起条件get请求时，ETag是不会匹配的<br>（5）即使组件具有长久的Expires头，一旦用户单击了Reload或Refresh按钮。依然会产生条件get请求</p>
+<h4 id="规则14：使Ajax可缓存"><a href="#规则14：使Ajax可缓存" class="headerlink" title="规则14：使Ajax可缓存"></a>规则14：使Ajax可缓存</h4>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/17/设备像素比devicePixelRatio/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DingJian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ding   Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/17/设备像素比devicePixelRatio/" itemprop="url">设备像素比devicePixelRatio</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-17T13:29:02+08:00">
+                2017-02-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>设备像素比的定义：</p>
+<blockquote>
+<p>window.devicePixelRatio是设备上物理像素和设备独立像素(device-independent pixels (dips))的比例。<br>公式表示就是：window.devicePixelRatio = 物理像素 / dips</p>
+</blockquote>
+<p>dip或dp,（device independent pixels，设备独立像素）与屏幕密度有关。dip可以用来辅助区分视网膜设备还是非视网膜设备。</p>
+<p>所有非视网膜屏幕的iphone在垂直的时候，宽度为320物理像素。当你使用<meta name="viewport" content="width=device-width">的时候，会设置视窗布局宽度（不同于视觉区域宽度，不放大显示情况下，两者大小一致，见下图）为320px, 于是，页面很自然地覆盖在屏幕上。</p>
+<p>这样，非视网膜屏幕的iphone上，屏幕物理像素320像素，独立像素也是320像素，因此，window.devicePixelRatio等于1.</p>
+<p>而对于视网膜屏幕的iphone，如iphone4s, 纵向显示的时候，屏幕物理像素640像素。同样，当用户设置<meta name="viewport" content="width=device-width">的时候，其视区宽度并不是640像素，而是320像素，这是为了有更好的阅读体验 – 更合适的文字大小。</p>
+<p>这样，在视网膜屏幕的iphone上，屏幕物理像素640像素，独立像素还是320像素，因此，window.devicePixelRatio等于2.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/16/vue-js仿饿了吗App/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DingJian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ding   Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/16/vue-js仿饿了吗App/" itemprop="url">vue.js仿饿了吗App</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-16T19:29:03+08:00">
+                2017-02-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>本项目仿饿了吗App商家模块（包括商品、评论、商家介绍等各模块），使用Vue.js+es6+webpack等前端热门技术，采用组件化、模块化开发方式。使用flex布局，stylus css预处理器。使用vue-router插件实现路由，数据交互用vue-resource插件实现。<br>项目运行：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//克隆项目</span></div><div class="line">git clone https:<span class="comment">//github.com/dj940212/sell.git</span></div><div class="line"><span class="comment">//安装依赖</span></div><div class="line">npm install</div><div class="line"><span class="comment">//运行项目</span></div><div class="line">npm run dev</div></pre></td></tr></table></figure></p>
+<p><img src="http://imglf0.nosdn.127.net/img/MklXTVZ2ekNiL0Jsbml5RVZBaDhIUGlLNks2MS9EWjNZQ01SUXI2bFRLY29tSmhUUytSbGt3PT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="饿了吗商家页面"></p>
+<h3 id="1-项目目录"><a href="#1-项目目录" class="headerlink" title="1.项目目录"></a>1.项目目录</h3><p>本项目使用webpack模版<br><img src="http://imglf0.nosdn.127.net/img/MklXTVZ2ekNiL0Jsbml5RVZBaDhISGRiRzNwcmc4bEdFV2lpOHpPaUw1QzlZNXh4WSs3QTBBPT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt=""></p>
+<h3 id="2-项目组件结构"><a href="#2-项目组件结构" class="headerlink" title="2.项目组件结构"></a>2.项目组件结构</h3><p>下面为本项目的各组件结构（图为Chrome插件 Vue Devtools 截图）<br><img src="http://imglf1.nosdn.127.net/img/MklXTVZ2ekNiL0Jsbml5RVZBaDhIRUlrY0lEenpqMzJvb2JVdWhZN0gwakszeGl6OG9rL3JRPT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt=""></p>
+<h3 id="3-mock数据"><a href="#3-mock数据" class="headerlink" title="3.mock数据"></a>3.mock数据</h3><p>本项目为纯前端项目，项目中数据均为模拟数据，</p>
+<p><img src="http://imglf.nosdn.127.net/img/MklXTVZ2ekNiL0Jsbml5RVZBaDhIQVJPL2dxdVI5bDQxVDNhS3g2YWIxMU8zRzZYNVJrSDVnPT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt=""></p>
+<h3 id="4-vue-router"><a href="#4-vue-router" class="headerlink" title="4.vue-router"></a>4.vue-router</h3><p><a href="http://router.vuejs.org/zh-cn/essentials/getting-started.html" target="_blank" rel="external">vue-router</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">Vue.use(VueRouter);</div><div class="line"></div><div class="line"><span class="keyword">let</span> app = Vue.extend(App);</div><div class="line"></div><div class="line"><span class="keyword">let</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">    <span class="attr">linkActiveClass</span>: <span class="string">'active'</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line">router.map(&#123;</div><div class="line">    <span class="string">'/goods'</span>: &#123;</div><div class="line">        <span class="attr">component</span>: goods</div><div class="line">    &#125;,</div><div class="line">    <span class="string">'/ratings'</span>: &#123;</div><div class="line">        <span class="attr">component</span>: ratings</div><div class="line">    &#125;,</div><div class="line">    <span class="string">'seller'</span>: &#123;</div><div class="line">        <span class="attr">component</span>: seller</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">router.start(app, <span class="string">'#app'</span>);</div><div class="line">router.go(<span class="string">'/goods'</span>);</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/16/vue.js仿饿了吗App/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DingJian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ding   Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/16/vue.js仿饿了吗App/" itemprop="url">vue.js仿饿了吗App</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-16T19:29:03+08:00">
+                2017-02-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>本项目仿饿了吗App商家模块（包括商品、评论、商家介绍等各模块），使用Vue.js+es6+webpack等前端热门技术，采用组件化、模块化开发方式。使用flex布局，stylus css预处理器。使用vue-router插件实现路由，数据交互用vue-resource插件实现。<br>项目运行：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//克隆项目</span></div><div class="line">git clone https:<span class="comment">//github.com/dj940212/sell.git</span></div><div class="line"><span class="comment">//安装依赖</span></div><div class="line">npm install</div><div class="line"><span class="comment">//运行项目</span></div><div class="line">npm run dev</div></pre></td></tr></table></figure></p>
+<p><img src="http://imglf0.nosdn.127.net/img/MklXTVZ2ekNiL0Jsbml5RVZBaDhIUGlLNks2MS9EWjNZQ01SUXI2bFRLY29tSmhUUytSbGt3PT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="饿了吗商家页面"></p>
+<h3 id="1-项目目录"><a href="#1-项目目录" class="headerlink" title="1.项目目录"></a>1.项目目录</h3><p>本项目使用webpack模版<br><img src="http://imglf0.nosdn.127.net/img/MklXTVZ2ekNiL0Jsbml5RVZBaDhISGRiRzNwcmc4bEdFV2lpOHpPaUw1QzlZNXh4WSs3QTBBPT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt=""></p>
+<h3 id="2-项目组件结构"><a href="#2-项目组件结构" class="headerlink" title="2.项目组件结构"></a>2.项目组件结构</h3><p>下面为本项目的各组件结构（图为Chrome插件 Vue Devtools 截图）<br><img src="http://imglf1.nosdn.127.net/img/MklXTVZ2ekNiL0Jsbml5RVZBaDhIRUlrY0lEenpqMzJvb2JVdWhZN0gwakszeGl6OG9rL3JRPT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt=""></p>
+<h3 id="3-mock数据"><a href="#3-mock数据" class="headerlink" title="3.mock数据"></a>3.mock数据</h3><p>本项目为纯前端项目，项目中数据均为模拟数据，</p>
+<p><img src="http://imglf.nosdn.127.net/img/MklXTVZ2ekNiL0Jsbml5RVZBaDhIQVJPL2dxdVI5bDQxVDNhS3g2YWIxMU8zRzZYNVJrSDVnPT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt=""></p>
+<h3 id="4-vue-router"><a href="#4-vue-router" class="headerlink" title="4.vue-router"></a>4.vue-router</h3><p><a href="http://router.vuejs.org/zh-cn/essentials/getting-started.html" target="_blank" rel="external">vue-router</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">Vue.use(VueRouter);</div><div class="line"></div><div class="line"><span class="keyword">let</span> app = Vue.extend(App);</div><div class="line"></div><div class="line"><span class="keyword">let</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">    <span class="attr">linkActiveClass</span>: <span class="string">'active'</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line">router.map(&#123;</div><div class="line">    <span class="string">'/goods'</span>: &#123;</div><div class="line">        <span class="attr">component</span>: goods</div><div class="line">    &#125;,</div><div class="line">    <span class="string">'/ratings'</span>: &#123;</div><div class="line">        <span class="attr">component</span>: ratings</div><div class="line">    &#125;,</div><div class="line">    <span class="string">'seller'</span>: &#123;</div><div class="line">        <span class="attr">component</span>: seller</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">router.start(app, <span class="string">'#app'</span>);</div><div class="line">router.go(<span class="string">'/goods'</span>);</div></pre></td></tr></table></figure>
+<h3 id="5-header组件"><a href="#5-header组件" class="headerlink" title="5.header组件"></a>5.header组件</h3>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/16/在GitHubPages上搭建项目主页/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DingJian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ding   Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/16/在GitHubPages上搭建项目主页/" itemprop="url">在GitHubPages上搭建项目主页</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-16T15:10:36+08:00">
+                2017-02-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Github Pages是Github免费提供给开发者的一款托管个人网站的产品，这绝对是个好东西啊。目前来看只能托管静态内容，但是这已经足够我们用了。<br><a href="https://pages.github.com" target="_blank" rel="external"><em>GitHub Pages主页</em></a></p>
+<ul>
+<li>终端里切换到你的工作目录</li>
+<li>创建一个新的gh-pages分支<br>  <code>git checkout --orphan gh-pages</code><blockquote>
+<p>//新建一个gh-pages分支并且没有任何提交历史，不要–orphan也行</p>
+</blockquote>
+</li>
+<li>删除里面的内容（可选，如果里面是你要提交的内容就不用删）<br><code>rm -rf *</code><blockquote>
+<p>//删除当前目录全部内容（可选）</p>
+</blockquote>
+</li>
+<li>git add和git commit之后就可以正常push了<br><code>git push -u origin gh-pages</code></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/16/H5报告/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DingJian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ding   Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/16/H5报告/" itemprop="url">H5报告</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-16T13:10:16+08:00">
+                2017-02-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h3><p><a href="http://www.huxiaofei.me/webApp" target="_blank" rel="external"><em>项目预览</em></a></p>
+<p>本项目为一个H5报告页面，运用了HTML5、CSS3、JS等技术，采用组件式开发，页面滚动采用了基于jQuery的FullPage.js，运用Canvas制作了柱形图、折线图、饼图、散点图、雷达图等多种动态图表组件。</p>
+<h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p><img src="http://imglf.nosdn.127.net/img/MklXTVZ2ekNiL0JqaHcvVlpGTk5rMDQyVGk1aXdRUE9uU0hDWnI2TzVmR2d1TWtBQkZTTVRRPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="核心对象"></p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//page 上绑定进入和离开事件处理程序</span></div><div class="line">$(<span class="string">'.page'</span>).on(<span class="string">'onLeave'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( $(<span class="keyword">this</span>).attr(<span class="string">'id'</span>) ,<span class="string">'==&gt;&gt;'</span> ,<span class="string">'onLeave'</span> );</div><div class="line">    $(<span class="keyword">this</span>).find(<span class="string">'.component'</span>).trigger(<span class="string">'onLeave'</span>);</div><div class="line">&#125;)</div><div class="line">$(<span class="string">'.page'</span>).on(<span class="string">'onLoad'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( $(<span class="keyword">this</span>).attr(<span class="string">'id'</span>) ,<span class="string">'==&gt;&gt;'</span> ,<span class="string">'onLoad'</span> );</div><div class="line">    $(<span class="keyword">this</span>).find(<span class="string">'.component'</span>).trigger(<span class="string">'onLoad'</span>);</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//component上绑定进入和离开事件处理程序</span></div><div class="line">$(<span class="string">'.component'</span>).on(<span class="string">'onLoad'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).fadeIn();</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;)</div><div class="line">$(<span class="string">'.component'</span>).on(<span class="string">'onLeave'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).fadeOut();</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="核心对象与方法"><a href="#核心对象与方法" class="headerlink" title="核心对象与方法"></a>核心对象与方法</h3><p>H5为整个项目的内容组件对象，H5包含addPage（）、addComponent（）、loader（）三个方法。addComponent()方法接受两个参数，第一个参数为组件名name，第二个参数为一个对象cfg，储存组件基本参数。loader()方法,每个方法都返回<code>this</code>,使其能形成链式调用。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">h5</div><div class="line">.addPage(<span class="string">'face'</span>)</div><div class="line">    .addComponent(<span class="string">'logo'</span>,&#123;</div><div class="line">        <span class="attr">text</span>:<span class="string">'logo'</span>,</div><div class="line">        <span class="attr">width</span>:<span class="number">400</span>,</div><div class="line">        <span class="attr">height</span>:<span class="number">100</span>,</div><div class="line">        <span class="attr">css</span>:&#123;<span class="attr">backgroundColor</span>:<span class="string">'red'</span>,<span class="attr">top</span>:<span class="number">200</span>,<span class="attr">opacity</span>:<span class="number">0</span>&#125;,</div><div class="line">        <span class="attr">center</span>:<span class="literal">true</span>,</div><div class="line">        <span class="attr">animateIn</span>:&#123;<span class="attr">opacity</span>:<span class="number">1</span>&#125;,</div><div class="line">        <span class="attr">animateOut</span>:&#123;<span class="attr">opacity</span>:<span class="number">0</span>&#125;</div><div class="line">    &#125;)</div><div class="line">    .addComponent(<span class="string">'slogan'</span>,&#123;</div><div class="line">        <span class="attr">text</span>:<span class="string">'slogan'</span>,</div><div class="line">        <span class="attr">width</span>:<span class="number">400</span>,</div><div class="line">        <span class="attr">height</span>:<span class="number">100</span>,</div><div class="line">        <span class="attr">css</span>:&#123;<span class="attr">backgroundColor</span>:<span class="string">'red'</span>,<span class="attr">top</span>:<span class="number">350</span>&#125;,</div><div class="line">        <span class="attr">center</span>:<span class="literal">true</span>,</div><div class="line">    &#125;)</div><div class="line">.addPage(<span class="string">'desc'</span>)</div><div class="line">    .addComponent(<span class="string">'caption'</span>,&#123;</div><div class="line">        <span class="attr">text</span>:<span class="string">'核心理念'</span>,</div><div class="line">        <span class="attr">width</span>:<span class="number">400</span>,</div><div class="line">        <span class="attr">height</span>:<span class="number">100</span>,</div><div class="line">        <span class="attr">css</span>:&#123;<span class="attr">backgroundColor</span>:<span class="string">'green'</span>,<span class="attr">top</span>:<span class="number">350</span>&#125;,</div><div class="line">        <span class="attr">center</span>:<span class="literal">true</span>,</div><div class="line">    &#125;)</div><div class="line">.addPage(<span class="string">'page-3'</span>)</div><div class="line">    .addComponent(<span class="string">'caption'</span>,&#123;<span class="attr">text</span>:<span class="string">'课程方向分布'</span>&#125;)</div><div class="line">.loader( );</div></pre></td></tr></table></figure></p>
+<h4 id="loader-方法"><a href="#loader-方法" class="headerlink" title="loader( )方法"></a>loader( )方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.loader = <span class="function"><span class="keyword">function</span>(<span class="params"> firstPage </span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.el.fullpage(&#123;</div><div class="line">            <span class="attr">onLeave</span>:<span class="function"><span class="keyword">function</span>(<span class="params"> index, nextIndex, direction</span>) </span>&#123;</div><div class="line">                $(<span class="keyword">this</span>).find(<span class="string">'.h5_component'</span>).trigger(<span class="string">'onLeave'</span>);</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">afterLoad</span>:<span class="function"><span class="keyword">function</span>(<span class="params"> anchorLink, index </span>) </span>&#123;</div><div class="line">                $(<span class="keyword">this</span>).find(<span class="string">'.h5_component'</span>).trigger(<span class="string">'onLoad'</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">this</span>.page[<span class="number">0</span>].find(<span class="string">'.h5_component'</span>).trigger(<span class="string">'onLoad'</span>);</div><div class="line">        <span class="keyword">this</span>.el.show();</div><div class="line">        <span class="keyword">if</span>(firstPage)&#123;</div><div class="line">            $.fn.fullpage.moveTo( firstPage );</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
 
 
 
+          </div>
+          
 
 
+          
 
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="DingJian" />
+          <p class="site-author-name" itemprop="name">DingJian</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/photos/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
 
 
+      </section>
 
-<script>
-(function() {
-    var OriginTitile = document.title, titleTime;
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            document.title = '死鬼去哪里了！';
-            clearTimeout(titleTime);
-        } else {
-            document.title = '(つェ⊂)咦!又好了!';
-            titleTime = setTimeout(function() {
-                document.title = OriginTitile;
-            },2000);
-        }
-    });
-})();
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">DingJian</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.1"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>

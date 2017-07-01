@@ -1,26 +1,99 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
-    
-
-    
-
-    
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
-    <meta charset="utf-8">
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
     
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-    <title>雅虎军规 | Ding   Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="theme-color" content="#3F51B5">
-    
-    
-    <meta name="keywords" content="性能优化">
-    <meta name="description" content="当我们打开一个网页时，事实上，只有10%-20%的最终用户响应时间是花在从web服务器获取HTML文档并传送到浏览器的，至少80%的最终用户响应时间是花在了页面中的组件上（图片、脚本、样式表、Flash等）、太慢的网站经常会造成访客不再回返，因此，把精力放在这80%的时间可以极大的改善web的性能。而请求组件需要伴随着HTTP请求，而减少HTTP请求、减小HTTP请求大小等都是改善web性能的最佳">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="性能优化," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="当我们打开一个网页时，事实上，只有10%-20%的最终用户响应时间是花在从web服务器获取HTML文档并传送到浏览器的，至少80%的最终用户响应时间是花在了页面中的组件上（图片、脚本、样式表、Flash等）、太慢的网站经常会造成访客不再回返，因此，把精力放在这80%的时间可以极大的改善web的性能。而请求组件需要伴随着HTTP请求，而减少HTTP请求、减小HTTP请求大小等都是改善web性能的最佳">
 <meta property="og:type" content="article">
 <meta property="og:title" content="雅虎军规">
 <meta property="og:url" content="http://yoursite.com/2017/02/17/雅虎军规/index.html">
@@ -30,169 +103,303 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="雅虎军规">
 <meta name="twitter:description" content="当我们打开一个网页时，事实上，只有10%-20%的最终用户响应时间是花在从web服务器获取HTML文档并传送到浏览器的，至少80%的最终用户响应时间是花在了页面中的组件上（图片、脚本、样式表、Flash等）、太慢的网站经常会造成访客不再回返，因此，把精力放在这80%的时间可以极大的改善web的性能。而请求组件需要伴随着HTTP请求，而减少HTTP请求、减小HTTP请求大小等都是改善web性能的最佳">
-    
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@1.6.1/css/style.css">
-    <script>window.lazyScripts=[]</script>
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/17/雅虎军规/"/>
+
+
+
+
+
+  <title>雅虎军规 | Ding   Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 
-<body>
-    <div id="loading" class="active"></div>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-    <aside id="menu" class="hide" >
-  <div class="inner flex-row-vertical">
-    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-        <i class="icon icon-lg icon-close"></i>
-    </a>
-    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
-      <div class="brand">
-        <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/img/avatar.jpg">
-        </a>
-        <hgroup class="introduce">
-          <h5 class="nickname">DingJian</h5>
-          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
-        </hgroup>
-      </div>
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ding   Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    <div class="scroll-wrap flex-col">
-      <ul class="nav">
-        
-            <li class="waves-block waves-effect">
-              <a href="/"  >
-                <i class="icon icon-lg icon-home"></i>
-                主页
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/archives"  >
-                <i class="icon icon-lg icon-archives"></i>
-                Archives
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/tags"  >
-                <i class="icon icon-lg icon-tags"></i>
-                Tags
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/categories"  >
-                <i class="icon icon-lg icon-th-list"></i>
-                Categories
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://github.com/yscoder" target="_blank" >
-                <i class="icon icon-lg icon-github"></i>
-                Github
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="http://www.weibo.com/ysweb" target="_blank" >
-                <i class="icon icon-lg icon-weibo"></i>
-                Weibo
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/custom"  >
-                <i class="icon icon-lg icon-link"></i>
-                测试
-              </a>
-            </li>
-        
-      </ul>
-    </div>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
-</aside>
 
-    <main id="main">
-        <header class="top-header" id="header">
-    <div class="flex-row">
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
-          <i class="icon icon-lg icon-navicon"></i>
-        </a>
-        <div class="flex-col header-title ellipsis">雅虎军规</div>
-        
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
-        
-        
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
-        
-    </div>
-</header>
-<header class="content-header post-header">
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
 
-    <div class="container fade-scale">
-        <h1 class="title">雅虎军规</h1>
-        <h5 class="subtitle">
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
             
-                <time datetime="2017-02-17T05:40:46.000Z" itemprop="datePublished" class="page-time">
-  2017-02-17
-</time>
-
-
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程/">编程</a></li></ul>
-
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-        </h5>
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
     </div>
 
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
     
 
+  
 
-</header>
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/17/雅虎军规/">
 
-<div class="container body-wrap">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DingJian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ding   Blog">
+    </span>
+
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#规则1：减少HTTP请求"><span class="post-toc-number">1.</span> <span class="post-toc-text">规则1：减少HTTP请求</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#规则2：使用内容发布网络"><span class="post-toc-number">2.</span> <span class="post-toc-text">规则2：使用内容发布网络</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#规则3：添加Expires头"><span class="post-toc-number">3.</span> <span class="post-toc-text">规则3：添加Expires头</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#规则4：压缩组件（使用gzip编码压缩http响应包）"><span class="post-toc-number">4.</span> <span class="post-toc-text">规则4：压缩组件（使用gzip编码压缩http响应包）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#规则5：将样式表放在顶部"><span class="post-toc-number">5.</span> <span class="post-toc-text">规则5：将样式表放在顶部</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#规则6：将脚本放在底部"><span class="post-toc-number">6.</span> <span class="post-toc-text">规则6：将脚本放在底部</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#规则7：避免CSS表达式"><span class="post-toc-number">7.</span> <span class="post-toc-text">规则7：避免CSS表达式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#规则8：使用外部的JavaScript和CSS"><span class="post-toc-number">8.</span> <span class="post-toc-text">规则8：使用外部的JavaScript和CSS</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#规则9：减少DNS查找"><span class="post-toc-number">9.</span> <span class="post-toc-text">规则9：减少DNS查找</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#规则10：精简Javascript"><span class="post-toc-number">10.</span> <span class="post-toc-text">规则10：精简Javascript</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#规则11：避免重定向"><span class="post-toc-number">11.</span> <span class="post-toc-text">规则11：避免重定向</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#规则12：移除重复脚本"><span class="post-toc-number">12.</span> <span class="post-toc-text">规则12：移除重复脚本</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#规则13：配置ETag"><span class="post-toc-number">13.</span> <span class="post-toc-text">规则13：配置ETag</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#规则14：使Ajax可缓存"><span class="post-toc-number">14.</span> <span class="post-toc-text">规则14：使Ajax可缓存</span></a></li></ol>
-        </nav>
-    </aside>
-    
-<article id="post-雅虎军规"
-  class="post-article article-type-post fade" itemprop="blogPost">
+      <header class="post-header">
 
-    <div class="post-card">
-        <h1 class="post-card-title">雅虎军规</h1>
+        
+        
+          <h1 class="post-title" itemprop="name headline">雅虎军规</h1>
+        
+
         <div class="post-meta">
-            <time class="post-time" title="2017-02-17 13:40:46" datetime="2017-02-17T05:40:46.000Z"  itemprop="datePublished">2017-02-17</time>
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-17T13:40:46+08:00">
+                2017-02-17
+              </time>
+            
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程/">编程</a></li></ul>
-
-
 
             
-<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
-    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
-</span>
+          </span>
 
-
+          
+            <span class="post-category" >
             
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
 
         </div>
-        <div class="post-content" id="post-content" itemprop="postContent">
-            <p>当我们打开一个网页时，事实上，只有10%-20%的最终用户响应时间是花在从web服务器获取HTML文档并传送到浏览器的，至少80%的最终用户响应时间是花在了页面中的组件上（图片、脚本、样式表、Flash等）、太慢的网站经常会造成访客不再回返，因此，把精力放在这80%的时间可以极大的改善web的性能。而请求组件需要伴随着HTTP请求，而减少HTTP请求、减小HTTP请求大小等都是改善web性能的最佳实践</p>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>当我们打开一个网页时，事实上，只有10%-20%的最终用户响应时间是花在从web服务器获取HTML文档并传送到浏览器的，至少80%的最终用户响应时间是花在了页面中的组件上（图片、脚本、样式表、Flash等）、太慢的网站经常会造成访客不再回返，因此，把精力放在这80%的时间可以极大的改善web的性能。而请求组件需要伴随着HTTP请求，而减少HTTP请求、减小HTTP请求大小等都是改善web性能的最佳实践</p>
 <h4 id="规则1：减少HTTP请求"><a href="#规则1：减少HTTP请求" class="headerlink" title="规则1：减少HTTP请求"></a>规则1：减少HTTP请求</h4><p>改善响应时间的最简单途径就是减少组件(图片，脚本，样式表、Flash等）的数量，并由此减少http请求的数量<br>（1）CSS Sprites：将多个图片合并到一个单独的图片中，再结合css的background-position属性一起使用，通过合并图片减少http请求（合并后的图片会比分离的图片的总和要小，因为它降低了图片自身的开销（颜色表，格式信息等））<br>适用场景：若需要在页面中为背景，按钮，导航栏，链接等提供大量图片，可使用CSS Sprites<br>（2）合并脚本和样式表：若将css代码和javascript代码分别放在多个文件中，每个文件都会导致一个额外的http请求，将这些文件合并到一个文件中，可以减少http请求的数量并缩短最终用户时间<br>注：若不同页面需要不同的脚本，可能脚本合并的组合数会比较多</p>
 <h4 id="规则2：使用内容发布网络"><a href="#规则2：使用内容发布网络" class="headerlink" title="规则2：使用内容发布网络"></a>规则2：使用内容发布网络</h4><p>通常来说，Web客户端离当前Web服务器越近，响应时间会更快<br>（1）内容发布网络：内容发布网络是一组分布在多个不同地理位置的Web服务器，用于更加有效地向用户发布内容<br>（2）一些大型公司都拥有他们自己的CDN，但使用一个CDN服务提供商更为有效<br>优点：对于地理上分散的用户人群来说，CDN能轻易地得到响应速度上的提高<br>         除了缩短响应时间之外，CDN还提供备份，扩展存储功能和进行缓存等服务<br>缺点：CDN服务开销可能比较大，且CDN服务提供商在其所有客户之间共享其Web服务组，可能会受到其它网站流量的影响<br>         无法直接控制组件服务器所带来的特殊麻烦，如修改HTTP响应头必须通过服务器提供商来完成</p>
 <h4 id="规则3：添加Expires头"><a href="#规则3：添加Expires头" class="headerlink" title="规则3：添加Expires头"></a>规则3：添加Expires头</h4><p>（1）主要通过配置组件，使用一个长久的Expires头，使这些组件能够被缓存，使在后续的页面浏览中避免不必要的http请求（浏览器可以直接从硬盘上读取组件而无需生成任何http流量）,web服务器使用Expires头来告诉web客户端它可以使用一个组件的当前副本，直到指定的时间为止<br>（2）长久的Expires头最常用于图片，但应该将其应用在所有组件上，包括脚本、样式表和Flash等不经常变化的组件，但添加长久的Expires会带来额外的开发成本<br>（3）浏览器（和代理）通过使用缓存来减少http请求的数量，并减小http响应的大小，从而使页面加载得更快，Expires在http响应中发送，web服务器通过使用Expires头来告诉Web客户端它可以使用一个组件的当前副本</p>
@@ -212,299 +419,382 @@
 <h4 id="规则12：移除重复脚本"><a href="#规则12：移除重复脚本" class="headerlink" title="规则12：移除重复脚本"></a>规则12：移除重复脚本</h4><p>（1）重复脚本损伤性能的方式有两种——不必要的HTTP请求和执行javascript所浪费的时间<br>（2）在页面中多次包含相同的脚本会使页面变慢<br>       在IE中，如果脚本没有被缓存，或在重新加载页面时，会产生额外的http请求<br>       在火狐和IE中，脚本会被多次求值</p>
 <h4 id="规则13：配置ETag"><a href="#规则13：配置ETag" class="headerlink" title="规则13：配置ETag"></a>规则13：配置ETag</h4><p>（1）ETag（实体标签）是web服务器和浏览器用于确认缓存组件的一种机制<br>（2）浏览器下载组件时，会将它们存储到缓存中，在后续的页面查看中，如果缓存的组件是“新鲜”的，浏览器就会从磁盘上读取它，避免产生http请求，如果缓存的组件过期了（或者用户明确地重新加载了页面），浏览器在重用它之前必须首先检查它是否仍然有效，这称为一个条件get请求，如果浏览器缓存中的组件是有效的（即它能够和原始服务器上的组件相匹配），原始服务器不会返回整个组件，而是返回一个304的状态码<br>（3）服务器在检测缓存的组件是否和原始服务器上的组件匹配时有两种方式：比较最新修改日期，比较实体标签（ETag是唯一标识了一个组件的一个特定版本的字符串）<br>（4）ETag带来的问题，当浏览器向一台服务器获取了原始组件，又向另一台不同的服务器发起条件get请求时，ETag是不会匹配的<br>（5）即使组件具有长久的Expires头，一旦用户单击了Reload或Refresh按钮。依然会产生条件get请求</p>
 <h4 id="规则14：使Ajax可缓存"><a href="#规则14：使Ajax可缓存" class="headerlink" title="规则14：使Ajax可缓存"></a>规则14：使Ajax可缓存</h4>
-        </div>
-
-        <blockquote class="post-copyright">
-    <div class="content">
-        
-<span class="post-time">
-    Last updated: <time datetime="2017-02-26T11:43:12.000Z" itemprop="dateUpdated">2017-02-26 19:43:12</time>
-</span><br>
-
-
-        这里写留言或版权声明：<a href="/2017/02/17/雅虎军规/" target="_blank" rel="external">http://yoursite.com/2017/02/17/雅虎军规/</a>
+      
     </div>
-    <footer>
-        <a href="http://yoursite.com">
-            <img src="/img/avatar.jpg" alt="DingJian">
-            DingJian
-        </a>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/性能优化/" rel="tag"># 性能优化</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/17/设备像素比devicePixelRatio/" rel="next" title="设备像素比devicePixelRatio">
+                <i class="fa fa-chevron-left"></i> 设备像素比devicePixelRatio
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/21/Node-js-express构建电影网站/" rel="prev" title="Node.js+express构建电影网站">
+                Node.js+express构建电影网站 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
     </footer>
-</blockquote>
-
-        
-<div class="page-reward">
-    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
-</div>
+  </article>
 
 
 
-        <div class="post-footer">
-            
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能优化/">性能优化</a></li></ul>
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
-            
-<div class="page-share-wrap">
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
-
-<div class="page-share" id="pageShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/02/17/雅虎军规/&title=《雅虎军规》 — Ding   Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/02/17/雅虎军规/&title=《雅虎军规》 — Ding   Blog&source=" data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/17/雅虎军规/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《雅虎军规》 — Ding   Blog&url=http://yoursite.com/2017/02/17/雅虎军规/&via=http://yoursite.com" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/17/雅虎军规/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-
-    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
-        <i class="icon icon-share-alt icon-lg"></i>
-    </a>
-</div>
-
+  </div>
 
 
         </div>
-    </div>
-
-    
-<nav class="post-nav flex-row flex-justify-between">
+        
+          
   
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/02/21/Node-js-express构建电影网站/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Node.js+express构建电影网站</h4>
-      </a>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
-  
+  </div>
 
-  
-    <div class="waves-block waves-effect next">
-      <a href="/2017/02/17/设备像素比devicePixelRatio/" id="post-next" class="post-nav-link">
-        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">设备像素比devicePixelRatio</h4>
-      </a>
-    </div>
-  
-</nav>
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
 
+      
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-    
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="DingJian" />
+          <p class="site-author-name" itemprop="name">DingJian</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
 
-<div class="comments" id="comments">
-    <div class="ds-thread" data-thread-key="雅虎军规" data-title="雅虎军规" data-url="http://yoursite.com/2017/02/17/雅虎军规/"></div>
-</div>
-<script>
-lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
-
-var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
-lazyScripts.push('//unpkg.com/hexo-theme-material-indigo@1.6.1/js/embed.min.js');
-
-
-</script>
-
-
-
-
-
-
-
-
-
-
-</article>
-
-<div id="reward" class="page-modal reward-lay">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <h3 class="reward-title">
-        <i class="icon icon-quote-left"></i>
-        谢谢大爷~
-        <i class="icon icon-quote-right"></i>
-    </h3>
-    <ul class="reward-items">
-        
-        <li>
-            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
-            <p>微信</p>
-        </li>
-        
-
-        
-        <li>
-            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
-            <p>支付宝</p>
-        </li>
-        
-    </ul>
-</div>
-
-
-
-</div>
-
-        <footer class="footer">
-    <div class="top">
-        
-<p>
-    <span id="busuanzi_container_site_uv" style='display:none'>
-        站点总访客数：<span id="busuanzi_value_site_uv"></span>
-    </span>
-    <span id="busuanzi_container_site_pv" style='display:none'>
-        站点总访问量：<span id="busuanzi_value_site_pv"></span>
-    </span>
-</p>
-
-
-        <p>
-            
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
-        </p>
-    </div>
-    <div class="bottom">
-        <p>
-            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
-            <span>DingJian &copy; 2015 - 2017</span>
-        </p>
-    </div>
-</footer>
-
-    </main>
-    <div class="mask" id="mask"></div>
-<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
-
-
-
-<div class="global-share" id="globalShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/02/17/雅虎军规/&title=《雅虎军规》 — Ding   Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/02/17/雅虎军规/&title=《雅虎军规》 — Ding   Blog&source=" data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/17/雅虎军规/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《雅虎军规》 — Ding   Blog&url=http://yoursite.com/2017/02/17/雅虎军规/&via=http://yoursite.com" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/17/雅虎军规/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-<div class="page-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3aQXLCMAwF0N7/0nTTRTcxX5LpNM7zijEk8YMZYUn++orH69e4mkk+v752fc8NAwMD47aM13Jcfab64Pn9rz6DgYHxHMbVg5NwmbyukvK1YWBgYKwZb4LgMpiuQzMGBgbGnNFLdPMZDAwMjF4S2wujvc3iB3NxDAyMGzLyqvvfv/5IfwMDA+NWjFdxJA3I3maxt56fazEwMI5m5AGuuvTNpbRkPRgYGIcy8jQ1D6PVlHjDGjAwMB7AmLQVk0JYr2xXaBhgYGAczcgXnQfZ9R0mpb0NNUIMDIzbMvIEdVKfT76mJDGOOrEYGBjHMXZtCnNe9bkf78FiYGD8Y0ay4UtCcxJ283ZCHl4vy20YGBgHMaplr8lxihw/WQ8GBsapjLy8VQ2FybtJwa7wO2BgYBzK6LUSJ0W0/FnrL7f5v4GBgXFbRvOC+Kre4bDmYQsMDIyDGNUjFL22waQZGb2LgYHxAEYeHHvHMubLfXM3DAyMoxnV4xTV/WYe0PPtIAYGBkbveEQ+n5T+86D85t8DAwPjOEa1GZnPTAJ3IcHGwMB4DKPayOwd10iCb3lgYGAcyngVR28j2NvwFUIzBgbG0YxeTKtuH6uJ6+alY2BgHMGoppr5QvOwu2H7iIGB8QDGen6Sms4Ph0XNAwwMDIz4wER1+zhPbjEwMDDmjcb5ljFJjzEwMJ7AqLYw927+qiEbAwPjaYxJ6jg/cpEvMZnBwMA4jvENYjMsujH2jUQAAAAASUVORK5CYII=" alt="微信分享二维码">
-</div>
-
-
-
-
-    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
-<script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
-
-
-
-</script>
-
-<script src="//unpkg.com/hexo-theme-material-indigo@1.6.1/js/main.min.js"></script>
-
-
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<template id="search-tpl">
-<li class="item">
-    <a href="{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
             </div>
-            <time class="flex-col time">{date}</time>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/photos/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
         </div>
-    </a>
-</li>
-</template>
 
-<script src="//unpkg.com/hexo-theme-material-indigo@1.6.1/js/search.min.js" async></script>
+        
+        
 
+        
+        
 
-
-
-
-
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
 
 
+      </section>
 
-<script>
-(function() {
-    var OriginTitile = document.title, titleTime;
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            document.title = '死鬼去哪里了！';
-            clearTimeout(titleTime);
-        } else {
-            document.title = '(つェ⊂)咦!又好了!';
-            titleTime = setTimeout(function() {
-                document.title = OriginTitile;
-            },2000);
-        }
-    });
-})();
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#规则1：减少HTTP请求"><span class="nav-number">1.</span> <span class="nav-text">规则1：减少HTTP请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规则2：使用内容发布网络"><span class="nav-number">2.</span> <span class="nav-text">规则2：使用内容发布网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规则3：添加Expires头"><span class="nav-number">3.</span> <span class="nav-text">规则3：添加Expires头</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规则4：压缩组件（使用gzip编码压缩http响应包）"><span class="nav-number">4.</span> <span class="nav-text">规则4：压缩组件（使用gzip编码压缩http响应包）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规则5：将样式表放在顶部"><span class="nav-number">5.</span> <span class="nav-text">规则5：将样式表放在顶部</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规则6：将脚本放在底部"><span class="nav-number">6.</span> <span class="nav-text">规则6：将脚本放在底部</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规则7：避免CSS表达式"><span class="nav-number">7.</span> <span class="nav-text">规则7：避免CSS表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规则8：使用外部的JavaScript和CSS"><span class="nav-number">8.</span> <span class="nav-text">规则8：使用外部的JavaScript和CSS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规则9：减少DNS查找"><span class="nav-number">9.</span> <span class="nav-text">规则9：减少DNS查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规则10：精简Javascript"><span class="nav-number">10.</span> <span class="nav-text">规则10：精简Javascript</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规则11：避免重定向"><span class="nav-number">11.</span> <span class="nav-text">规则11：避免重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规则12：移除重复脚本"><span class="nav-number">12.</span> <span class="nav-text">规则12：移除重复脚本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规则13：配置ETag"><span class="nav-number">13.</span> <span class="nav-text">规则13：配置ETag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规则14：使Ajax可缓存"><span class="nav-number">14.</span> <span class="nav-text">规则14：使Ajax可缓存</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">DingJian</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.1"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
