@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Vue.js学习笔记 | Ding   Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Vue.js">
+    <meta name="description" content="自定义按键修饰符别名12//将键码为17的Ctrl健定义别名为ctrlVue.directive(&apos;on&apos;).keyCodes.ctrl=17;
+vue-resource get
+12345678910111213141516//获取一个普通的文本数据this.$http.get(&apos;a.txt&apos;).then(function(res)&amp;#123;    alert(res.status)&amp;#125">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue.js学习笔记">
+<meta property="og:url" content="http://yoursite.com/2016/12/21/Vue-js学习笔记/index.html">
+<meta property="og:site_name" content="Ding   Blog">
+<meta property="og:description" content="自定义按键修饰符别名12//将键码为17的Ctrl健定义别名为ctrlVue.directive(&apos;on&apos;).keyCodes.ctrl=17;
+vue-resource get
+12345678910111213141516//获取一个普通的文本数据this.$http.get(&apos;a.txt&apos;).then(function(res)&amp;#123;    alert(res.status)&amp;#125">
+<meta property="og:updated_time" content="2017-02-28T07:43:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue.js学习笔记">
+<meta name="twitter:description" content="自定义按键修饰符别名12//将键码为17的Ctrl健定义别名为ctrlVue.directive(&apos;on&apos;).keyCodes.ctrl=17;
+vue-resource get
+12345678910111213141516//获取一个普通的文本数据this.$http.get(&apos;a.txt&apos;).then(function(res)&amp;#123;    alert(res.status)&amp;#125">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@1.6.1/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">DingJian</h5>
+          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/ysweb" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Vue.js学习笔记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Vue.js学习笔记</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-12-21T05:49:24.000Z" itemprop="datePublished" class="page-time">
+  2016-12-21
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程/">编程</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自定义按键修饰符别名"><span class="post-toc-number">1.</span> <span class="post-toc-text">自定义按键修饰符别名</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vue-resource"><span class="post-toc-number">2.</span> <span class="post-toc-text">vue-resource</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vue-router"><span class="post-toc-number">3.</span> <span class="post-toc-text">vue-router</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vue生存周期"><span class="post-toc-number">4.</span> <span class="post-toc-text">vue生存周期</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#防止数据闪烁"><span class="post-toc-number">5.</span> <span class="post-toc-text">防止数据闪烁</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#计算属性"><span class="post-toc-number">6.</span> <span class="post-toc-text">计算属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vue实例方法"><span class="post-toc-number">7.</span> <span class="post-toc-text">vue实例方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#循环重复数据"><span class="post-toc-number">8.</span> <span class="post-toc-text">循环重复数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#过滤器"><span class="post-toc-number">9.</span> <span class="post-toc-text">过滤器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自定义指令"><span class="post-toc-number">10.</span> <span class="post-toc-text">自定义指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#监听数据变化"><span class="post-toc-number">11.</span> <span class="post-toc-text">监听数据变化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#父子组件数据传递"><span class="post-toc-number">12.</span> <span class="post-toc-text">父子组件数据传递</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#slot"><span class="post-toc-number">13.</span> <span class="post-toc-text">slot</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Vue-js学习笔记"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Vue.js学习笔记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016-12-21 13:49:24" datetime="2016-12-21T05:49:24.000Z"  itemprop="datePublished">2016-12-21</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程/">编程</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="自定义按键修饰符别名"><a href="#自定义按键修饰符别名" class="headerlink" title="自定义按键修饰符别名"></a>自定义按键修饰符别名</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//将键码为17的Ctrl健定义别名为ctrl</span></div><div class="line">Vue.directive(<span class="string">'on'</span>).keyCodes.ctrl=<span class="number">17</span>;</div></pre></td></tr></table></figure>
+<h3 id="vue-resource"><a href="#vue-resource" class="headerlink" title="vue-resource"></a>vue-resource</h3><p> get</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//获取一个普通的文本数据</span></div><div class="line"><span class="keyword">this</span>.$http.get(<span class="string">'a.txt'</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">    alert(res.status)</div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="string">"出错"</span>)</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//给服务发送数据:√</span></div><div class="line"><span class="keyword">this</span>.$http.get(<span class="string">'get.php'</span>,&#123;</div><div class="line">    <span class="attr">a</span>:<span class="number">1</span>,</div><div class="line">    <span class="attr">b</span>:<span class="number">2</span></div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">    alert(res.data);</div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">    alert(res.status);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p> post</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$http.post(<span class="string">'post.php'</span>,&#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>&#125;,&#123;</div><div class="line">    <span class="attr">emulateJSON</span>:<span class="literal">true</span>     <span class="comment">//发送json数据</span></div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">    alert(res.status)</div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="string">"出错"</span>)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>jsonp<br>好搜接口：<a href="https://sug.so.360.cn/suggest?callback=suggest_so&amp;word=a" target="_blank" rel="external">https://sug.so.360.cn/suggest?callback=suggest_so&amp;word=a</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$http.jsonp(<span class="string">'https://sug.so.360.cn/suggest'</span>,&#123;<span class="attr">word</span>:<span class="string">'a'</span>&#125;</div><div class="line">).then(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">    alert(res.data.s)</div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="string">"出错"</span>)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>百度接口：https:<br>//sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&amp;cb=show</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$http.jsonp(<span class="string">'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su'</span>,</div><div class="line">        &#123;<span class="attr">wd</span>:<span class="string">'a'</span>&#125;,</div><div class="line">        &#123;<span class="attr">jsonp</span>:<span class="string">'cb'</span>&#125; <span class="comment">//callback的名字，默认名字为"callback"</span></div><div class="line">    ).then(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">        alert(res.data.s)</div><div class="line">    &#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="string">"出错"</span>)</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h3><p>版本 0.7.13</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1.准备一个根组件</span></div><div class="line">        <span class="keyword">var</span> App = Vue.extend(); </div><div class="line">        <span class="comment">//2.Home News组件都准备</span></div><div class="line">        <span class="keyword">var</span> Home = Vue.extend(&#123;</div><div class="line">            <span class="attr">template</span>:<span class="string">'&lt;h3&gt;我是主页&lt;/h3&gt;'</span></div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">var</span> News = Vue.extend(&#123;</div><div class="line">            <span class="attr">template</span>:<span class="string">'&lt;h3&gt;卧室新闻&lt;/h3&gt;'</span></div><div class="line">        &#125;);</div><div class="line">        <span class="comment">//3.准备路由</span></div><div class="line">        <span class="keyword">var</span> router = <span class="keyword">new</span> VueRouter();</div><div class="line">        <span class="comment">//4.关联</span></div><div class="line">        router.map(&#123;</div><div class="line">            <span class="string">'home'</span>:&#123;</div><div class="line">                <span class="attr">component</span>:Home</div><div class="line">            &#125;,</div><div class="line">            <span class="string">'news'</span>:&#123;</div><div class="line">                <span class="attr">component</span>:News</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="comment">//5.跳转</span></div><div class="line">        router.redirect(&#123;</div><div class="line">            <span class="string">'/'</span>:<span class="string">'home'</span></div><div class="line">        &#125;);</div><div class="line">        <span class="comment">//6.启动路由</span></div><div class="line">        router.start(App,<span class="string">"#box"</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">router.map(&#123;</div><div class="line">    <span class="string">'home'</span>:&#123;</div><div class="line">        <span class="attr">component</span>:Home,</div><div class="line">        <span class="comment">//嵌套</span></div><div class="line">        subRoutes:&#123;</div><div class="line">            <span class="string">'login'</span>:&#123;</div><div class="line">                <span class="attr">component</span>:&#123;</div><div class="line">                    <span class="attr">template</span>:<span class="string">'&lt;strong&gt;我是登录信息&lt;/strong&gt;'</span></div><div class="line">                &#125;</div><div class="line">            &#125;,</div><div class="line">            <span class="string">'reg'</span>:&#123;</div><div class="line">                <span class="attr">component</span>:&#123;</div><div class="line">                    <span class="attr">template</span>:<span class="string">'&lt;strong&gt;我是注册信息&lt;/strong&gt;'</span></div><div class="line">                &#125;</div><div class="line">                </div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="string">'news'</span>:&#123;</div><div class="line">        <span class="attr">component</span>:News,</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;template id=<span class="string">"detail"</span>&gt;</div><div class="line">    &#123;&#123;$route.params | json&#125;&#125; </div><div class="line">    &lt;!-- 获取id --&gt;</div><div class="line">    &lt;br&gt; </div><div class="line">    &#123;&#123;$route.path&#125;&#125;</div><div class="line">    &lt;!-- 获取路径 --&gt;</div><div class="line">    &lt;br&gt;</div><div class="line">    &#123;&#123;$route.query | json&#125;&#125;</div><div class="line">    &lt;!--传入数据 测试：url后传入"?a=1&amp;b=2" --&gt;</div><div class="line">&lt;/template&gt;</div></pre></td></tr></table></figure>
+<h3 id="vue生存周期"><a href="#vue生存周期" class="headerlink" title="vue生存周期"></a>vue生存周期</h3><p>钩子函数：</p>
+<p>created       -&gt;  实例创建的时候执行<br>beforeCompile -&gt;  编译之前执行<br>compiled      -&gt;  编译之后执行<br>ready         -&gt;  文本节点插入到文档中了</p>
+<p>vm.$destroy()  //销毁vue实例对象<br>beforeDestroy -&gt;  销毁之前<br>destroyed     -&gt;  销毁之后</p>
+<h3 id="防止数据闪烁"><a href="#防止数据闪烁" class="headerlink" title="防止数据闪烁"></a>防止数据闪烁</h3><p>指令： v-cloak<br>指令： v-text<br>指令： v-html</p>
+<h3 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h3><p>默认形式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">computed: &#123;</div><div class="line">  <span class="attr">now</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Date</span>.now()</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>完整形式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">data:&#123;</div><div class="line">    <span class="attr">a</span>:<span class="number">1</span></div><div class="line">&#125;,</div><div class="line"><span class="attr">computed</span>: &#123;</div><div class="line">    <span class="attr">b</span>:&#123;</div><div class="line">        <span class="attr">get</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;    <span class="comment">//获取值</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.a + <span class="number">1</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">set</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;    <span class="comment">//设置值</span></div><div class="line">            <span class="keyword">this</span>.a = val;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">----------------------------------</div><div class="line"><span class="built_in">document</span>.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    vm.b=<span class="number">10</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="vue实例方法"><a href="#vue实例方法" class="headerlink" title="vue实例方法"></a>vue实例方法</h3><p> vm.$el -&gt; 元素<br> vm.$data -&gt; data<br> vm.$mount -&gt; 手动挂载vue程序</p>
+<p> vm.$options -&gt; 获取自定义属性<br> vm.destroy -&gt; 销毁对象</p>
+<p> vm.$log() -&gt; 查看现在数据的状态</p>
+<h3 id="循环重复数据"><a href="#循环重复数据" class="headerlink" title="循环重复数据"></a>循环重复数据</h3><p>track-by = “$index”</p>
+<h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><ul>
+<li><p>常用过滤器<br>capitalize uppercase currency<br>debounce -&gt; 延迟执行，空一个输入参数延迟毫秒<br>limitBy  -&gt; 限制数据个数<br>filterBy -&gt; 过滤数据<br>oderBy   -&gt; 排序</p>
+</li>
+<li><p>自定义过滤器</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Vue.filter(<span class="string">'todou'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">input</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> input &lt; <span class="number">10</span> ? <span class="string">'0'</span> + input: <span class="string">''</span>+input;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="number">9</span> | toDou   <span class="comment">// 09</span></div></pre></td></tr></table></figure>
+<p>格式化时间</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Vue.filter(<span class="string">'date'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">input</span>)</span>&#123;</div><div class="line">   <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(input);</div><div class="line">   <span class="keyword">return</span> date.getFullYear()+<span class="string">'-'</span>+(date.getMonth()+<span class="number">1</span>)+<span class="string">'-'</span>+date.getDate()+<span class="string">''</span></div><div class="line">   +date.getHours()+<span class="string">':'</span>+date.getMinutes()+<span class="string">':'</span>+date.getSecond();</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h3><p>Vue.drective(‘red’,function(){<br>    this.el.style.background=’red’;<br>})</p>
+<h3 id="监听数据变化"><a href="#监听数据变化" class="headerlink" title="监听数据变化"></a>监听数据变化</h3><pre><code>vm.$watch(name,function(){})                //浅度监视
+
+vm.$watch(name,function(){},{deep:true})   //深度监视
+</code></pre><h3 id="父子组件数据传递"><a href="#父子组件数据传递" class="headerlink" title="父子组件数据传递"></a>父子组件数据传递</h3><ul>
+<li>子组建获取父组件数据</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在调用子组件中</span></div><div class="line">&lt;bbb :m = <span class="string">"数据"</span>&gt;&lt;/bbb&gt;</div><div class="line"></div><div class="line">子组件之内：</div><div class="line">props:[<span class="string">'m'</span>,<span class="string">'myMsg'</span>]</div></pre></td></tr></table></figure>
+<ul>
+<li>父组件获得子组件数据<br>子组件把数据发送到父组件<br>vm.$emit(事件名称，数据)</li>
+</ul>
+<p>父组件接收</p>
+<p>v-on:事件名称=””</p>
+<h3 id="slot"><a href="#slot" class="headerlink" title="slot"></a>slot</h3><p>作用：占个位置</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2017-02-28T07:43:02.000Z" itemprop="dateUpdated">2017-02-28 15:43:02</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2016/12/21/Vue-js学习笔记/" target="_blank" rel="external">http://yoursite.com/2016/12/21/Vue-js学习笔记/</a>
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="DingJian">
+            DingJian
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue-js/">Vue.js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2016/12/21/Vue-js学习笔记/&title=《Vue.js学习笔记》 — Ding   Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2016/12/21/Vue-js学习笔记/&title=《Vue.js学习笔记》 — Ding   Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/12/21/Vue-js学习笔记/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vue.js学习笔记》 — Ding   Blog&url=http://yoursite.com/2016/12/21/Vue-js学习笔记/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2016/12/21/Vue-js学习笔记/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/12/23/ES6学习笔记/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">ES6学习笔记</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/12/15/CSS清除浮动/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">CSS清除浮动</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="Vue-js学习笔记" data-title="Vue.js学习笔记" data-url="http://yoursite.com/2016/12/21/Vue-js学习笔记/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+lazyScripts.push('//unpkg.com/hexo-theme-material-indigo@1.6.1/js/embed.min.js');
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>DingJian &copy; 2015 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2016/12/21/Vue-js学习笔记/&title=《Vue.js学习笔记》 — Ding   Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2016/12/21/Vue-js学习笔记/&title=《Vue.js学习笔记》 — Ding   Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/12/21/Vue-js学习笔记/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vue.js学习笔记》 — Ding   Blog&url=http://yoursite.com/2016/12/21/Vue-js学习笔记/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2016/12/21/Vue-js学习笔记/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNklEQVR42u3awY6DMAxF0f7/TzPSrGakAvfZUBXnZoUoLTmpZMV2Xi88tt+xd/33zt792rcuHjJkyHgsYzscZBJ7n5InyZId/6YMGTLWYfCfI0tA4iH5lMxNhgwZMq565hjQea8MGTJkkO0gf55vKGXIkCGjlsTyF5MtIwnBt+TiMmTIeCCj3xi47/qj/Q0ZMmR8JWMLx/Gm8DMh+823ZMiQMZpB0lF+P8XzlicKxzJkyBjKSANlJyzWNoWonSBDhowFGLXUkU8uPZbR6mzIkCFjHIOnl7UCfbA/xY3MkyRWhgwZ4xgksUwPUtSalyn137UMGTJGM0ii2A+Xd1TGZMiQsRqDtweO79SmnibSJ4slQ4aMcYw0OKYvOw7oZIFQ8JUhQ8ZoRlqC52ltulmstQdkyJCxAoMX0dJAyVsFPHCj/0GGDBnLMIJojQv3vKjHi2snAVeGDBnjGHzSPLmttQH4e2XIkLEag/xEyuPbzc7zMmTImM0gE621NtMDZLwterI9lSFDxjhG/xhEOpXO0pwEWRkyZIxmpKX5ToOz88zufGTIkDGawUvwaVgkS8MbmWhbKUOGjKGMLRxpaYxfd1JoGTJkzGakwS4th/EDHLUtZkySIUPGYxm1clu6BeTls7TkJ0OGjHUYvKlZOyTBAy6f55uAK0OGjOUZtQSYV/5aLVUZMmTICI9qpVOstQRaAVeGDBkPZFzVDLiqbMcPZMiQIWMFRi2BTM9l8RZmp1QnQ4aMcYwfmINW5OyZR38AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.6.1/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.6.1/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

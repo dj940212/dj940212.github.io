@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>H5报告 | Ding   Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="项目介绍">
+    <meta name="description" content="项目简介项目预览
+本项目为一个H5报告页面，运用了HTML5、CSS3、JS等技术，采用组件式开发，页面滚动采用了基于jQuery的FullPage.js，运用Canvas制作了柱形图、折线图、饼图、散点图、雷达图等多种动态图表组件。
+项目结构
+事件12345678910111213141516171819//page 上绑定进入和离开事件处理程序$(&apos;.page&apos;).on(&apos;onLeave&apos;,f">
+<meta property="og:type" content="article">
+<meta property="og:title" content="H5报告">
+<meta property="og:url" content="http://yoursite.com/2017/02/16/H5报告/index.html">
+<meta property="og:site_name" content="Ding   Blog">
+<meta property="og:description" content="项目简介项目预览
+本项目为一个H5报告页面，运用了HTML5、CSS3、JS等技术，采用组件式开发，页面滚动采用了基于jQuery的FullPage.js，运用Canvas制作了柱形图、折线图、饼图、散点图、雷达图等多种动态图表组件。
+项目结构
+事件12345678910111213141516171819//page 上绑定进入和离开事件处理程序$(&apos;.page&apos;).on(&apos;onLeave&apos;,f">
+<meta property="og:image" content="http://imglf.nosdn.127.net/img/MklXTVZ2ekNiL0JqaHcvVlpGTk5rMDQyVGk1aXdRUE9uU0hDWnI2TzVmR2d1TWtBQkZTTVRRPT0.png?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg">
+<meta property="og:updated_time" content="2017-03-02T10:44:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="H5报告">
+<meta name="twitter:description" content="项目简介项目预览
+本项目为一个H5报告页面，运用了HTML5、CSS3、JS等技术，采用组件式开发，页面滚动采用了基于jQuery的FullPage.js，运用Canvas制作了柱形图、折线图、饼图、散点图、雷达图等多种动态图表组件。
+项目结构
+事件12345678910111213141516171819//page 上绑定进入和离开事件处理程序$(&apos;.page&apos;).on(&apos;onLeave&apos;,f">
+<meta name="twitter:image" content="http://imglf.nosdn.127.net/img/MklXTVZ2ekNiL0JqaHcvVlpGTk5rMDQyVGk1aXdRUE9uU0hDWnI2TzVmR2d1TWtBQkZTTVRRPT0.png?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@1.6.1/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">DingJian</h5>
+          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/ysweb" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">H5报告</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">H5报告</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-02-16T05:10:16.000Z" itemprop="datePublished" class="page-time">
+  2017-02-16
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程/">编程</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#项目简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">项目简介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#项目结构"><span class="post-toc-number">2.</span> <span class="post-toc-text">项目结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#事件"><span class="post-toc-number">3.</span> <span class="post-toc-text">事件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#核心对象与方法"><span class="post-toc-number">4.</span> <span class="post-toc-text">核心对象与方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#loader-方法"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">loader( )方法</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-H5报告"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">H5报告</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-02-16 13:10:16" datetime="2017-02-16T05:10:16.000Z"  itemprop="datePublished">2017-02-16</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程/">编程</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h3><p><a href="http://www.huxiaofei.me/webApp" target="_blank" rel="external"><em>项目预览</em></a></p>
+<p>本项目为一个H5报告页面，运用了HTML5、CSS3、JS等技术，采用组件式开发，页面滚动采用了基于jQuery的FullPage.js，运用Canvas制作了柱形图、折线图、饼图、散点图、雷达图等多种动态图表组件。</p>
+<h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p><img src="http://imglf.nosdn.127.net/img/MklXTVZ2ekNiL0JqaHcvVlpGTk5rMDQyVGk1aXdRUE9uU0hDWnI2TzVmR2d1TWtBQkZTTVRRPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="核心对象"></p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//page 上绑定进入和离开事件处理程序</span></div><div class="line">$(<span class="string">'.page'</span>).on(<span class="string">'onLeave'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( $(<span class="keyword">this</span>).attr(<span class="string">'id'</span>) ,<span class="string">'==&gt;&gt;'</span> ,<span class="string">'onLeave'</span> );</div><div class="line">    $(<span class="keyword">this</span>).find(<span class="string">'.component'</span>).trigger(<span class="string">'onLeave'</span>);</div><div class="line">&#125;)</div><div class="line">$(<span class="string">'.page'</span>).on(<span class="string">'onLoad'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( $(<span class="keyword">this</span>).attr(<span class="string">'id'</span>) ,<span class="string">'==&gt;&gt;'</span> ,<span class="string">'onLoad'</span> );</div><div class="line">    $(<span class="keyword">this</span>).find(<span class="string">'.component'</span>).trigger(<span class="string">'onLoad'</span>);</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//component上绑定进入和离开事件处理程序</span></div><div class="line">$(<span class="string">'.component'</span>).on(<span class="string">'onLoad'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).fadeIn();</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;)</div><div class="line">$(<span class="string">'.component'</span>).on(<span class="string">'onLeave'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).fadeOut();</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="核心对象与方法"><a href="#核心对象与方法" class="headerlink" title="核心对象与方法"></a>核心对象与方法</h3><p>H5为整个项目的内容组件对象，H5包含addPage（）、addComponent（）、loader（）三个方法。addComponent()方法接受两个参数，第一个参数为组件名name，第二个参数为一个对象cfg，储存组件基本参数。loader()方法,每个方法都返回<code>this</code>,使其能形成链式调用。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">h5</div><div class="line">.addPage(<span class="string">'face'</span>)</div><div class="line">    .addComponent(<span class="string">'logo'</span>,&#123;</div><div class="line">        <span class="attr">text</span>:<span class="string">'logo'</span>,</div><div class="line">        <span class="attr">width</span>:<span class="number">400</span>,</div><div class="line">        <span class="attr">height</span>:<span class="number">100</span>,</div><div class="line">        <span class="attr">css</span>:&#123;<span class="attr">backgroundColor</span>:<span class="string">'red'</span>,<span class="attr">top</span>:<span class="number">200</span>,<span class="attr">opacity</span>:<span class="number">0</span>&#125;,</div><div class="line">        <span class="attr">center</span>:<span class="literal">true</span>,</div><div class="line">        <span class="attr">animateIn</span>:&#123;<span class="attr">opacity</span>:<span class="number">1</span>&#125;,</div><div class="line">        <span class="attr">animateOut</span>:&#123;<span class="attr">opacity</span>:<span class="number">0</span>&#125;</div><div class="line">    &#125;)</div><div class="line">    .addComponent(<span class="string">'slogan'</span>,&#123;</div><div class="line">        <span class="attr">text</span>:<span class="string">'slogan'</span>,</div><div class="line">        <span class="attr">width</span>:<span class="number">400</span>,</div><div class="line">        <span class="attr">height</span>:<span class="number">100</span>,</div><div class="line">        <span class="attr">css</span>:&#123;<span class="attr">backgroundColor</span>:<span class="string">'red'</span>,<span class="attr">top</span>:<span class="number">350</span>&#125;,</div><div class="line">        <span class="attr">center</span>:<span class="literal">true</span>,</div><div class="line">    &#125;)</div><div class="line">.addPage(<span class="string">'desc'</span>)</div><div class="line">    .addComponent(<span class="string">'caption'</span>,&#123;</div><div class="line">        <span class="attr">text</span>:<span class="string">'核心理念'</span>,</div><div class="line">        <span class="attr">width</span>:<span class="number">400</span>,</div><div class="line">        <span class="attr">height</span>:<span class="number">100</span>,</div><div class="line">        <span class="attr">css</span>:&#123;<span class="attr">backgroundColor</span>:<span class="string">'green'</span>,<span class="attr">top</span>:<span class="number">350</span>&#125;,</div><div class="line">        <span class="attr">center</span>:<span class="literal">true</span>,</div><div class="line">    &#125;)</div><div class="line">.addPage(<span class="string">'page-3'</span>)</div><div class="line">    .addComponent(<span class="string">'caption'</span>,&#123;<span class="attr">text</span>:<span class="string">'课程方向分布'</span>&#125;)</div><div class="line">.loader( );</div></pre></td></tr></table></figure></p>
+<h4 id="loader-方法"><a href="#loader-方法" class="headerlink" title="loader( )方法"></a>loader( )方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.loader = <span class="function"><span class="keyword">function</span>(<span class="params"> firstPage </span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.el.fullpage(&#123;</div><div class="line">            <span class="attr">onLeave</span>:<span class="function"><span class="keyword">function</span>(<span class="params"> index, nextIndex, direction</span>) </span>&#123;</div><div class="line">                $(<span class="keyword">this</span>).find(<span class="string">'.h5_component'</span>).trigger(<span class="string">'onLeave'</span>);</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">afterLoad</span>:<span class="function"><span class="keyword">function</span>(<span class="params"> anchorLink, index </span>) </span>&#123;</div><div class="line">                $(<span class="keyword">this</span>).find(<span class="string">'.h5_component'</span>).trigger(<span class="string">'onLoad'</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">this</span>.page[<span class="number">0</span>].find(<span class="string">'.h5_component'</span>).trigger(<span class="string">'onLoad'</span>);</div><div class="line">        <span class="keyword">this</span>.el.show();</div><div class="line">        <span class="keyword">if</span>(firstPage)&#123;</div><div class="line">            $.fn.fullpage.moveTo( firstPage );</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2017-03-02T10:44:16.000Z" itemprop="dateUpdated">2017-03-02 18:44:16</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2017/02/16/H5报告/" target="_blank" rel="external">http://yoursite.com/2017/02/16/H5报告/</a>
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="DingJian">
+            DingJian
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/项目介绍/">项目介绍</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/02/16/H5报告/&title=《H5报告》 — Ding   Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/02/16/H5报告/&title=《H5报告》 — Ding   Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/16/H5报告/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《H5报告》 — Ding   Blog&url=http://yoursite.com/2017/02/16/H5报告/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/16/H5报告/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/02/16/在GitHubPages上搭建项目主页/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">在GitHubPages上搭建项目主页</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/12/23/ES6学习笔记/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">ES6学习笔记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="H5报告" data-title="H5报告" data-url="http://yoursite.com/2017/02/16/H5报告/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+lazyScripts.push('//unpkg.com/hexo-theme-material-indigo@1.6.1/js/embed.min.js');
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>DingJian &copy; 2015 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/02/16/H5报告/&title=《H5报告》 — Ding   Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/02/16/H5报告/&title=《H5报告》 — Ding   Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/16/H5报告/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《H5报告》 — Ding   Blog&url=http://yoursite.com/2017/02/16/H5报告/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/16/H5报告/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABzElEQVR42u3ay47CMBBE0fz/TxuJHQKbqi67CdL1amSNkxMWLffjuuQ1nmu9P97W+/5sZ/OCCxduzB3LpXBnp2b/qXzq9Glw4cJt5OZBStlX6F9scOHCvRnXDWQzqPt8uHDh3pmr4BQEXLhw/4W7i6IUO5Qr0YZcDS5cuAHXLZie+PtgfRcuXLgmd5gr+bANb4cLF24LVyleuIVO/epTTJzgwoV7mKu3PJX9qNixDHBw4cLt5NYeMduplT+UjzSqvHDhwo25+uH1CIV+1r08fYi7cOHCbeHmaU/tiqOnUi+BDC5cuO1cJf1wxyySLsnl/pZw4cKNubWyqVs81dOkYtcXLly4B7hKupIMURmXGOWHgAsXbgt3fdjtcuqFFbhw4d6Tq49E6O1Y5ZluewYuXLidXPeVbkHEHcaSAitcuHAPc2sDWEoJw229SG+ECxduI9dtjubNkuIpuHDhNnL1VUt+3OTK7sTChQt3Kzdpwbqlk1qLZVvHGC5cuCbXDV5JDcZNsabTZHDhwm3h1q4jSVvlyPUFLly47dxas0RPujYHMrhw4TZya4lN7XIDFy7c33Kj4FJKZtwRLrhw4XZy3YwjD2T6QAZcuHDbuQ9ZyOcemY4TgwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.6.1/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.6.1/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

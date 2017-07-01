@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>CSS清除浮动 | Ding   Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="CSS">
+    <meta name="description" content="浮动属性会使当前标签脱离文档流，同时会影响父标签（高度塌陷）以及前后标签的布局，下面总结平时常用的清除浮动的方法。1.浮动标签结尾处添加一个空标签&amp;lt;div style=&amp;quot;clear:both&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;;
+
+优点：简单易懂，浏览器支持好，不容易出问题缺点：增加很多空标签不易维护和理解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS清除浮动">
+<meta property="og:url" content="http://yoursite.com/2016/12/15/CSS清除浮动/index.html">
+<meta property="og:site_name" content="Ding   Blog">
+<meta property="og:description" content="浮动属性会使当前标签脱离文档流，同时会影响父标签（高度塌陷）以及前后标签的布局，下面总结平时常用的清除浮动的方法。1.浮动标签结尾处添加一个空标签&amp;lt;div style=&amp;quot;clear:both&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;;
+
+优点：简单易懂，浏览器支持好，不容易出问题缺点：增加很多空标签不易维护和理解">
+<meta property="og:updated_time" content="2016-12-15T06:50:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS清除浮动">
+<meta name="twitter:description" content="浮动属性会使当前标签脱离文档流，同时会影响父标签（高度塌陷）以及前后标签的布局，下面总结平时常用的清除浮动的方法。1.浮动标签结尾处添加一个空标签&amp;lt;div style=&amp;quot;clear:both&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;;
+
+优点：简单易懂，浏览器支持好，不容易出问题缺点：增加很多空标签不易维护和理解">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@1.6.1/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">DingJian</h5>
+          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/ysweb" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">CSS清除浮动</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">CSS清除浮动</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-12-15T05:43:31.000Z" itemprop="datePublished" class="page-time">
+  2016-12-15
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程/">编程</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-CSS清除浮动"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">CSS清除浮动</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016-12-15 13:43:31" datetime="2016-12-15T05:43:31.000Z"  itemprop="datePublished">2016-12-15</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程/">编程</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>浮动属性会使当前标签脱离文档流，同时会影响父标签（高度塌陷）以及前后标签的布局，下面总结平时常用的清除浮动的方法。<br>1.浮动标签结尾处添加一个空标签<code>&lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;</code>;</p>
+<blockquote>
+<p>优点：简单易懂，浏览器支持好，不容易出问题<br>缺点：增加很多空标签不易维护和理解</p>
+</blockquote>
+<a id="more"></a>
+<p>2.给父级标签添加<code>overflow:hidden</code></p>
+<blockquote>
+<p>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:hidden时，浏览器会自动检查浮动区域的高度<br>优点：简单、代码少、浏览器支持好<br>缺点：不能和position配合使用，因为超出的尺寸的会被隐藏。</p>
+</blockquote>
+<p>3.父级div定义 <code>overflow:auto</code> </p>
+<blockquote>
+<p>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:auto时，浏览器会自动检查浮动区域的高度<br>优点：简单、代码少、浏览器支持好<br>缺点：内部宽高超过父级div时，会出现滚动条。</p>
+</blockquote>
+<p>4.父级标签也一起浮动 </p>
+<blockquote>
+<p>原理：所有代码一起浮动，就变成了一个整体<br>缺点：会产生新的浮动问题,不推荐使用</p>
+</blockquote>
+<p>5.父级标签定义<code>display:table</code></p>
+<blockquote>
+<p>原理：将div属性变成表格<br>缺点：会产生新的未知问题,不推荐使用</p>
+</blockquote>
+<p>6.给父级元素添加 <code>&lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;</code></p>
+<blockquote>
+<p>目前比较通用的方法</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*清除浮动，防止高度塌陷*/</span></div><div class="line"><span class="comment">/*清除浮动，防止高度塌陷*/</span></div><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span>,</div><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line">	<span class="attribute">content</span>: <span class="string">" "</span>;</div><div class="line">	<span class="attribute">display</span>: table;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line">	<span class="attribute">clear</span>: both;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2016-12-15T06:50:44.000Z" itemprop="dateUpdated">2016-12-15 14:50:44</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2016/12/15/CSS清除浮动/" target="_blank" rel="external">http://yoursite.com/2016/12/15/CSS清除浮动/</a>
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="DingJian">
+            DingJian
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2016/12/15/CSS清除浮动/&title=《CSS清除浮动》 — Ding   Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2016/12/15/CSS清除浮动/&title=《CSS清除浮动》 — Ding   Blog&source=浮动属性会使当前标签脱离文档流，同时会影响父标签（高度塌陷）以及前后标签的布局，下面总结平时常用的清除浮动的方法。1.浮动标签结尾处添加一个空标签&lt;..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/12/15/CSS清除浮动/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CSS清除浮动》 — Ding   Blog&url=http://yoursite.com/2016/12/15/CSS清除浮动/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2016/12/15/CSS清除浮动/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/12/21/Vue-js学习笔记/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Vue.js学习笔记</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/12/14/windows中路径太长文件无法删除/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">windows中路径太长文件无法删除</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="CSS清除浮动" data-title="CSS清除浮动" data-url="http://yoursite.com/2016/12/15/CSS清除浮动/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+lazyScripts.push('//unpkg.com/hexo-theme-material-indigo@1.6.1/js/embed.min.js');
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>DingJian &copy; 2015 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2016/12/15/CSS清除浮动/&title=《CSS清除浮动》 — Ding   Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2016/12/15/CSS清除浮动/&title=《CSS清除浮动》 — Ding   Blog&source=浮动属性会使当前标签脱离文档流，同时会影响父标签（高度塌陷）以及前后标签的布局，下面总结平时常用的清除浮动的方法。1.浮动标签结尾处添加一个空标签&lt;..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/12/15/CSS清除浮动/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CSS清除浮动》 — Ding   Blog&url=http://yoursite.com/2016/12/15/CSS清除浮动/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2016/12/15/CSS清除浮动/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACHUlEQVR42u3ay26DQAwF0Pz/T1Op2yj02p5UYuawigoFDgvLr9crPq7fIzn7/vv9uL/P/TWjAwMD47GM6/b49IBPv5OzydPzd8PAwDiHkYTRJLBWY+P935N3w8DAwEiCZoKpBlYMDAyMOaMaNPPiFgMDA2NSxFZL1t59vl6LY2BgPJBRHQz85+8vzjcwMDAewriKR94ay8vRBW+FgYGxNWNZq2vckpsPFTAwMHZl5Otc1aI3H3P2xgMYGBinMaqA5MpJglhu2GFgYBzD6AXWVa38xZMNDAyM7RjV1a5qOVr9EOWxAQYGxtaMpH3WW56YJ47VsxgYGHsz8mRxvorRC8dR0w0DA+MYRnXc2GulTQYGUcDFwMDYlJGEtnw5LP9ak3QQAwPjBEYvIcupvYWM6jAVAwNjb8aqEjQfKvTCa/SJMTAwtmbkZWcyhsyHoMn9q0sbGBgYuzKqPblq8O2F1EJSiIGBcQyjGjrzEndVkfzHNRgYGJsyJo2w3vrFPJXEwMDAyEvHJHFstsYmi18YGBjbMRJejp+8VvUO0XMxMDC2YPQCbh5G84WMUcjGwMDYmtFL0fJk8RvrFCMYBgbGYxnVdYpq1tlr540msRgYGJsy8uZ+tdFfTTebtTgGBgZGHEyrixq9QPwxNcTAwMAIQvDkv/I1jmUBFwMD41GMahHbG2Tm5XGejGJgYJzAmAwG8jWyOW/BOBMDA+N5jB+a1x3z+47nLAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.6.1/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.6.1/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
