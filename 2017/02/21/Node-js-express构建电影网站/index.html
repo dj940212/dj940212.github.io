@@ -1,0 +1,821 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Node.js," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="本项目是一个简单的电影网站，实现了用户注册、登录、登出，电影的录入、移除、查看、修改等后台管管理功能。用户可以对电影进行评论，用户之间也可以相互评论。为了方便电影的录入，利用豆瓣Api，使用jsonp跨域请求，实现豆瓣电影数据同步。项目后端使用Node.js+express+MongoDB数据库构建，前端是使用jade模版引擎，样式使用了Bootstrap框架，以及jQuery工具库。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js+express构建电影网站">
+<meta property="og:url" content="http://yoursite.com/2017/02/21/Node-js-express构建电影网站/index.html">
+<meta property="og:site_name" content="Ding   Blog">
+<meta property="og:description" content="本项目是一个简单的电影网站，实现了用户注册、登录、登出，电影的录入、移除、查看、修改等后台管管理功能。用户可以对电影进行评论，用户之间也可以相互评论。为了方便电影的录入，利用豆瓣Api，使用jsonp跨域请求，实现豆瓣电影数据同步。项目后端使用Node.js+express+MongoDB数据库构建，前端是使用jade模版引擎，样式使用了Bootstrap框架，以及jQuery工具库。">
+<meta property="og:image" content="http://imglf0.nosdn.127.net/img/MklXTVZ2ekNiL0JQdWdiOFJNMEhXbjhmME9OZFpUVkdqMWxIL0N0NXZpRDRsRmZSdGk5eTR3PT0.png?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg">
+<meta property="og:image" content="http://imglf2.nosdn.127.net/img/MklXTVZ2ekNiL0JQdWdiOFJNMEhXbEc0Q2RuR3FGQzZMSjNQcVA5SEQrblhYMEJ4WWhNZW1BPT0.png?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg">
+<meta property="og:updated_time" content="2017-07-02T02:35:00.761Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node.js+express构建电影网站">
+<meta name="twitter:description" content="本项目是一个简单的电影网站，实现了用户注册、登录、登出，电影的录入、移除、查看、修改等后台管管理功能。用户可以对电影进行评论，用户之间也可以相互评论。为了方便电影的录入，利用豆瓣Api，使用jsonp跨域请求，实现豆瓣电影数据同步。项目后端使用Node.js+express+MongoDB数据库构建，前端是使用jade模版引擎，样式使用了Bootstrap框架，以及jQuery工具库。">
+<meta name="twitter:image" content="http://imglf0.nosdn.127.net/img/MklXTVZ2ekNiL0JQdWdiOFJNMEhXbjhmME9OZFpUVkdqMWxIL0N0NXZpRDRsRmZSdGk5eTR3PT0.png?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'CXRD600X38',
+      apiKey: '1753cdcfc30d722b1d60398ca31930fa',
+      indexName: 'blogIndex',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/21/Node-js-express构建电影网站/"/>
+
+
+
+
+
+  <title>Node.js+express构建电影网站 | Ding   Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ding   Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/21/Node-js-express构建电影网站/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DingJian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ding   Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Node.js+express构建电影网站</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-21T18:46:02+08:00">
+                2017-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本项目是一个简单的电影网站，实现了用户注册、登录、登出，电影的录入、移除、查看、修改等后台管管理功能。用户可以对电影进行评论，用户之间也可以相互评论。为了方便电影的录入，利用豆瓣Api，使用jsonp跨域请求，实现豆瓣电影数据同步。项目后端使用Node.js+express+MongoDB数据库构建，前端是使用jade模版引擎，样式使用了Bootstrap框架，以及jQuery工具库。<br><a id="more"></a></p>
+<p>运行项目</p>
+<blockquote>
+<ol>
+<li>git clone <a href="https://github.com/dj940212/showMovie.git" target="_blank" rel="external">https://github.com/dj940212/showMovie.git</a></li>
+<li>grunt</li>
+</ol>
+</blockquote>
+<h3 id="1-grunt集成自动化"><a href="#1-grunt集成自动化" class="headerlink" title="1.grunt集成自动化"></a>1.grunt集成自动化</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">grunt</span>)</span>&#123;</div><div class="line"></div><div class="line">    grunt.initConfig(&#123;</div><div class="line">        <span class="attr">watch</span>:&#123;</div><div class="line">            <span class="attr">jade</span>:&#123;</div><div class="line">                <span class="attr">files</span>:[<span class="string">'views/**'</span>],</div><div class="line">                <span class="attr">options</span>:&#123;</div><div class="line">                    <span class="attr">livereload</span>:<span class="literal">true</span></div><div class="line">                &#125;</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">js</span>:&#123;</div><div class="line">                <span class="attr">files</span>:[<span class="string">'public/js/**'</span>,<span class="string">'models/**/*.js'</span>,<span class="string">'schemas/**/*.js'</span>],</div><div class="line">                <span class="comment">//tasks:['jshint'],</span></div><div class="line">                options:&#123;</div><div class="line">                    <span class="attr">livereload</span>:<span class="literal">true</span>  <span class="comment">//重启服务</span></div><div class="line">                &#125;</div><div class="line">            &#125;,</div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        <span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">grunt</span>)</span>&#123;</div><div class="line"></div><div class="line">    grunt.initConfig(&#123;</div><div class="line">        <span class="attr">watch</span>:&#123;</div><div class="line">            <span class="attr">jade</span>:&#123;</div><div class="line">                <span class="attr">files</span>:[<span class="string">'views/**'</span>],</div><div class="line">                <span class="attr">options</span>:&#123;</div><div class="line">                    <span class="attr">livereload</span>:<span class="literal">true</span></div><div class="line">                &#125;</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">js</span>:&#123;</div><div class="line">                <span class="attr">files</span>:[<span class="string">'public/js/**'</span>,<span class="string">'models/**/*.js'</span>,<span class="string">'schemas/**/*.js'</span>],</div><div class="line">                <span class="comment">//tasks:['jshint'],</span></div><div class="line">                options:&#123;</div><div class="line">                    <span class="attr">livereload</span>:<span class="literal">true</span>  <span class="comment">//重启服务</span></div><div class="line">                &#125;</div><div class="line">            &#125;,</div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        <span class="attr">nodemon</span>:&#123;</div><div class="line">            <span class="attr">dev</span>:&#123;</div><div class="line">                <span class="attr">options</span>:&#123;</div><div class="line">                    <span class="attr">file</span>:<span class="string">'app.js'</span>,</div><div class="line">                    <span class="attr">args</span>:[],</div><div class="line">                    <span class="attr">ignoredFiles</span>:[<span class="string">'README.md'</span>,<span class="string">'node_modules/**'</span>,<span class="string">'.DS_Store'</span>],</div><div class="line">                    <span class="attr">watchedExtensions</span>:[<span class="string">'js'</span>],</div><div class="line">                    <span class="attr">watchedFolders</span>:[<span class="string">'./'</span>],</div><div class="line">                    <span class="attr">debug</span>:<span class="literal">true</span>,</div><div class="line">                    <span class="attr">delayTime</span>:<span class="number">1</span>,</div><div class="line">                    <span class="attr">env</span>:&#123;</div><div class="line">                        <span class="attr">PORT</span>:<span class="number">3000</span></div><div class="line">                    &#125;,</div><div class="line">                    <span class="attr">cwd</span>:__dirname</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        <span class="attr">concurrent</span>:&#123;</div><div class="line">            <span class="attr">tasks</span>:[<span class="string">'nodemon'</span>,<span class="string">'watch'</span>],</div><div class="line">            <span class="attr">options</span>:&#123;</div><div class="line">                <span class="attr">logConcurrentOutput</span>:<span class="literal">true</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">    grunt.loadNpmTasks(<span class="string">'grunt-contrib-watch'</span>) <span class="comment">//监听文件变更，注册其他任务启动</span></div><div class="line">    grunt.loadNpmTasks(<span class="string">'grunt-nodemon'</span>)  <span class="comment">//监听文件变更，重启服务</span></div><div class="line">    grunt.loadNpmTasks(<span class="string">'grunt-concurrent'</span>) <span class="comment">//并发执行任务</span></div><div class="line"></div><div class="line">    grunt.option(<span class="string">'force'</span>,<span class="literal">true</span>)  <span class="comment">//避免打断，强制执行</span></div><div class="line"></div><div class="line">    grunt.registerTask(<span class="string">'default'</span>,[<span class="string">'concurrent'</span>])</div><div class="line">&#125;:&#123;</div><div class="line">            <span class="attr">dev</span>:&#123;</div><div class="line">                <span class="attr">options</span>:&#123;</div><div class="line">                    <span class="attr">file</span>:<span class="string">'app.js'</span>,</div><div class="line">                    <span class="attr">args</span>:[],</div><div class="line">                    <span class="attr">ignoredFiles</span>:[<span class="string">'README.md'</span>,<span class="string">'node_modules/**'</span>,<span class="string">'.DS_Store'</span>],</div><div class="line">                    <span class="attr">watchedExtensions</span>:[<span class="string">'js'</span>],</div><div class="line">                    <span class="attr">watchedFolders</span>:[<span class="string">'./'</span>],</div><div class="line">                    <span class="attr">debug</span>:<span class="literal">true</span>,</div><div class="line">                    <span class="attr">delayTime</span>:<span class="number">1</span>,</div><div class="line">                    <span class="attr">env</span>:&#123;</div><div class="line">                        <span class="attr">PORT</span>:<span class="number">3000</span></div><div class="line">                    &#125;,</div><div class="line">                    <span class="attr">cwd</span>:__dirname</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        <span class="attr">concurrent</span>:&#123;</div><div class="line">            <span class="attr">tasks</span>:[<span class="string">'nodemon'</span>,<span class="string">'watch'</span>],</div><div class="line">            <span class="attr">options</span>:&#123;</div><div class="line">                <span class="attr">logConcurrentOutput</span>:<span class="literal">true</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">    grunt.loadNpmTasks(<span class="string">'grunt-contrib-watch'</span>) <span class="comment">//监听文件变更，注册其他任务启动</span></div><div class="line">    grunt.loadNpmTasks(<span class="string">'grunt-nodemon'</span>)  <span class="comment">//监听文件变更，重启服务</span></div><div class="line">    grunt.loadNpmTasks(<span class="string">'grunt-concurrent'</span>) <span class="comment">//并发执行任务</span></div><div class="line"></div><div class="line">    grunt.option(<span class="string">'force'</span>,<span class="literal">true</span>)  <span class="comment">//避免打断，强制执行</span></div><div class="line"></div><div class="line">    grunt.registerTask(<span class="string">'default'</span>,[<span class="string">'concurrent'</span>])</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="1-文件目录"><a href="#1-文件目录" class="headerlink" title="1.文件目录"></a>1.文件目录</h3><ul>
+<li><p>入口文件<br>index.js -&gt; 主程序入口<br>启动Express程序，启动并连接数据库，路由分发，引入配置</p>
+</li>
+<li><p>路由<br>routes.js  -&gt; 路由文件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">  <span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">app</span>)</span>&#123;</div><div class="line">    app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req,res,next</span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> _user = req.session.user;</div><div class="line"></div><div class="line">        app.locals.user = _user;</div><div class="line"></div><div class="line">        next()</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">    <span class="comment">// Index</span></div><div class="line">    app.get(<span class="string">'/'</span>, Index.index);</div><div class="line">    <span class="comment">//User</span></div><div class="line">    app.post(<span class="string">'/user/signup'</span>, User.signup)</div><div class="line">    app.post(<span class="string">'/user/signin'</span>, User.signin)</div><div class="line">    app.get(<span class="string">'/signin'</span>,User.showSignin)</div><div class="line">    app.get(<span class="string">'/signup'</span>,User.showSignup)</div><div class="line">    app.get(<span class="string">'/logout'</span>,User.logout)</div><div class="line">    app.get(<span class="string">'/admin/userlist'</span>,User.signinRequired,User.adminRequired,User.userlist);</div><div class="line"></div><div class="line">    <span class="comment">//Movie</span></div><div class="line">    <span class="comment">//详情页</span></div><div class="line">    app.get(<span class="string">'/movie/:id'</span>, Movie.detail);</div><div class="line">    <span class="comment">//列表页</span></div><div class="line">    app.get(<span class="string">'/admin/list'</span>,User.signinRequired,User.adminRequired, Movie.list);</div><div class="line">    <span class="comment">// 后台录入页</span></div><div class="line">    app.get(<span class="string">'/admin/movie'</span>,User.signinRequired,User.adminRequired, Movie.new);</div><div class="line">    <span class="comment">// 逻辑控制:更新</span></div><div class="line">    app.get(<span class="string">'/admin/update/:id'</span>,User.signinRequired,User.adminRequired, Movie.update);</div><div class="line">    <span class="comment">// 逻辑控制:插入</span></div><div class="line">    app.post(<span class="string">'/admin/movie/new'</span>,User.signinRequired,User.adminRequired, Movie.save);</div><div class="line">    <span class="comment">// 逻辑控制:删除</span></div><div class="line">    app.delete(<span class="string">'/admin/delete'</span>,User.signinRequired,User.adminRequired, Movie.del);</div><div class="line"></div><div class="line">    <span class="comment">//评论</span></div><div class="line">    app.post(<span class="string">'/user/comment'</span>,User.signinRequired,Comment.save)</div><div class="line"></div><div class="line">    <span class="comment">//分类</span></div><div class="line">    app.get(<span class="string">'/admin/category/new'</span>,User.signinRequired,User.adminRequired, Category.new);</div><div class="line">    app.post(<span class="string">'/admin/category'</span>,User.signinRequired,User.adminRequired, Category.save);</div><div class="line">    app.get(<span class="string">'/admin/category/list'</span>,User.signinRequired,User.adminRequired, Category.list);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>视图文件<br><img src="http://imglf0.nosdn.127.net/img/MklXTVZ2ekNiL0JQdWdiOFJNMEhXbjhmME9OZFpUVkdqMWxIL0N0NXZpRDRsRmZSdGk5eTR3PT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="文件目录"></p>
+<p>layout.hade -&gt; 布局文件<br><img src="http://imglf2.nosdn.127.net/img/MklXTVZ2ekNiL0JQdWdiOFJNMEhXbEc0Q2RuR3FGQzZMSjNQcVA5SEQrblhYMEJ4WWhNZW1BPT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="布局"></p>
+</li>
+</ul>
+<h3 id="2-数据库模式模型设计"><a href="#2-数据库模式模型设计" class="headerlink" title="2.数据库模式模型设计"></a>2.数据库模式模型设计</h3><p>创建category、comment、movie、user四个数据库模型</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line">    <span class="comment">//电影分类</span></div><div class="line">    <span class="keyword">var</span> CategorySchema = <span class="keyword">new</span> Schema(&#123;</div><div class="line">        <span class="attr">name</span>: <span class="built_in">String</span>,</div><div class="line">        <span class="attr">movies</span>: [&#123;<span class="attr">type</span>: ObjectId, <span class="attr">ref</span>: <span class="string">'Movie'</span>&#125;],</div><div class="line">        <span class="attr">meta</span>: &#123;</div><div class="line">            <span class="attr">createAt</span>: &#123;</div><div class="line">                <span class="attr">type</span>: <span class="built_in">Date</span>,</div><div class="line">                <span class="attr">default</span>: <span class="built_in">Date</span>.now()</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">updateAt</span>: &#123;</div><div class="line">                <span class="attr">type</span>: <span class="built_in">Date</span>,</div><div class="line">                <span class="attr">default</span>: <span class="built_in">Date</span>.now()</div><div class="line">            &#125;</div><div class="line">          &#125;</div><div class="line">    &#125;)</div><div class="line">    <span class="comment">//用户评论</span></div><div class="line">    <span class="keyword">var</span> CommentSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</div><div class="line">        <span class="attr">movie</span>:&#123;<span class="attr">type</span>:ObjectId, <span class="attr">ref</span>:<span class="string">'Movie'</span> &#125;,</div><div class="line">        <span class="attr">from</span>:&#123;<span class="attr">type</span>:ObjectId, <span class="attr">ref</span>:<span class="string">'User'</span> &#125;,</div><div class="line">        <span class="attr">reply</span>:[&#123;</div><div class="line">            <span class="attr">from</span>:&#123;<span class="attr">type</span>:ObjectId,<span class="attr">ref</span>:<span class="string">'User'</span>&#125;,</div><div class="line">            <span class="attr">to</span>:&#123;<span class="attr">type</span>:ObjectId,<span class="attr">ref</span>:<span class="string">'User'</span>&#125;,</div><div class="line">            <span class="attr">content</span>:<span class="built_in">String</span></div><div class="line">        &#125;],</div><div class="line">        <span class="attr">to</span>:&#123;<span class="attr">type</span>:ObjectId, <span class="attr">ref</span>:<span class="string">'User'</span> &#125;,</div><div class="line">        <span class="attr">content</span>:<span class="built_in">String</span>,</div><div class="line">        <span class="attr">meta</span>: &#123;</div><div class="line">            <span class="attr">createAt</span>: &#123;</div><div class="line">                <span class="attr">type</span>: <span class="built_in">Date</span>,</div><div class="line">                <span class="attr">default</span>: <span class="built_in">Date</span>.now()</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">updateAt</span>: &#123;</div><div class="line">                <span class="attr">type</span>: <span class="built_in">Date</span>,</div><div class="line">                <span class="attr">default</span>: <span class="built_in">Date</span>.now()</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="comment">//用户信息</span></div><div class="line">    <span class="keyword">var</span> UserSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</div><div class="line">        <span class="attr">name</span>:&#123;</div><div class="line">            <span class="attr">unique</span>:<span class="literal">true</span>,</div><div class="line">            <span class="attr">type</span>:<span class="built_in">String</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">password</span>:<span class="built_in">String</span>,</div><div class="line">        <span class="attr">role</span>:&#123;</div><div class="line">            <span class="attr">type</span>:<span class="built_in">Number</span>,</div><div class="line">            <span class="attr">default</span>:<span class="number">0</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">meta</span>: &#123;</div><div class="line">            <span class="attr">createAt</span>: &#123;</div><div class="line">                <span class="attr">type</span>: <span class="built_in">Date</span>,</div><div class="line">                <span class="attr">default</span>: <span class="built_in">Date</span>.now()</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">updateAt</span>: &#123;</div><div class="line">                <span class="attr">type</span>: <span class="built_in">Date</span>,</div><div class="line">                <span class="attr">default</span>: <span class="built_in">Date</span>.now()</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="comment">//电影</span></div><div class="line">    <span class="keyword">var</span> MovieSchema = <span class="keyword">new</span> Schema(&#123;</div><div class="line">    <span class="attr">doctor</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">title</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">language</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">country</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">year</span>: <span class="built_in">Number</span>,</div><div class="line">    <span class="attr">summary</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">poster</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">category</span>:&#123;</div><div class="line">        <span class="attr">type</span>:ObjectId,</div><div class="line">        <span class="attr">ref</span>:<span class="string">'Category'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">meta</span>: &#123;</div><div class="line">        <span class="attr">createAt</span>: &#123;</div><div class="line">            <span class="attr">type</span>: <span class="built_in">Date</span>,</div><div class="line">            <span class="attr">default</span>: <span class="built_in">Date</span>.now()</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">updateAt</span>: &#123;</div><div class="line">            <span class="attr">type</span>: <span class="built_in">Date</span>,</div><div class="line">            <span class="attr">default</span>: <span class="built_in">Date</span>.now()</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="3-数据库交互"><a href="#3-数据库交互" class="headerlink" title="3. 数据库交互"></a>3. 数据库交互</h3><ul>
+<li>建立数据库链接</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// movie为mongodb的一个数据库</span></div><div class="line"><span class="keyword">var</span> dbUrl = <span class="string">'mongodb://localhost/movie'</span>;</div><div class="line"><span class="keyword">var</span> db = mongoose.connect(dbUrl)</div><div class="line">db.connection.on(<span class="string">'open'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"----数据库连接成功！------"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>数据库交互</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">MovieSchema.pre(<span class="string">'save'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">next</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.isNew) &#123;</div><div class="line">        <span class="keyword">this</span>.meta.createAt = <span class="keyword">this</span>.meta.updateAt = <span class="built_in">Date</span>.now();</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">this</span>.meta.updateAt = <span class="built_in">Date</span>.now();</div><div class="line">    &#125;</div><div class="line">    next();</div><div class="line">&#125;);</div><div class="line"></div><div class="line">MovieSchema.statics = &#123;</div><div class="line">    <span class="attr">fetch</span>: <span class="function"><span class="keyword">function</span> (<span class="params">cb</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span></div><div class="line">            .find(&#123;&#125;)</div><div class="line">            .sort(<span class="string">'meta.updateAt'</span>)</div><div class="line">            .exec(cb);</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">findById</span>: <span class="function"><span class="keyword">function</span> (<span class="params">id, cb</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span></div><div class="line">            .findOne(&#123;<span class="attr">_id</span>: id&#125;)</div><div class="line">            .exec(cb);</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="4-用户登录注册后台存储"><a href="#4-用户登录注册后台存储" class="headerlink" title="4.用户登录注册后台存储"></a>4.用户登录注册后台存储</h3><p>使用bcrypt-nodejs模块，实现对密码的加盐，转换hash值，以及登录是密码的比对</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//实例方法</span></div><div class="line">UserSchema.methods = &#123;</div><div class="line">    <span class="attr">comparePassword</span>:<span class="function"><span class="keyword">function</span>(<span class="params">_password,cb</span>)</span>&#123;</div><div class="line">        bcrypt.compare(_password,<span class="keyword">this</span>.password,<span class="function"><span class="keyword">function</span>(<span class="params">err,isMatch</span>)</span>&#123;</div><div class="line">            <span class="keyword">if</span> (err) &#123;</div><div class="line">                <span class="keyword">return</span> cb(err)</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            cb(<span class="literal">null</span>,isMatch)</div><div class="line"></div><div class="line">        &#125;)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">UserSchema.pre(<span class="string">'save'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">next</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> user = <span class="keyword">this</span></div><div class="line"></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.isNew) &#123;</div><div class="line">        <span class="keyword">this</span>.meta.createAt = <span class="keyword">this</span>.meta.updateAt = <span class="built_in">Date</span>.now();</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">this</span>.meta.updateAt = <span class="built_in">Date</span>.now();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">//随机salt及密码加密</span></div><div class="line">    bcrypt.genSalt(SALT_WORK_FACTOR, <span class="function"><span class="keyword">function</span>(<span class="params">err, salt</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span> (err) <span class="keyword">return</span> next(err);</div><div class="line">        </div><div class="line">        bcrypt.hash(user.password, salt, <span class="literal">null</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, hash</span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span> (err) <span class="keyword">return</span> next(err);</div><div class="line">            user.password = hash;</div><div class="line">            next();</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="5-用户权限管理"><a href="#5-用户权限管理" class="headerlink" title="5.用户权限管理"></a>5.用户权限管理</h3><p>UserSchema模式下增加一个<code>role:Number</code>用来区分用户的权限</p>
+<blockquote>
+<p>0: nomal user<br>1:verified user<br>2:professonal user</p>
+<p>lg10:admin<br>lg50:super admin</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//用户中间件</span></div><div class="line">exports.signinRequired = <span class="function"><span class="keyword">function</span> (<span class="params">req, res,next</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> user = req.session.user</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'当前用户'</span>)</div><div class="line">    <span class="built_in">console</span>.log(user)</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (!user) &#123;</div><div class="line">        <span class="keyword">return</span> res.redirect(<span class="string">'/signin'</span>)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    next();</div><div class="line">    </div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//管理员中间件</span></div><div class="line">exports.adminRequired = <span class="function"><span class="keyword">function</span> (<span class="params">req, res,next</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> user = req.session.user</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(user)</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (user.role &lt;= <span class="number">10</span>) &#123;</div><div class="line">        <span class="keyword">return</span> res.redirect(<span class="string">'/signin'</span>)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    next()</div><div class="line"></div><div class="line">    </div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="6-用户评论"><a href="#6-用户评论" class="headerlink" title="6.用户评论"></a>6.用户评论</h3>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Node-js/" rel="tag"># Node.js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/17/雅虎军规/" rel="next" title="雅虎军规">
+                <i class="fa fa-chevron-left"></i> 雅虎军规
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/26/CSS中居中的几种方法/" rel="prev" title="CSS中居中的几种方法">
+                CSS中居中的几种方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="DingJian" />
+          <p class="site-author-name" itemprop="name">DingJian</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-grunt集成自动化"><span class="nav-text">1.grunt集成自动化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-文件目录"><span class="nav-text">1.文件目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-数据库模式模型设计"><span class="nav-text">2.数据库模式模型设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-数据库交互"><span class="nav-text">3. 数据库交互</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-用户登录注册后台存储"><span class="nav-text">4.用户登录注册后台存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-用户权限管理"><span class="nav-text">5.用户权限管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-用户评论"><span class="nav-text">6.用户评论</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">DingJian</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.1"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
