@@ -94,30 +94,18 @@
 
 
 <meta name="description" content="let命令
-let用法类似于var,但是所声明的变量只在let所在的代码块内有效
-1234567&amp;#123;  let a = 10;  var b = 1;&amp;#125;a // ReferenceError: a is not defined.b //
-
-不存在变量提升
-1234567// var 的情况console.log(foo); // 输出undefinedvar foo = 2;//">
+let用法类似于var,但是所声明的变量只在let所在的代码块内有效1234567&amp;#123;  let a = 10;  var b = 1;&amp;#125;a // ReferenceError: a is not defined.b //">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6学习笔记">
 <meta property="og:url" content="http://yoursite.com/2016/12/23/ES6学习笔记/index.html">
 <meta property="og:site_name" content="Ding   Blog">
 <meta property="og:description" content="let命令
-let用法类似于var,但是所声明的变量只在let所在的代码块内有效
-1234567&amp;#123;  let a = 10;  var b = 1;&amp;#125;a // ReferenceError: a is not defined.b //
-
-不存在变量提升
-1234567// var 的情况console.log(foo); // 输出undefinedvar foo = 2;//">
-<meta property="og:updated_time" content="2017-02-18T07:42:40.000Z">
+let用法类似于var,但是所声明的变量只在let所在的代码块内有效1234567&amp;#123;  let a = 10;  var b = 1;&amp;#125;a // ReferenceError: a is not defined.b //">
+<meta property="og:updated_time" content="2017-07-02T02:32:35.412Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6学习笔记">
 <meta name="twitter:description" content="let命令
-let用法类似于var,但是所声明的变量只在let所在的代码块内有效
-1234567&amp;#123;  let a = 10;  var b = 1;&amp;#125;a // ReferenceError: a is not defined.b //
-
-不存在变量提升
-1234567// var 的情况console.log(foo); // 输出undefinedvar foo = 2;//">
+let用法类似于var,但是所声明的变量只在let所在的代码块内有效1234567&amp;#123;  let a = 10;  var b = 1;&amp;#125;a // ReferenceError: a is not defined.b //">
 
 
 
@@ -415,9 +403,11 @@ let用法类似于var,但是所声明的变量只在let所在的代码块内有�
 
       
         <h4 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h4><ul>
-<li><p>let用法类似于var,但是所声明的变量只在let所在的代码块内有效</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="number">10</span>;</div><div class="line">  <span class="keyword">var</span> b = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">a <span class="comment">// ReferenceError: a is not defined.</span></div><div class="line">b <span class="comment">//</span></div></pre></td></tr></table></figure>
+<li>let用法类似于var,但是所声明的变量只在let所在的代码块内有效<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="number">10</span>;</div><div class="line">  <span class="keyword">var</span> b = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">a <span class="comment">// ReferenceError: a is not defined.</span></div><div class="line">b <span class="comment">//</span></div></pre></td></tr></table></figure>
 </li>
+</ul>
+<a id="more"></a>
+<ul>
 <li><p>不存在变量提升</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// var 的情况</span></div><div class="line"><span class="built_in">console</span>.log(foo); <span class="comment">// 输出undefined</span></div><div class="line"><span class="keyword">var</span> foo = <span class="number">2</span>;</div><div class="line"></div><div class="line"><span class="comment">// let 的情况</span></div><div class="line"><span class="built_in">console</span>.log(bar); <span class="comment">// 报错ReferenceError</span></div><div class="line"><span class="keyword">let</span> bar = <span class="number">2</span>;</div></pre></td></tr></table></figure>
 </li>
@@ -661,7 +651,7 @@ let用法类似于var,但是所声明的变量只在let所在的代码块内有�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#let命令"><span class="nav-number">1.</span> <span class="nav-text">let命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#const命令"><span class="nav-number">2.</span> <span class="nav-text">const命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量的解构赋值-数组，对象，字符串，数值和布尔值，函数参数）"><span class="nav-number">3.</span> <span class="nav-text">变量的解构赋值(数组，对象，字符串，数值和布尔值，函数参数）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模版字符串"><span class="nav-number">4.</span> <span class="nav-text">模版字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#箭头函数"><span class="nav-number">5.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise-对像"><span class="nav-number">6.</span> <span class="nav-text">Promise 对像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Class"><span class="nav-number">7.</span> <span class="nav-text">Class</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#let命令"><span class="nav-text">let命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#const命令"><span class="nav-text">const命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量的解构赋值-数组，对象，字符串，数值和布尔值，函数参数）"><span class="nav-text">变量的解构赋值(数组，对象，字符串，数值和布尔值，函数参数）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模版字符串"><span class="nav-text">模版字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#箭头函数"><span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise-对像"><span class="nav-text">Promise 对像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Class"><span class="nav-text">Class</span></a></li></ol></div>
             
 
           </div>

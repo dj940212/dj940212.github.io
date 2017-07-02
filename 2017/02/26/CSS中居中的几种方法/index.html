@@ -94,21 +94,18 @@
 
 
 <meta name="description" content="本文主要总结一下平常所能用到的各种使用CSS居中的方法。
-1.水瓶居中 margin：0 auto;平常比较常用的方法，前提是不受float影响
-1234567891011121314151617181920212223&amp;lt;style&amp;gt;    *&amp;#123;        padding: 0;        margin: 0;    &amp;#125;    .box&amp;#123;">
+1.水瓶居中 margin：0 auto;平常比较常用的方法，前提是不受float影响">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS中居中的几种方法">
 <meta property="og:url" content="http://yoursite.com/2017/02/26/CSS中居中的几种方法/index.html">
 <meta property="og:site_name" content="Ding   Blog">
 <meta property="og:description" content="本文主要总结一下平常所能用到的各种使用CSS居中的方法。
-1.水瓶居中 margin：0 auto;平常比较常用的方法，前提是不受float影响
-1234567891011121314151617181920212223&amp;lt;style&amp;gt;    *&amp;#123;        padding: 0;        margin: 0;    &amp;#125;    .box&amp;#123;">
-<meta property="og:updated_time" content="2017-02-26T13:38:50.000Z">
+1.水瓶居中 margin：0 auto;平常比较常用的方法，前提是不受float影响">
+<meta property="og:updated_time" content="2017-07-02T02:32:14.404Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS中居中的几种方法">
 <meta name="twitter:description" content="本文主要总结一下平常所能用到的各种使用CSS居中的方法。
-1.水瓶居中 margin：0 auto;平常比较常用的方法，前提是不受float影响
-1234567891011121314151617181920212223&amp;lt;style&amp;gt;    *&amp;#123;        padding: 0;        margin: 0;    &amp;#125;    .box&amp;#123;">
+1.水瓶居中 margin：0 auto;平常比较常用的方法，前提是不受float影响">
 
 
 
@@ -385,6 +382,7 @@
       
         <p>本文主要总结一下平常所能用到的各种使用CSS居中的方法。</p>
 <h4 id="1-水瓶居中-margin：0-auto"><a href="#1-水瓶居中-margin：0-auto" class="headerlink" title="1.水瓶居中 margin：0 auto;"></a>1.水瓶居中 margin：0 auto;</h4><p>平常比较常用的方法，前提是不受float影响</p>
+<a id="more"></a>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    *&#123;</div><div class="line">        padding: 0;</div><div class="line">        margin: 0;</div><div class="line">    &#125;</div><div class="line">    .box&#123;</div><div class="line">        width: 300px;</div><div class="line">        height: 300px;</div><div class="line">        border: 3px solid red;</div><div class="line">    &#125;</div><div class="line">    img&#123;</div><div class="line">        display: block;</div><div class="line">        width: 100px;</div><div class="line">        height: 100px;</div><div class="line">        margin: 0 auto;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;!--html--&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div class="box"&gt;</div><div class="line">        &lt;img src=""/&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
 <h4 id="2-水平居中-text-align：center；"><a href="#2-水平居中-text-align：center；" class="headerlink" title="2.水平居中 text-align：center；"></a>2.水平居中 text-align：center；</h4><p>img的display：inline-block；类似一样在不受float影响下进行<br>实在父元素上添加效果让它进行水平居中</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    *&#123;</div><div class="line">        padding: 0;</div><div class="line">        margin: 0;</div><div class="line">    &#125;</div><div class="line">    .box&#123;</div><div class="line">        width: 300px;</div><div class="line">        height: 300px;</div><div class="line">        border: 3px solid red;</div><div class="line">        text-align: center;</div><div class="line">    &#125;</div><div class="line">    img&#123;</div><div class="line">        display: inline-block;</div><div class="line">        width: 100px;</div><div class="line">        height: 100px;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;!--html--&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div class="box"&gt;</div><div class="line">        &lt;img src=""/&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
@@ -573,7 +571,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-水瓶居中-margin：0-auto"><span class="nav-number">1.</span> <span class="nav-text">1.水瓶居中 margin：0 auto;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-水平居中-text-align：center；"><span class="nav-number">2.</span> <span class="nav-text">2.水平居中 text-align：center；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-水平垂直居中（一）-定位和需要定位的元素的margin减去宽高的一半"><span class="nav-number">3.</span> <span class="nav-text">3.水平垂直居中（一） 定位和需要定位的元素的margin减去宽高的一半</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-水平垂直居中（二）定位和margin-auto"><span class="nav-number">4.</span> <span class="nav-text">4.水平垂直居中（二）定位和margin:auto;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-水平垂直居中（三）绝对定位和transfrom"><span class="nav-number">5.</span> <span class="nav-text">5.水平垂直居中（三）绝对定位和transfrom</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-水平垂直居中（四）diplay：table-cell"><span class="nav-number">6.</span> <span class="nav-text">6.水平垂直居中（四）diplay：table-cell</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-水平垂直居中（五）flexBox居中"><span class="nav-number">7.</span> <span class="nav-text">7.水平垂直居中（五）flexBox居中</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-水瓶居中-margin：0-auto"><span class="nav-text">1.水瓶居中 margin：0 auto;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-水平居中-text-align：center；"><span class="nav-text">2.水平居中 text-align：center；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-水平垂直居中（一）-定位和需要定位的元素的margin减去宽高的一半"><span class="nav-text">3.水平垂直居中（一） 定位和需要定位的元素的margin减去宽高的一半</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-水平垂直居中（二）定位和margin-auto"><span class="nav-text">4.水平垂直居中（二）定位和margin:auto;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-水平垂直居中（三）绝对定位和transfrom"><span class="nav-text">5.水平垂直居中（三）绝对定位和transfrom</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-水平垂直居中（四）diplay：table-cell"><span class="nav-text">6.水平垂直居中（四）diplay：table-cell</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-水平垂直居中（五）flexBox居中"><span class="nav-text">7.水平垂直居中（五）flexBox居中</span></a></li></ol></div>
             
 
           </div>
