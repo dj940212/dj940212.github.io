@@ -1678,7 +1678,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1ff20f;
+  background: #ff331c;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3074,11 +3074,14 @@ button {
   background: #686868;
   border-radius: 16px;
   line-height: 2;
-  margin: 0 4px 8px 4px;
-  padding: 0 20px;
   transition: 0.2s ease-out;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   text-align: center;
+  position: relative;
+  display: block;
+  width: 100px;
+  margin-left: 50% !important;
+  left: -60px;
 }
 .post-body table thead tr th {
   font-weight: normal;
@@ -3134,6 +3137,9 @@ button {
 .site-meta {
   margin-left: 0px;
 }
+.algolia-pop-overlay {
+  z-index: 200 !important;
+}
 @media (max-width: 991px) and (min-width: 768px) {
   #header {
     right: 0 !important;
@@ -3161,6 +3167,7 @@ button {
 @media (max-width: 767px) {
   body .header-inner {
     padding: 6px 9px 6px;
+    margin-bottom: 0;
   }
   .sidebar-toggle {
     display: block;
@@ -3221,6 +3228,10 @@ button {
   }
   .body-site-nav {
     overflow: hidden;
+  }
+  .site-nav-toggle {
+    position: absolute !important;
+    margin-left: 290px;
   }
   .site-nav-toggle button {
     padding: 9px 2px 9px 10px;
