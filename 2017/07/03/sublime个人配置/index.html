@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="Ding  Blog">
 <meta property="og:description" content="一直以来非常喜爱sublime的轻便简洁，考虑到会更换电脑，重装系统等情况，在此将平时使用sublime安装的插件以及配置记录下来。
 插件MarkdownEditing这是一款实时预览markdown格式文本的插件，打开MarkdownEditing配置文件 Markdown GFM Settings - user写入如下配置">
-<meta property="og:updated_time" content="2017-07-03T14:31:14.321Z">
+<meta property="og:updated_time" content="2017-07-04T12:13:52.517Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sublime个人配置">
 <meta name="twitter:description" content="一直以来非常喜爱sublime的轻便简洁，考虑到会更换电脑，重装系统等情况，在此将平时使用sublime安装的插件以及配置记录下来。
@@ -404,6 +404,9 @@
       
         <p>一直以来非常喜爱sublime的轻便简洁，考虑到会更换电脑，重装系统等情况，在此将平时使用sublime安装的插件以及配置记录下来。</p>
 <h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><h3 id="MarkdownEditing"><a href="#MarkdownEditing" class="headerlink" title="MarkdownEditing"></a>MarkdownEditing</h3><p>这是一款实时预览markdown格式文本的插件，打开MarkdownEditing配置文件 Markdown GFM Settings - user写入如下配置<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;color_scheme&quot;: &quot;Packages/MarkdownEditing/MarkdownEditor-Dark.tmTheme&quot;, //黑色主题</div><div class="line">    &quot;draw_centered&quot;: false,  //左边不空出来</div><div class="line">    &quot;wrap_width&quot;: 90 //换行字数</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="Babel"><a href="#Babel" class="headerlink" title="Babel"></a>Babel</h3><p>支持ES6、JSX语法高亮</p>
+<h3 id="Emmet"><a href="#Emmet" class="headerlink" title="Emmet"></a>Emmet</h3><p>解决Emmet在jsx语法下无法使用问题，Preferences-&gt;Key Bindings - User加上以下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">[&#123;</div><div class="line">  &quot;keys&quot;: [</div><div class="line">    &quot;tab&quot;</div><div class="line">  ],</div><div class="line">  &quot;args&quot;: &#123;</div><div class="line">    &quot;action&quot;: &quot;expand_abbreviation&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;command&quot;: &quot;run_emmet_action&quot;,</div><div class="line">  &quot;context&quot;: [&#123;</div><div class="line">    &quot;key&quot;: &quot;emmet_action_enabled.expand_abbreviation&quot;</div><div class="line">  &#125;]</div><div class="line">&#125;, &#123;</div><div class="line">  &quot;keys&quot;: [&quot;tab&quot;],</div><div class="line">  &quot;command&quot;: &quot;expand_abbreviation_by_tab&quot;,</div><div class="line">  &quot;context&quot;: [&#123;</div><div class="line">    &quot;operand&quot;: &quot;source.js&quot;,</div><div class="line">    &quot;operator&quot;: &quot;equal&quot;,</div><div class="line">    &quot;match_all&quot;: true,</div><div class="line">    &quot;key&quot;: &quot;selector&quot;</div><div class="line">  &#125;, &#123;</div><div class="line">    &quot;key&quot;: &quot;preceding_text&quot;,</div><div class="line">    &quot;operator&quot;: &quot;regex_contains&quot;,</div><div class="line">    &quot;operand&quot;: &quot;(\\b(a\\b|div|span|p\\b|button)(\\.\\w*|&gt;\\w*)?([^&#125;]*?&#125;$)?)&quot;,</div><div class="line">    &quot;match_all&quot;: true</div><div class="line">  &#125;, &#123;</div><div class="line">    &quot;key&quot;: &quot;selection_empty&quot;,</div><div class="line">    &quot;operator&quot;: &quot;equal&quot;,</div><div class="line">    &quot;operand&quot;: true,</div><div class="line">    &quot;match_all&quot;: true</div><div class="line">  &#125;]</div><div class="line">&#125;]</div></pre></td></tr></table></figure></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="高分屏文件名显示乱码问题"><a href="#高分屏文件名显示乱码问题" class="headerlink" title="高分屏文件名显示乱码问题"></a>高分屏文件名显示乱码问题</h3><p>preferences settings-user添加下面两项配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&quot;dpi_scale&quot;: 1.0,</div><div class="line">&quot;font_size&quot;: 16</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -526,7 +529,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -583,7 +586,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#插件"><span class="nav-number">1.</span> <span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MarkdownEditing"><span class="nav-number">1.1.</span> <span class="nav-text">MarkdownEditing</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#插件"><span class="nav-number">1.</span> <span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MarkdownEditing"><span class="nav-number">1.1.</span> <span class="nav-text">MarkdownEditing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Babel"><span class="nav-number">1.2.</span> <span class="nav-text">Babel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Emmet"><span class="nav-number">1.3.</span> <span class="nav-text">Emmet</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#高分屏文件名显示乱码问题"><span class="nav-number">2.1.</span> <span class="nav-text">高分屏文件名显示乱码问题</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -1678,7 +1678,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d4d0ff;
+  background: #9dff9a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2996,9 +2996,15 @@ button {
 .posts-expand .post-title-link::before {
   height: 0;
 }
+.post-header .post-meta {
+  margin-bottom: 20px;
+}
 .post-body {
   margin: 0px -20px;
   padding: 0 20px;
+}
+.post-body p {
+  margin-bottom: 10px;
 }
 .post-body h2 {
   margin: 30px -20px;
@@ -3008,6 +3014,8 @@ button {
 }
 .post-body h2:nth-of-type(5n+1) {
   border-left: 4px solid #333;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .post-body h2:nth-of-type(5n+2) {
   border-left: 4px solid #333;
@@ -3024,10 +3032,13 @@ button {
 .post-body h3 {
   font-size: 17px;
   margin-left: -21px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .post-body h4 {
   font-size: 15px;
   font-weight: bold;
+  margin-top: 0;
 }
 .post-body h3 a {
   margin-left: 5px;
