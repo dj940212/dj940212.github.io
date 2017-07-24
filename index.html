@@ -539,23 +539,17 @@
 
       
         
-          
-            <a id="more"></a>
-<h3 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h3><blockquote>
-<p><a href="https://docs.mongodb.com/v3.0/tutorial/install-mongodb-on-ubuntu/" target="_blank" rel="external">https://docs.mongodb.com/v3.0/tutorial/install-mongodb-on-ubuntu/</a></p>
-<h3 id="下载太慢解决"><a href="#下载太慢解决" class="headerlink" title="下载太慢解决"></a>下载太慢解决</h3><p><code>sudo vi /etc/apt/sources/list.d/mongodb-org-3.0.list</code><br>修改<br><code>http://mirrors.aliyun.com/mongodb/apt/ubuntu trusty/mongodb-org/3.0 multiverse</code></p>
-<h3 id="防火墙开放27017端口"><a href="#防火墙开放27017端口" class="headerlink" title="防火墙开放27017端口"></a>防火墙开放27017端口</h3><p><code>sudo vi /etc/iptables.up.rules</code></p>
-<ul>
-<li>添加<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># mongodb connect</div><div class="line">-A INPUT -s 127.0.0.1 -p tcp --destination-port 27017 -m state --state NEW,ESTABLISHED -j ACCEPT</div><div class="line">-A OUTPUT -d 127.0.0.1 -p tcp --source-port 27017 -m state --state ESTABLISHED -j ACCEPT</div></pre></td></tr></table></figure>
-</li>
-</ul>
+          <h3 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h3><blockquote>
+<p><a href="https://docs.mongodb.com/v3.0/tutorial/install-mongodb-on-ubuntu/">https://docs.mongodb.com/v3.0/tutorial/install-mongodb-on-ubuntu/</a></p>
 </blockquote>
-<ul>
-<li>重载防火墙<br><code>sudo iptables-restore &lt; /etc/iptables.up.rules</code></li>
-<li>启动数据库&amp;停止数据库<br>启动 <code>mongo</code><br>停止服务 <code>sudo service mongod stop</code><br>启动服务 <code>sudo service mongod start</code><h3 id="修改数据库默认端口27017"><a href="#修改数据库默认端口27017" class="headerlink" title="修改数据库默认端口27017"></a>修改数据库默认端口27017</h3><code>sudo vi /etc/mongod.conf</code><br>修改 <code>port: 27017</code> ==&gt;  <code>port: 19999</code><br>修改防火墙相应配置<br>启动防火墙 <code>mongo --port 19999</code><h3 id="本地数据上传服务器-windows"><a href="#本地数据上传服务器-windows" class="headerlink" title="本地数据上传服务器(windows)"></a>本地数据上传服务器(windows)</h3>备份 <code>mongodump -h 127.0.0.1:27017 -d databaseName -o folderName</code><br>打包 <code>tar zcvf dumall.tar.gz dumall-reback</code><br>上传 <code>scp dumall.tar.gz dj_user@101.201.70.122:/home/dj_user/dbbackup/</code><h3 id="导入数据库到服务器数据库"><a href="#导入数据库到服务器数据库" class="headerlink" title="导入数据库到服务器数据库"></a>导入数据库到服务器数据库</h3>解压 <code>tar xvf dumall.tar.gz</code><br>导入 <code>mongorestore --host 127.0.0.1:27017 -d dumall ./dbbackup/dumall-reback/dumall/</code><h3 id="导入单表到服务器数据库"><a href="#导入单表到服务器数据库" class="headerlink" title="导入单表到服务器数据库"></a>导入单表到服务器数据库</h3>本地保存 <code>mongoexport -d dumall -c goods -o ./dumall-goods.json</code><br>本地上传 <code>scp ./dumall-goods.json dj_user@101.201.70.122:/home/dj_user/dbbackup/</code><br>服务器导入 <code>mongoimport --host 127.0.0.1:27017 -d dumall -c goods ./dbbackup/dumall-goods.json</code><h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><code>mongo --host 127.0.0.1:27017 dumall --eval &quot;db.dropDatabase()&quot;</code></li>
-</ul>
-
-          
+<h3 id="下载太慢解决"><a href="#下载太慢解决" class="headerlink" title="下载太慢解决"></a>下载太慢解决</h3><p><code>sudo vi /etc/apt/sources/list.d/mongodb-org-3.0.list</code><br>修改<br><code>http://mirrors.aliyun.com/mongodb/apt/ubuntu trusty/mongodb-org/3.0 multiverse</code></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/03/服务器配置安装MongoDB/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
