@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS," />
+  <meta name="keywords" content="CSS页面布局," />
 
 
 
@@ -103,7 +103,7 @@
 <meta property="og:description" content="浮动属性会使当前标签脱离文档流，同时会影响父标签（高度塌陷）以及前后标签的布局，下面总结平时常用的清除浮动的方法。1.浮动标签结尾处添加一个空标签&amp;lt;div style=&amp;quot;clear:both&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;;
 
 优点：简单易懂，浏览器支持好，不容易出问题缺点：增加很多空标签不易维护和理解">
-<meta property="og:updated_time" content="2017-07-02T02:31:24.207Z">
+<meta property="og:updated_time" content="2017-08-13T07:41:27.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS清除浮动">
 <meta name="twitter:description" content="浮动属性会使当前标签脱离文档流，同时会影响父标签（高度塌陷）以及前后标签的布局，下面总结平时常用的清除浮动的方法。1.浮动标签结尾处添加一个空标签&amp;lt;div style=&amp;quot;clear:both&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;;
@@ -414,11 +414,11 @@
 <blockquote>
 <p>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:hidden时，浏览器会自动检查浮动区域的高度<br>优点：简单、代码少、浏览器支持好<br>缺点：不能和position配合使用，因为超出的尺寸的会被隐藏。</p>
 </blockquote>
-<p>3.父级div定义 <code>overflow:auto</code> </p>
+<p>3.父级div定义 <code>overflow:auto</code></p>
 <blockquote>
 <p>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:auto时，浏览器会自动检查浮动区域的高度<br>优点：简单、代码少、浏览器支持好<br>缺点：内部宽高超过父级div时，会出现滚动条。</p>
 </blockquote>
-<p>4.父级标签也一起浮动 </p>
+<p>4.父级标签也一起浮动</p>
 <blockquote>
 <p>原理：所有代码一起浮动，就变成了一个整体<br>缺点：会产生新的浮动问题,不推荐使用</p>
 </blockquote>
@@ -431,6 +431,7 @@
 <p>目前比较通用的方法</p>
 </blockquote>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*清除浮动，防止高度塌陷*/</span></div><div class="line"><span class="comment">/*清除浮动，防止高度塌陷*/</span></div><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span>,</div><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line">	<span class="attribute">content</span>: <span class="string">" "</span>;</div><div class="line">	<span class="attribute">display</span>: table;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line">	<span class="attribute">clear</span>: both;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -459,7 +460,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag"># CSS</a>
+            <a href="/tags/CSS页面布局/" rel="tag"># CSS页面布局</a>
           
         </div>
       
@@ -547,7 +548,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -557,7 +558,7 @@
             
             
             <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
+              <a href="/photos/index.html">
                 <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -569,7 +570,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
