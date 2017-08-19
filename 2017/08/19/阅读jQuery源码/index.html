@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS," />
+  <meta name="keywords" content="jQuery源码," />
 
 
 
@@ -93,22 +93,18 @@
 
 
 
-<meta name="description" content="设备像素比的定义：
-
-window.devicePixelRatio是设备上物理像素和设备独立像素(device-independent pixels (dips))的比例。公式表示就是：window.devicePixelRatio = 物理像素 / dips">
+<meta name="description" content="一直听说jQuery的设计优雅巧妙，尽管现在的工作中大多使用MVVM框架，如VUE、React,但是jQuery仍然是经常可以使用到的工具库。决定花一段时间研究一下jQuery的源码，在此记录一下自己的理解以及感悟。这里我看的jQuery-2.0.3，抛弃了对IE678的支持">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设备像素比devicePixelRatio">
-<meta property="og:url" content="http://yoursite.com/2017/02/17/设备像素比devicePixelRatio/index.html">
+<meta property="og:title" content="阅读jQuery源码(一):整体架构">
+<meta property="og:url" content="http://yoursite.com/2017/08/19/阅读jQuery源码/index.html">
 <meta property="og:site_name" content="Ding  Blog">
-<meta property="og:description" content="设备像素比的定义：
-
-window.devicePixelRatio是设备上物理像素和设备独立像素(device-independent pixels (dips))的比例。公式表示就是：window.devicePixelRatio = 物理像素 / dips">
-<meta property="og:updated_time" content="2017-07-02T02:56:18.735Z">
+<meta property="og:description" content="一直听说jQuery的设计优雅巧妙，尽管现在的工作中大多使用MVVM框架，如VUE、React,但是jQuery仍然是经常可以使用到的工具库。决定花一段时间研究一下jQuery的源码，在此记录一下自己的理解以及感悟。这里我看的jQuery-2.0.3，抛弃了对IE678的支持">
+<meta property="og:image" content="http://img.mukewang.com/53fa8fec0001754806930473.jpg">
+<meta property="og:updated_time" content="2017-08-19T07:52:49.297Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设备像素比devicePixelRatio">
-<meta name="twitter:description" content="设备像素比的定义：
-
-window.devicePixelRatio是设备上物理像素和设备独立像素(device-independent pixels (dips))的比例。公式表示就是：window.devicePixelRatio = 物理像素 / dips">
+<meta name="twitter:title" content="阅读jQuery源码(一):整体架构">
+<meta name="twitter:description" content="一直听说jQuery的设计优雅巧妙，尽管现在的工作中大多使用MVVM框架，如VUE、React,但是jQuery仍然是经常可以使用到的工具库。决定花一段时间研究一下jQuery的源码，在此记录一下自己的理解以及感悟。这里我看的jQuery-2.0.3，抛弃了对IE678的支持">
+<meta name="twitter:image" content="http://img.mukewang.com/53fa8fec0001754806930473.jpg">
 
 
 
@@ -136,13 +132,13 @@ window.devicePixelRatio是设备上物理像素和设备独立像素(device-inde
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/17/设备像素比devicePixelRatio/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/19/阅读jQuery源码/"/>
 
 
 
 
 
-  <title>设备像素比devicePixelRatio | Ding  Blog</title>
+  <title>阅读jQuery源码(一):整体架构 | Ding  Blog</title>
   
 
 
@@ -319,7 +315,7 @@ window.devicePixelRatio是设备上物理像素和设备独立像素(device-inde
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/17/设备像素比devicePixelRatio/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/阅读jQuery源码/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="DingJian">
@@ -336,7 +332,7 @@ window.devicePixelRatio是设备上物理像素和设备独立像素(device-inde
 
         
         
-          <h1 class="post-title" itemprop="name headline">设备像素比devicePixelRatio</h1>
+          <h1 class="post-title" itemprop="name headline">阅读jQuery源码(一):整体架构</h1>
         
 
         <div class="post-meta">
@@ -348,8 +344,8 @@ window.devicePixelRatio是设备上物理像素和设备独立像素(device-inde
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-17T13:29:02+08:00">
-                2017-02-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-19T00:34:48+08:00">
+                2017-08-19
               </time>
             
 
@@ -371,8 +367,8 @@ window.devicePixelRatio是设备上物理像素和设备独立像素(device-inde
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
                   </a>
                 </span>
 
@@ -405,16 +401,14 @@ window.devicePixelRatio是设备上物理像素和设备独立像素(device-inde
       
 
       
-        <p>设备像素比的定义：</p>
-<blockquote>
-<p>window.devicePixelRatio是设备上物理像素和设备独立像素(device-independent pixels (dips))的比例。<br>公式表示就是：window.devicePixelRatio = 物理像素 / dips</p>
-</blockquote>
-<a id="more"></a>
-<p>dip或dp,（device independent pixels，设备独立像素）与屏幕密度有关。dip可以用来辅助区分视网膜设备还是非视网膜设备。</p>
-<p>所有非视网膜屏幕的iphone在垂直的时候，宽度为320物理像素。当你使用<meta name="viewport" content="width=device-width">的时候，会设置视窗布局宽度（不同于视觉区域宽度，不放大显示情况下，两者大小一致，见下图）为320px, 于是，页面很自然地覆盖在屏幕上。</p>
-<p>这样，非视网膜屏幕的iphone上，屏幕物理像素320像素，独立像素也是320像素，因此，window.devicePixelRatio等于1.</p>
-<p>而对于视网膜屏幕的iphone，如iphone4s, 纵向显示的时候，屏幕物理像素640像素。同样，当用户设置<meta name="viewport" content="width=device-width">的时候，其视区宽度并不是640像素，而是320像素，这是为了有更好的阅读体验 – 更合适的文字大小。</p>
-<p>这样，在视网膜屏幕的iphone上，屏幕物理像素640像素，独立像素还是320像素，因此，window.devicePixelRatio等于2.</p>
+        <p>一直听说jQuery的设计优雅巧妙，尽管现在的工作中大多使用MVVM框架，如VUE、React,但是jQuery仍然是经常可以使用到的工具库。决定花一段时间研究一下jQuery的源码，在此记录一下自己的理解以及感悟。这里我看的<code>jQuery-2.0.3</code>，抛弃了对IE678的支持<br><a id="more"></a></p>
+<h2 id="整体架构"><a href="#整体架构" class="headerlink" title="整体架构"></a>整体架构</h2><p>这是我在网上找的一个图<br><img src="http://img.mukewang.com/53fa8fec0001754806930473.jpg" alt=""></p>
+<h2 id="立即执行表达式"><a href="#立即执行表达式" class="headerlink" title="立即执行表达式"></a>立即执行表达式</h2><p>立即执行表达式用来解决了<code>命名空间</code>与<code>变量污染的问题</code>，这里传递<code>undefined</code>是为了防止<code>undefined</code>的值被修改</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">window,undefined</span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;)(<span class="built_in">window</span>)</div></pre></td></tr></table></figure>
+<h2 id="链式调用"><a href="#链式调用" class="headerlink" title="链式调用"></a>链式调用</h2><p>jQuery的链式调用十分优雅，如<code>$(&#39;div&#39;).css()</code>，看了源码终于知道它是怎么实现的了。在使用<code>$()</code>的时候，会返回一个构造函数<code>jQuery.fn.init()</code>创建的实例,而这个构造函数的<code>prototype</code>又指向<code>$.prototype</code>,所以我们<code>$()</code>后返回的实例可以调用<code>jQuery.prototype</code>上面的所有方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">window, undefined</span>)</span>&#123;</div><div class="line"></div><div class="line"><span class="keyword">var</span> jQuery = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> jQuery.fn.init();</div><div class="line">&#125;</div><div class="line"></div><div class="line">jQuery.fn = jQuery.prototype = &#123;</div><div class="line">    <span class="attr">constructor</span>: jQuery,</div><div class="line">    <span class="attr">init</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>[<span class="number">0</span>] = <span class="string">'li'</span>;</div><div class="line">        <span class="keyword">this</span>[<span class="number">1</span>] = <span class="string">'li'</span>;</div><div class="line">        <span class="keyword">this</span>.length = <span class="number">2</span>;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">hello</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        alert(<span class="string">"hello jquery"</span>)</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">jQuery.fn.init.prototype = jQuery.fn;</div><div class="line"></div><div class="line"><span class="built_in">window</span>.jQuery = <span class="built_in">window</span>.$ = jQuery;</div><div class="line"></div><div class="line">&#125;)(<span class="built_in">window</span>)</div></pre></td></tr></table></figure>
+<h2 id="类数组对象结构"><a href="#类数组对象结构" class="headerlink" title="类数组对象结构"></a>类数组对象结构</h2><p>在<code>init</code>函数中可以看到，执行<code>init()</code>会返回<code>this</code>,作者将所有的数据保存在<code>this</code>中，并构建成类数组对象，如<code>this[0]=&#39;li&#39;,this[1]=&#39;li&#39;,this.length=2</code>,将数据赋给<code>this</code>的好处是，在整个<code>jQuery.prototype</code>中的所有函数中可以共享</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">init: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>[<span class="number">0</span>] = <span class="string">'li'</span>;</div><div class="line">    <span class="keyword">this</span>[<span class="number">1</span>] = <span class="string">'li'</span>;</div><div class="line">    <span class="keyword">this</span>.length = <span class="number">2</span>;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -444,7 +438,7 @@ window.devicePixelRatio是设备上物理像素和设备独立像素(device-inde
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag"># CSS</a>
+            <a href="/tags/jQuery源码/" rel="tag"># jQuery源码</a>
           
         </div>
       
@@ -457,8 +451,8 @@ window.devicePixelRatio是设备上物理像素和设备独立像素(device-inde
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/16/vue.js仿饿了吗App/" rel="next" title="vue.js仿饿了吗App">
-                <i class="fa fa-chevron-left"></i> vue.js仿饿了吗App
+              <a href="/2017/08/13/CSS三栏布局/" rel="next" title="CSS三栏布局">
+                <i class="fa fa-chevron-left"></i> CSS三栏布局
               </a>
             
           </div>
@@ -467,8 +461,8 @@ window.devicePixelRatio是设备上物理像素和设备独立像素(device-inde
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/17/雅虎军规/" rel="prev" title="雅虎军规">
-                雅虎军规 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/19/阅读jQuery源码(一)：整体架构/" rel="prev" title="阅读jQuery源码(一):整体架构">
+                阅读jQuery源码(一):整体架构 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -516,8 +510,17 @@ window.devicePixelRatio是设备上物理像素和设备独立像素(device-inde
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -579,6 +582,22 @@ window.devicePixelRatio是设备上物理像素和设备独立像素(device-inde
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#整体架构"><span class="nav-number">1.</span> <span class="nav-text">整体架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#立即执行表达式"><span class="nav-number">2.</span> <span class="nav-text">立即执行表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链式调用"><span class="nav-number">3.</span> <span class="nav-text">链式调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类数组对象结构"><span class="nav-number">4.</span> <span class="nav-text">类数组对象结构</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
